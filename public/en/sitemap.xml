@@ -142,6 +142,26 @@
                 href="//localhost:1313/en/docs/guide/shortcodes/"
                 />
   </url><url>
+    <loc>//localhost:1313/en/test/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>//localhost:1313/en/</loc>
+    <lastmod>2025-08-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="//localhost:1313/zh-cn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/en/"
+                />
+  </url><url>
     <loc>//localhost:1313/en/blog/</loc>
     <lastmod>2025-08-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -155,21 +175,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/en/blog/"
-                />
-  </url><url>
-    <loc>//localhost:1313/en/</loc>
-    <lastmod>2025-08-14T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="//localhost:1313/zh-cn/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/en/"
                 />
   </url><url>
     <loc>//localhost:1313/en/blog/hextra-v0.10/</loc>

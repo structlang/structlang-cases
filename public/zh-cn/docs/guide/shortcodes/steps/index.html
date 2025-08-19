@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     requestAnimationFrame(()=>setTimeout(renderThemeIcon,0));
   }
-  topTheme.addEventListener('click', (e)=>{ e.preventDefault(); toggleTheme(); }, {passive:true});
+topTheme.addEventListener('click', toggleTheme);
 
   
   renderThemeIcon();
