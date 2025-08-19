@@ -1,0 +1,126 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.git.enabled": true,
+  "frontMatter.media.folder": "static/uploads",
+  "frontMatter.media.publicFolder": "/uploads",
+  "frontMatter.content.pageFolders": [
+    {
+      "path": "[[workspace]]/content"
+    }
+  ],
+  "frontMatter.i18n": {
+    "defaultLocale": "en",
+    "locales": [
+      {
+        "id": "en",
+        "label": "English",
+        "fileSuffix": ""
+      },
+      {
+        "id": "zh-cn",
+        "label": "简体中文",
+        "fileSuffix": ".zh-cn"
+      }
+    ]
+  },
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "Docs",
+      "id": "docs",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Weight",
+          "name": "weight",
+          "type": "number"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "id": "blog",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        }
+      ]
+    }
+  ],
+  "frontMatter.scripts": [
+    {
+      "title": "Create ZH copy",
+      "command": "powershell",
+      "arguments": [
+        "Copy-Item '${file}' ('${file}' -replace '.md$', '.zh-cn.md') -Force"
+      ]
+    }
+  ]
+}

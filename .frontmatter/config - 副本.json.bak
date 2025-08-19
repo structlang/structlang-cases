@@ -1,0 +1,53 @@
+{
+  "framework": { "name": "hugo", "pages": "content", "static": "static" },
+  "media": { "folder": "static/uploads", "publicFolder": "/uploads" },
+  "taxonomies": ["tags", "categories"],
+
+  "contentTypes": [
+    {
+      "name": "Docs",
+      "id": "docs",
+      "path": "content/docs",
+      "fileName": "{{slug}}",
+      "slug": "docs/{{slug}}",
+      "fields": [
+        { "title": "Title", "name": "title", "type": "string", "required": true },
+        { "title": "Date", "name": "date", "type": "datetime" },
+        { "title": "Draft", "name": "draft", "type": "boolean", "default": true },
+        { "title": "Weight", "name": "weight", "type": "number" },
+        { "title": "Tags", "name": "tags", "type": "tags" }
+      ],
+      "newFileContent": "templates/docs.md"
+    },
+    {
+      "name": "Blog",
+      "id": "blog",
+      "path": "content/blog",
+      "fileName": "{{slug}}",
+      "slug": "blog/{{slug}}",
+      "fields": [
+        { "title": "Title", "name": "title", "type": "string", "required": true },
+        { "title": "Date", "name": "date", "type": "datetime" },
+        { "title": "Draft", "name": "draft", "type": "boolean", "default": true },
+        { "title": "Tags", "name": "tags", "type": "tags" }
+      ],
+      "newFileContent": "templates/blog.md"
+    }
+  ],
+
+  "localization": {
+    "defaultLocale": "en",
+    "locales": [
+      { "id": "en", "label": "English", "fileSuffix": "" },
+      { "id": "zh-cn", "label": "简体中文", "fileSuffix": ".zh-cn" }
+    ]
+  },
+
+  "custom": {
+    "scripts": [
+      { "name": "Create ZH copy", "command": "pwsh -NoProfile -File .frontmatter/make-zh.ps1 \"{{document.filePath}}\"" },
+      { "name": "Toggle draft",   "command": "pwsh -NoProfile -File .frontmatter/toggle-draft.ps1 \"{{document.filePath}}\"" },
+      { "name": "List missing ZH","command": "pwsh -NoProfile -File .frontmatter/list-missing-zh.ps1" }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+﻿baseURL: "/"
+title: MainStruct
+languageCode: en
+theme: hextra
+
+# 顶部导航 —— 先用 url，100% 会显示
+menu:
+  main:
+    - name: MainStruct
+      url: /
+      weight: 5
+    - name: 首页
+      url: /
+      weight: 10
+    - name: 文档
+      url: /docs/
+      weight: 20
+    - name: 博客
+      url: /blog/
+      weight: 30
+    - name: 关于
+      url: /about/
+      weight: 40
+    - name: Search
+      weight: 50
+      params:
+        type: search
+    - name: GitHub
+      url: "https://github.com"
+      weight: 60
+      params:
+        icon: github
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+  theme:
+    default: system
+    displayToggle: true
+  # 确保搜索启用（避免脚本找不到输入框报错）
+  search:
+    enable: true
+    type: flexsearch
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+ignoreLogs: ['warning-goldmark-raw-html']

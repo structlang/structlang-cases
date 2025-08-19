@@ -1,0 +1,39 @@
+title: MainStruct
+baseURL: "/"
+languageCode: en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true     # 关键：英文也在 /en/
+theme: hextra
+enableRobotsTXT: true
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+    menu:
+      main:
+        - { name: Home,  pageRef: /,      weight: 10 }
+        - { name: Docs,  pageRef: /docs,  weight: 20 }
+        - { name: Blog,  pageRef: /blog,  weight: 30 }
+        - { name: About, pageRef: /about, weight: 40 }
+        - { name: Search, weight: 50, params: { type: search } }
+        - { name: GitHub, url: "https://github.com", weight: 60, params: { icon: github } }
+
+  zh-cn:
+    languageName: 简体中文
+    weight: 2
+    menu:
+      main:
+        - { name: 首页, pageRef: /,      weight: 10 }
+        - { name: 文档, pageRef: /docs,  weight: 20 }
+        - { name: 博客, pageRef: /blog,  weight: 30 }
+        - { name: 关于, pageRef: /about, weight: 40 }
+        - { name: Search, weight: 50, params: { type: search } }
+        - { name: GitHub, url: "https://github.com", weight: 60, params: { icon: github } }
+
+# 允许示例中的 HTML，安静控制台
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+ignoreLogs: ['warning-goldmark-raw-html']

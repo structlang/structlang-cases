@@ -1,0 +1,92 @@
+# ── Site Basics ───────────────────────────────────────────
+baseURL: "http://localhost/"
+title: "MainStruct"
+hasCJKLanguage: true
+
+# 默认语言 & URL 结构：/en /zh
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: true
+
+# 使用本地主题
+theme: "hextra"
+
+# ── Build & Render ───────────────────────────────────────
+pagination:
+  pagerSize: 10
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    parser:
+      autoHeadingID: true
+      autoHeadingIDType: github
+      attribute: true
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+      attrs: true
+
+enableRobotsTXT: true
+buildDrafts: true
+
+# 主页输出（若用内置搜索索引，保留 JSON）
+outputs:
+  home: [HTML, RSS, JSON]
+
+# ── Languages (en / zh) ──────────────────────────────────
+languages:
+  en:
+    languageName: "English"
+    languageCode: "en"
+    weight: 1
+    title: "MainStruct"
+    params:
+      description: "Structured cognition, engineered execution."
+    menu:
+      main:
+        - name: "Home"
+          pageRef: "/"
+          weight: 1
+        - name: "Docs"
+          pageRef: "/docs"
+          weight: 2
+        - name: "Blog"
+          pageRef: "/blog"
+          weight: 3
+        - name: "About"
+          pageRef: "/about"
+          weight: 4
+
+  zh-cn:   # ⚠️ 从 zh 改成 zh-cn
+    languageName: "简体中文"
+    languageCode: "zh-CN"
+    weight: 2
+    title: "MainStruct"
+    params:
+      description: "结构化认知与工程化落地"
+    menu:
+      main:
+        - name: "首页"
+          pageRef: "/"
+          weight: 1
+        - name: "文档"
+          pageRef: "/docs"
+          weight: 2
+        - name: "博客"
+          pageRef: "/blog"
+          weight: 3
+        - name: "关于"
+          pageRef: "/about"
+          weight: 4
+       
+
+params:
+  theme:
+    default: system   # light | dark | system
+    displayToggle: true

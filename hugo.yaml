@@ -1,0 +1,80 @@
+# === MainStruct — Hugo + Hextra 多语言配置（英文默认，中文可切换；其他语言预留但不显示）===
+
+title: MainStruct
+baseURL: "/"
+theme: hextra
+
+# 多语言核心
+languageCode: en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true   # 英文走 /en/，中文走 /zh-cn/
+
+# 预留但不显示的语言（不会构建、不会出现在语言切换里）
+disableLanguages: ["fa", "ja", "ar"]
+
+# --- 语言定义（只为 en / zh-cn 提供菜单；fa/ja/ar 仅占位，未来可启用） ---
+languages:
+  en:
+    languageName: English
+    weight: 1
+    menu:
+      main:
+        - { name: Home,  pageRef: /,      weight: 10 }
+        - { name: Docs,  pageRef: /docs,  weight: 20 }
+        - { name: Blog,  pageRef: /blog,  weight: 30 }
+        - { name: About, pageRef: /about, weight: 40 }
+        - { name: Search, weight: 50, params: { type: search } }
+        - { name: GitHub, url: "https://github.com", weight: 60, params: { icon: github } }
+
+  zh-cn:
+    languageName: 简体中文
+    weight: 2
+    menu:
+      main:
+        - { name: 首页, pageRef: /,      weight: 10 }
+        - { name: 文档, pageRef: /docs,  weight: 20 }
+        - { name: 博客, pageRef: /blog,  weight: 30 }
+        - { name: 关于, pageRef: /about, weight: 40 }
+        - { name: Search, weight: 50, params: { type: search } }
+        - { name: GitHub, url: "https://github.com", weight: 60, params: { icon: github } }
+
+  # 下面三种语言仅为将来启用做占位；当前被 disableLanguages 禁用，不会出现在站点中
+  fa:
+    languageName: فارسی
+    weight: 90
+  ja:
+    languageName: 日本語
+    weight: 91
+  ar:
+    languageName: العربية
+    weight: 92
+
+# --- 主题与功能 ---
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+  search:
+    enable: true
+    type: flexsearch
+  theme:
+    default: system
+    displayToggle: true  # 日/夜切换（主题内置）
+
+# 允许示例文档里的原始 HTML，并安静掉相关告警
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+ignoreLogs: ['warning-goldmark-raw-html']
+
+# 站点地图/robots（可保留，便于上线 SEO）
+enableRobotsTXT: true
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+  filename: sitemap.xml
+
+# 按需：博客固定链接（可改）
+permalinks:
+  blog: /blog/:slug/
