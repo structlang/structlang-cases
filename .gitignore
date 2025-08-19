@@ -1,0 +1,11 @@
+﻿public/
+resources/
+hugo_stats.json
+.hugo_build.lock
+
+# editors & OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
