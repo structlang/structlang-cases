@@ -60,6 +60,9 @@ params:
   theme:
     default: system
     displayToggle: true  # 日/夜切换（主题内置）
+  footer:
+    displayPoweredBy: false     # 关闭 Powered by Hextra
+    displayCopyright: true      # 需要就留着版权；不要就改成 false
 
 # 允许示例文档里的原始 HTML，并安静掉相关告警
 markup:
