@@ -17,6 +17,8 @@ git clone https://github.com/structlang/structlang-cases.git
 cd structlang-cases
 pip install -r requirements.txt
 python src/demo.py
+```
+---
 
 
 ## Why StructLang?
