@@ -17,3 +17,13 @@ git clone https://github.com/structlang/structlang-cases.git
 cd structlang-cases
 pip install -r requirements.txt
 python src/demo.py
+
+
+## Why StructLang?
+
+Traditional descriptive analysis struggles with complex interactions. StructLang encodes human intentions, abilities, and attitudes into clear structures, enabling:
+
+- Structural pattern recognition
+- Cross-domain experience transfer
+- Predictive modeling of interactions
+- Human-AI unified decision support
