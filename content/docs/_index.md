@@ -1,41 +1,87 @@
 ---
 linkTitle: "Documentation"
 title: Introduction
+weight: 1
+toc: true            # ← 关键：开启本页 TOC
+sidebar:
+  open: true         # ← 你要求的，左侧目录默认展开
 ---
 
-👋 Hello! Welcome to the Hextra documentation!
+👋 Hello! Welcome to the MainStruct documentation!
 
 <!--more-->
 
-## What is Hextra?
+# MainStruct · The Next Cognitive Language
 
-Hextra is a modern, fast and batteries-included [Hugo][hugo] theme built with [Tailwind CSS][tailwind-css].
-Designed for building beautiful websites for documentation, blogs, and websites, it provides out-of-the-box features and flexibility to meet various requirements.
+**Complexity isn’t infinite. It’s structured.**  
+MainStruct reveals the hidden logic behind how humans think, decide, and act — and translates it into a universal language that both people and AI can use.
 
-## Features
+---
 
-- **Beautiful Design** - Inspired by Nextra, Hextra utilizes Tailwind CSS to offer a modern design that makes your site look outstanding.
-- **Responsive Layout and Dark Mode** - It looks great on all devices, from mobile, tablet to desktop. Dark mode is also supported to accommodate various lighting conditions.
-- **Fast and Lightweight** - Powered by Hugo, a lightning-fast static-site generator housed in a single binary file, Hextra keeps its footprint minimal. No JavaScript or Node.js are needed to use it.
-- **Full-text Search** - Built-in offline full-text search powered by FlexSearch, no additional configuration required.
-- **Battery-included** - Markdown, syntax highlighting, LaTeX math formulae, diagrams and Shortcodes elements to enhance your content. Table of contents, breadcrumbs, pagination, sidebar navigation and more are all automatically generated.
-- **Multi-language and SEO Ready** - Multi-language sites made easy with Hugo's multilingual mode. Out-of-the-box support is included for SEO tags, Open Graph, and Twitter Cards.
+## Why another framework?
 
-## Questions or Feedback?
+The world already has many theories and tools. But each one only sees **part of the picture**:
 
-{{< callout emoji="❓" >}}
-  Hextra is still in active development.
-  Have a question or feedback? Feel free to [open an issue](https://github.com/imfing/hextra/issues)!
-{{< /callout >}}
+- **Psychology (CBT, Personality Tests)** → Focuses on traits or emotions, but struggles with dynamic, real-time change.
+    
+- **Game Theory** → Models rational choices, but ignores uncertainty, fear, and subjective intentions.
+    
+- **System Dynamics** → Captures feedback loops, but too abstract for everyday or organizational decisions.
+    
+- **AI & Neural Nets** → Powerful predictions, but trapped in “black box” logic, lacking human-level explainability.
+    
 
-## Next
+---
 
-Dive right into the following section to get started:
+## What makes MainStruct different?
 
-{{< cards >}}
-  {{< card link="getting-started" title="Getting Started" icon="document-text" subtitle="Learn how to create website using Hextra" >}}
-{{< /cards >}}
+- **Dynamic** → Captures shifting states (intention × ability × attitude) instead of static labels.
+    
+- **Cross-Domain** → Works in business, education, health, politics, psychology, strategy — not just relationships.
+    
+- **Computable** → 64 fundamental modes = a “Periodic Table of Human Behavior,” ready for AI integration.
+    
+- **Explainable** → Turns intuition into clear logic, bridging human wisdom and machine reasoning.
+    
+- **Predictive** → Identifies not only current states, but also likely transitions and triggers of change.
+    
 
-[hugo]: https://gohugo.io/
-[flex-search]: https://github.com/nextapps-de/flexsearch
-[tailwind-css]: https://tailwindcss.com/
+---
+
+## Comparison at a Glance
+
+|Field / Framework|Strengths|Limitations|What MainStruct Adds|
+|---|---|---|---|
+|**Personality Tests (MBTI, Big Five)**|Easy to use, popular|Static, labels people, poor prediction|Dynamic structure: same person in different contexts has different codes|
+|**Cognitive Behavioral Therapy (CBT)**|Evidence-based, clinical|Narrow to therapy, not generalizable|Universal structural model for any domain, not just clinical use|
+|**Game Theory**|Rigorous, mathematical|Assumes rationality, ignores emotions|Models real subjective intentions, conflicts, and irrational dynamics|
+|**System Dynamics**|Captures feedback & complexity|Too abstract, weak on individual psychology|Makes complexity intuitive and human-readable|
+|**AI / Deep Learning**|Powerful predictions|Opaque, black-box, lacks interpretability|Provides a symbolic “explainability layer” AI can compute and humans can understand|
+|**Traditional Strategy Tools (SWOT, PESTEL)**|Simple, widely taught|Surface-level, ignores real human dynamics|Structural diagnosis: reveals the hidden intention–ability–attitude grid|
+
+---
+
+## Our Position
+
+👉 **MainStruct = The next cognitive standard.**
+
+- For **humans**: a practical tool to decode complexity, anticipate change, and design better strategies.
+    
+- For **AI**: a universal symbolic layer that turns “black box” outputs into explainable reasoning.
+    
+
+This is not just another personality test.  
+Not just another management tool.  
+Not just another AI model.
+
+**It’s the language that connects them all.**
+
+---
+
+⚡ Marketing tagline examples you can rotate:
+
+- _“MBTI was about who you are. MainStruct is about how you change.”_
+    
+- _“From psychology to AI: one language to structure them all.”_
+    
+- _“The periodic table of decisions.”_

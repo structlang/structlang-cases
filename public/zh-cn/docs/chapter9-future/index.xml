@@ -1,0 +1,82 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MainStruct – 第9章 · 边界与未来</title>
+    <link>//localhost:1313/zh-cn/docs/chapter9-future/</link>
+    <description>Recent content in 第9章 · 边界与未来 on MainStruct</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	  <atom:link href="//localhost:1313/zh-cn/docs/chapter9-future/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>结构解释的局限</title>
+      <link>//localhost:1313/zh-cn/docs/chapter9-future/limits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter9-future/limits/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>多文化、多语境下的适配</title>
+      <link>//localhost:1313/zh-cn/docs/chapter9-future/multicultural/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter9-future/multicultural/</guid>
+      <description>
+        
+        
+        &lt;pre class=&#34;mermaid hx:mt-6&#34;&gt;
+  graph TD
+
+    A[经验&amp;lt;br/&amp;gt;直接印象 · 一次性跳变] --&amp;gt; B[普通知识&amp;lt;br/&amp;gt;故事 · 文化 · 他人经验]
+
+    B --&amp;gt;|筛选：可靠性 × 可证伪性| C[科学&amp;lt;br/&amp;gt;更可靠的经验]
+    B --&amp;gt;|筛选：不可证伪 × 高稳定性| D[宗教 / 神话&amp;lt;br/&amp;gt;稳定信念体系]
+
+    style A fill:#f9f,stroke:#333,stroke-width:1px,color:#000
+    style B fill:#bbf,stroke:#333,stroke-width:1px,color:#000
+    style C fill:#bfb,stroke:#333,stroke-width:1px,color:#000
+    style D fill:#fbb,stroke:#333,stroke-width:1px,color:#000
+&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>与人工智能的结合</title>
+      <link>//localhost:1313/zh-cn/docs/chapter9-future/ai-integration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter9-future/ai-integration/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>未来的研究方向</title>
+      <link>//localhost:1313/zh-cn/docs/chapter9-future/research/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter9-future/research/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

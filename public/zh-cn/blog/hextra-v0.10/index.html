@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="http://localhost:1313/favicon.ico" sizes="32x32" />
+<link rel="icon" href="http://localhost:1313/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="http://localhost:1313/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="http://localhost:1313/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="http://localhost:1313/site.webmanifest" rel="manifest" />
+<title>Hextra v0.10 – StructLang</title>
+  <meta name="description" content="Hextra v0.10.0 是一个重大版本更新，包含多项新功能、架构升级和使用体验优化。" /><link rel="canonical" href="http://localhost:1313/zh-cn/blog/hextra-v0.10/" itemprop="url" />
+
+<meta property="og:title" content="Hextra v0.10" />
+<meta property="og:description" content="Hextra v0.10.0 是一个重大版本更新，包含多项新功能、架构升级和使用体验优化。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/zh-cn/blog/hextra-v0.10/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-08-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-08-14T00:00:00+00:00" />
+
+  <meta itemprop="name" content="Hextra v0.10">
+  <meta itemprop="description" content="Hextra v0.10.0 是一个重大版本更新，包含多项新功能、架构升级和使用体验优化。">
+  <meta itemprop="datePublished" content="2025-08-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-08-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="423">
+  <meta itemprop="keywords" content="Release">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hextra v0.10">
+  <meta name="twitter:description" content="Hextra v0.10.0 是一个重大版本更新，包含多项新功能、架构升级和使用体验优化。">
+<link href="http://localhost:1313/css/compiled/main.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/variables.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/custom.css" rel="stylesheet" />
+
+  
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  
+  <script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const anchor = document.querySelector('.hextra-search-wrapper') ||
+                 document.querySelector('.hextra-nav-container');
+  if (!anchor) return;
+
+   
+  function readAlternates() {
+    const m = new Map();
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l=>{
+      const lang=(l.getAttribute('hreflang')||'').toLowerCase();
+      const href=l.getAttribute('href'); if(lang && href) m.set(lang, href);
+    });
+    return m;
+  }
+  function currentLang() {
+    const htmlLang=(document.documentElement.lang||'').toLowerCase();
+    if (htmlLang) return htmlLang;
+    const p=location.pathname.toLowerCase();
+    if (p.startsWith('/zh-cn/')) return 'zh-cn';
+    if (p.startsWith('/en/'))    return 'en';
+    return 'en';
+  }
+  function switchURL(target) {
+    const alts = readAlternates();
+    if (alts.size && alts.get(target)) return alts.get(target);
+    const u = new URL(location.href), p=u.pathname;
+    if (target==='zh-cn') {
+      if (p.startsWith('/en/')) u.pathname=p.replace(/^\/en\//,'/zh-cn/');
+      else if (!p.startsWith('/zh-cn/')) u.pathname='/zh-cn'+(p.startsWith('/')?p:'/'+p);
+    } else {
+      if (p.startsWith('/zh-cn/')) u.pathname=p.replace(/^\/zh-cn\//,'/en/');
+      else if (!p.startsWith('/en/'))    u.pathname='/en'+(p.startsWith('/')?p:'/'+p);
+    }
+    return u.toString();
+  }
+
+  const labels={ 'en':'English', 'zh-cn':'简体中文' };
+  const langs=['en','zh-cn'];
+  const cur=currentLang();
+
+  const langSelect=document.createElement('select');
+  langSelect.className='hx-navbar-lang';
+  langs.forEach(code=>{
+    const opt=document.createElement('option');
+    opt.value=switchURL(code);
+    opt.textContent=labels[code]||code;
+    if(code===cur) opt.selected=true;
+    langSelect.appendChild(opt);
+  });
+  langSelect.addEventListener('change', e => { const url=e.target.value; if(url) location.href=url; });
+  anchor.insertAdjacentElement('afterend', langSelect);
+
+   
+  const origTheme = document.querySelector('.hextra-theme-toggle'); 
+  const topTheme  = document.createElement('button');
+  topTheme.type   = 'button';
+  topTheme.className = 'hextra-theme-toggle in-navbar hx-top-theme';
+  langSelect.insertAdjacentElement('afterend', topTheme);
+
+  function isDark(){
+    
+    return document.documentElement.classList.contains('dark') ||
+           (document.documentElement.getAttribute('data-theme')||'').toLowerCase()==='dark';
+  }
+  function renderThemeIcon(){
+    if (isDark()){
+      topTheme.setAttribute('aria-label','Light');
+      topTheme.title='Light';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 4V2M12 22v-2M4.93 4.93 3.51 3.51M20.49 20.49l-1.42-1.42M4 12H2M22 12h-2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    } else {
+      topTheme.setAttribute('aria-label','Dark');
+      topTheme.title='Dark';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    }
+  }
+  function toggleTheme(){
+    if (origTheme) {
+      
+      origTheme.click();
+    } else {
+      
+      document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('theme', isDark() ? 'dark' : 'light'); } catch(e){}
+    }
+    
+    requestAnimationFrame(()=>setTimeout(renderThemeIcon,0));
+  }
+topTheme.addEventListener('click', toggleTheme);
+
+  
+  renderThemeIcon();
+  const obs = new MutationObserver(renderThemeIcon);
+  obs.observe(document.documentElement, {attributes:true, attributeFilter:['class','data-theme']});
+  if (origTheme) obs.observe(origTheme, {attributes:true, childList:true, subtree:true});
+  window.addEventListener('storage', (e)=>{ if ((e.key||'').toLowerCase().includes('theme')) renderThemeIcon(); });
+
+   
+  const style=document.createElement('style');
+  style.textContent=`
+    @media (min-width:1024px){
+      select.hx-navbar-lang{
+        width:auto; max-width:14rem; height:2rem;
+        padding:0 .55rem; border-radius:9999px;
+        border:1px solid var(--hx-border, rgba(0,0,0,.14));
+        background:transparent; color:var(--hx-fg, inherit);
+        font-size:.9rem; line-height:2rem; cursor:pointer; margin-left:.5rem;
+        color-scheme: light dark;
+      }
+      html.dark select.hx-navbar-lang{
+        color: rgba(255,255,255,.92);
+        border-color: rgba(255,255,255,.22);
+        background-color: rgba(255,255,255,.06);
+      }
+      html.dark select.hx-navbar-lang option{ color:#111; background:#fff; }
+
+      .hextra-theme-toggle.in-navbar{ margin-left:.5rem; background:transparent; border:0; padding:0 .25rem; }
+      .hextra-theme-toggle.in-navbar svg{ display:block; }
+
+      /* 新增：桌面端隐藏原位置的日/夜切换按钮（保留顶部的） */
+      .hextra-theme-toggle:not(.in-navbar){ display: none !important; }
+
+      /* 桌面端也隐藏原位置的语言切换器，避免重复 */
+      .hextra-language-switcher{ display:none !important; }
+    }
+    @media (max-width:1023.98px){
+      /* 移动端：顶部语言下拉不显示；底部的日/夜按钮继续保留 */
+      select.hx-navbar-lang{ display:none !important; }
+    }
+  `;
+  document.head.appendChild(style);
+
+});
+</script>
+</head>
+<body dir="ltr"><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="http://localhost:1313/zh-cn/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="StructLang">StructLang</span>
+</a>
+
+            <a
+              title="首页"
+              href="http://localhost:1313/zh-cn/"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">首页</span>
+            </a>
+            <a
+              title="文档"
+              href="http://localhost:1313/zh-cn/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">文档</span>
+            </a>
+            <a
+              title="博客"
+              href="http://localhost:1313/zh-cn/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">博客</span>
+            </a>
+            <a
+              title="关于"
+              href="http://localhost:1313/zh-cn/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">关于</span>
+            </a><div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx:sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class="hx:mx-auto hx:flex hextra-max-page-width">
+    <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:hidden hx:xl:block">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/"
+    
+  >文档
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入 MainStruct 社群
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-traditional-analysis-limitations/"
+    
+  >第1章 · 传统分析方法的缺陷
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-human-thinking-structure/"
+    
+  >第2章 · 人类思维的结构本质
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-chaos-to-structure/"
+    
+  >第3章 · 混沌到结构的认知过程
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+    
+  >第4章 · 主客关系分析框架
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+    
+  >第5章 · 64种基本结构模式
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-structural-change-mechanisms/"
+    
+  >第6章 · 规律和触发机制
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-future-of-structlang/"
+    
+  >第7章 · 结构语言的未来
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/"
+    
+  >博客
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/blog/hextra-v0.10/"
+    
+  >Hextra v0.10
+    </a>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#%e5%8d%87%e7%ba%a7%e6%8c%87%e5%8d%97"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >升级指南</a>
+            </li>
+          <li>
+              <a
+                href="#%e6%96%b0%e5%8a%9f%e8%83%bd"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >新功能</a>
+            </li>
+          <li>
+              <a
+                href="#%e6%8a%80%e6%9c%af%e6%94%b9%e8%bf%9b"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >技术改进</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%bd%bf%e7%94%a8%e4%bd%93%e9%aa%8c%e4%bc%98%e5%8c%96"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >使用体验优化</a>
+            </li>
+          <li>
+              <a
+                href="#%e9%94%99%e8%af%af%e4%bf%ae%e5%a4%8d%e4%b8%8e%e7%a8%b3%e5%ae%9a%e6%80%a7"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >错误修复与稳定性</a>
+            </li>
+          <li>
+              <a
+                href="#%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >迁移指南</a>
+            </li>
+          <li>
+              <a
+                href="#%e8%b4%a1%e7%8c%ae%e8%80%85"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >贡献者</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"
+    
+  >Markdown 语法指南
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/about/"
+    
+  >关于
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/showcase/"
+    
+  >项目展示
+    </a></li>
+    </ul>
+
+    <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
+  
+  
+    <div class="hx:md:hidden hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="切换语言"
+      data-state="closed"
+      class="hextra-language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>简体中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/en/blog/hextra-v0.10/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/zh-cn/blog/hextra-v0.10/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >简体中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">此页上</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8d%87%e7%ba%a7%e6%8c%87%e5%8d%97">升级指南
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%96%b0%e5%8a%9f%e8%83%bd">新功能
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%af%bc%e8%88%aa%e6%a0%8f%e4%b8%8b%e6%8b%89%e8%8f%9c%e5%8d%95%e6%94%af%e6%8c%81">导航栏下拉菜单支持
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%a2%9e%e5%bc%ba%e6%90%9c%e7%b4%a2%e4%bd%93%e9%aa%8c">增强搜索体验
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#llmstxt-%e6%94%af%e6%8c%81">llms.txt 支持
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8%e9%ab%98%e4%ba%ae">目录滚动高亮
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%90%8c%e6%ad%a5%e6%a0%87%e7%ad%be%e9%a1%b5%e5%88%87%e6%8d%a2">同步标签页切换
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8d%9a%e5%ae%a2%e5%88%97%e8%a1%a8%e5%88%86%e9%a1%b5">博客列表分页
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#mathjax-%e6%94%af%e6%8c%81">MathJax 支持
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%8a%80%e6%9c%af%e6%94%b9%e8%bf%9b">技术改进
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%a1%86%e6%9e%b6%e4%b8%8e%e6%9e%84%e5%bb%ba%e7%b3%bb%e7%bb%9f">框架与构建系统
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%bd%bf%e7%94%a8%e4%bd%93%e9%aa%8c%e4%bc%98%e5%8c%96">使用体验优化
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e9%94%99%e8%af%af%e4%bf%ae%e5%a4%8d%e4%b8%8e%e7%a8%b3%e5%ae%9a%e6%80%a7">错误修复与稳定性
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97">迁移指南
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#hugo-%e7%89%88%e6%9c%ac%e8%a6%81%e6%b1%82">Hugo 版本要求
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#css-%e7%b1%bb%e5%89%8d%e7%bc%80%e5%8f%98%e6%9b%b4">CSS 类前缀变更
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#katex-%e5%92%8c-mermaid-%e8%b5%84%e6%ba%90%e7%ae%a1%e7%90%86">KaTeX 和 Mermaid 资源管理
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#tailwind-css-v4">Tailwind CSS v4
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e8%b4%a1%e7%8c%ae%e8%80%85">贡献者
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>返回顶部</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="http://localhost:1313/zh-cn/blog/">博客</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Hextra v0.10</div>
+  </div>
+
+        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Hextra v0.10</h1>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 14, 2025</span><span class="hx:mx-1">·</span><a
+                  href="https://github.com/imfing" target="_blank"
+                  class="hx:group hx:inline-flex hx:items-center hx:text-current hx:gap-x-1.5 hx:mx-1"
+                  title="imfing"
+                ><img src="https://github.com/imfing.png" alt="imfing" class="hx:inline-block hx:h-4 hx:w-4 hx:rounded-full" loading="lazy" />
+                  <div class="hx:group-hover:underline">imfing</div>
+                </a></div>
+        <div class="content">
+          <p>Hextra v0.10.0 是一个重大版本更新，包含多项新功能、架构升级和使用体验优化。</p>
+<p>本次更新还包含了来自 10 位 <a href="#contributors" >新贡献者</a> 的代码提交，并解决了社区长期期待的功能需求。</p>
+<h2>升级指南<span class="hx:absolute hx:-mt-20" id="升级指南"></span>
+    <a href="#%e5%8d%87%e7%ba%a7%e6%8c%87%e5%8d%97" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><div class="hx:overflow-x-auto hx:mt-6 hx:flex hx:flex-col hx:rounded-lg hx:border hx:py-4 hx:px-4 hx:border-gray-200 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-indigo-200 hx:bg-indigo-100 hx:text-indigo-900 hx:dark:border-indigo-200/30 hx:dark:bg-indigo-900/30 hx:dark:text-indigo-200">
+  <p class="hx:flex hx:items-center hx:font-medium"><svg height=16px class="hx:inline-block hx:align-middle hx:mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Important</p>
+
+  <div class="hx:w-full hx:min-w-0 hx:leading-7">
+    <div class="hx:mt-6 hx:leading-7 hx:first:mt-0"><p><strong>破坏性变更</strong>：此版本包含多项不兼容改动。升级前请仔细阅读检查清单和 <a href="#migration-guide" >迁移指南</a>。</p></div>
+  </div>
+</div>
+<p>升级至 v0.10.0 前，请确保：</p>
+<ul>
+<li>已安装 Hugo v0.146.0+（扩展版）</li>
+<li>检查自定义 CSS 的类名变更（参见 <a href="#css-class-prefix-changes" >CSS 类前缀变更</a> 和 <a href="#tailwind-css-v4" >Tailwind CSS v4</a>）</li>
+<li>确认构建环境可访问互联网以下载 LaTeX 和/或 Mermaid 资源</li>
+</ul>
+<p>准备就绪后，更新 Hugo 模块：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo mod get -u github.com/imfing/hextra@v0.10.0</span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h2>新功能<span class="hx:absolute hx:-mt-20" id="新功能"></span>
+    <a href="#%e6%96%b0%e5%8a%9f%e8%83%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>以下是本版本值得关注的新特性：</p>
+<ul>
+<li><a href="#dropdown-menu-support-in-navbar" ><strong>导航栏下拉菜单支持</strong></a>：创建层级导航菜单</li>
+<li><a href="#enhanced-search-experience" ><strong>增强搜索体验</strong></a>：改进全标题搜索精度</li>
+<li><a href="#llmstxt-support" ><strong>llms.txt 支持</strong></a>：生成 AI 友好的站点大纲</li>
+<li><a href="#table-of-contents-scroll-highlighting" ><strong>目录滚动高亮</strong></a>：滚动时自动高亮当前章节</li>
+<li><a href="#synchronized-tab-switching" ><strong>同步标签页切换</strong></a>：跨多组标签页同步选择状态</li>
+<li><a href="#blog-list-pagination" ><strong>博客列表分页</strong></a>：为博客列表添加分页控件</li>
+<li><a href="#mathjax-support" ><strong>MathJax 支持</strong></a>：在 KaTeX 外新增数学公式渲染引擎</li>
+</ul>
+<h3>导航栏下拉菜单支持<span class="hx:absolute hx:-mt-20" id="导航栏下拉菜单支持"></span>
+    <a href="#%e5%af%bc%e8%88%aa%e6%a0%8f%e4%b8%8b%e6%8b%89%e8%8f%9c%e5%8d%95%e6%94%af%e6%8c%81" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在导航栏中创建下拉菜单，优化导航项组织方式。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div class="hextra-code-filename not-prose" dir="auto">hugo.yaml</div><div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">menu</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">main</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">identifier</span>: <span style="color:#ae81ff">products</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;产品&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;产品A&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">parent</span>: <span style="color:#ae81ff">products</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;/product-a&#34;</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;产品B&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">parent</span>: <span style="color:#ae81ff">products</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">url</span>: <span style="color:#e6db74">&#34;/product-b&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-8">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p><img src="https://github.com/user-attachments/assets/1816f9b9-7fe3-46e8-9546-f15e43e9914a" alt="下拉菜单导航"  loading="lazy" /></p>
+<h3>增强搜索体验<span class="hx:absolute hx:-mt-20" id="增强搜索体验"></span>
+    <a href="#%e5%a2%9e%e5%bc%ba%e6%90%9c%e7%b4%a2%e4%bd%93%e9%aa%8c" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li><strong>全标题搜索</strong>：可搜索所有层级标题内容，不限于页面标题</li>
+<li><strong>提升结果精度</strong>：改进标题处理和链接准确性</li>
+<li><strong>修复结果导航</strong>：搜索结果现在能正确跳转到对应章节</li>
+</ul>
+<p>特别感谢 <a href="https://github.com/ldez" target="_blank" rel="noopener">@ldez</a> 推动搜索功能升级！</p>
+<p><img src="https://github.com/user-attachments/assets/f819652a-95d4-4843-b7e2-c7953a8cabe8" alt="增强版搜索结果"  loading="lazy" /></p>
+<h3>llms.txt 支持<span class="hx:absolute hx:-mt-20" id="llmstxt-支持"></span>
+    <a href="#llmstxt-%e6%94%af%e6%8c%81" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>现支持生成 <a href="https://llmstxt.org/" target="_blank" rel="noopener">llms.txt</a> 格式输出，使站点内容更便于 AI 工具和语言模型获取上下文参考。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div class="hextra-code-filename not-prose" dir="auto">hugo.yaml</div><div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">outputs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">home</span>: [<span style="color:#ae81ff">html, llms]</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-8">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p>这将在站点根目录生成 <code>llms.txt</code> 文件。</p>
+<p><img src="https://github.com/user-attachments/assets/c6e929bb-0fce-4ab2-af15-a71c5a38b22c" alt="示例 llms 文本"  loading="lazy" /></p>
+<h3>目录滚动高亮<span class="hx:absolute hx:-mt-20" id="目录滚动高亮"></span>
+    <a href="#%e7%9b%ae%e5%bd%95%e6%bb%9a%e5%8a%a8%e9%ab%98%e4%ba%ae" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>滚动页面时，目录会自动高亮当前章节，使导航更加直观。</p>
+<p><img src="https://github.com/user-attachments/assets/d623fb99-7000-428b-af95-384eb722f0eb" alt="目录滚动高亮效果"  loading="lazy" /></p>
+<h3>同步标签页切换<span class="hx:absolute hx:-mt-20" id="同步标签页切换"></span>
+    <a href="#%e5%90%8c%e6%ad%a5%e6%a0%87%e7%ad%be%e9%a1%b5%e5%88%87%e6%8d%a2" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>相同内容的标签页现在支持跨组同步。启用同步后，选择某个标签会更新所有包含相同项目的标签组（且会记住选择状态）。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div class="hextra-code-filename not-prose" dir="auto">hugo.yaml</div><div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">params</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">page</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tabs</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">sync</span>: <span style="color:#66d9ef">true</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-8">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>博客列表分页<span class="hx:absolute hx:-mt-20" id="博客列表分页"></span>
+    <a href="#%e5%8d%9a%e5%ae%a2%e5%88%97%e8%a1%a8%e5%88%86%e9%a1%b5" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>为博客列表页面添加基础分页控件。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div class="hextra-code-filename not-prose" dir="auto">hugo.yaml</div><div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">params</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">blog</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">list</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">pagerSize</span>: <span style="color:#ae81ff">20</span> <span style="color:#75715e"># 每页文章数</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-8">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p><img src="https://github.com/user-attachments/assets/60405fb4-ec36-4733-ba13-b4066396b5c5" alt="博客分页效果"  loading="lazy" /></p>
+<h3>MathJax 支持<span class="hx:absolute hx:-mt-20" id="mathjax-支持"></span>
+    <a href="#mathjax-%e6%94%af%e6%8c%81" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>除默认的 KaTeX 外，新增 <a href="https://www.mathjax.org/" target="_blank" rel="noopener">MathJax</a> 数学公式渲染引擎支持，可按需选择。</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div class="hextra-code-filename not-prose" dir="auto">hugo.yaml</div><div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">params</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">math</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">engine</span>: <span style="color:#e6db74">&#34;mathjax&#34;</span> <span style="color:#75715e"># 默认为 &#34;katex&#34;</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-8">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h2>技术改进<span class="hx:absolute hx:-mt-20" id="技术改进"></span>
+    <a href="#%e6%8a%80%e6%9c%af%e6%94%b9%e8%bf%9b" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>框架与构建系统<span class="hx:absolute hx:-mt-20" id="框架与构建系统"></span>
+    <a href="#%e6%a1%86%e6%9e%b6%e4%b8%8e%e6%9e%84%e5%bb%ba%e7%b3%bb%e7%bb%9f" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ul>
+<li><strong>Tailwind CSS v4 迁移</strong>：完整迁移至 <a href="https://tailwindcss.com/blog/tailwindcss-v4" target="_blank" rel="noopener">Tailwind CSS v4</a>，提供更好的定制支持</li>
+<li><strong>Hugo 模板系统</strong>：适配 Hugo <a href="https://gohugo.io/templates/new-templatesystem-overview/" target="_blank" rel="noopener">新版模板系统</a>（v0.146.0+）以确保未来兼容性</li>
+<li><strong>数学公式服务端渲染</strong>：默认使用 Hugo 原生渲染改进数学公式处理</li>
+<li><strong>FlexSearch 0.8 升级</strong>：搜索引擎升级至 <a href="https://github.com/nextapps-de/flexsearch" target="_blank" rel="noopener">FlexSearch</a> 0.8，提升 CJK（中日韩）内容编码处理能力</li>
+<li><strong>增强资源管理</strong>：KaTeX 和 Mermaid 资源支持从 CDN 或本地加载</li>
+</ul>
+<h2>使用体验优化<span class="hx:absolute hx:-mt-20" id="使用体验优化"></span>
+    <a href="#%e4%bd%bf%e7%94%a8%e4%bd%93%e9%aa%8c%e4%bc%98%e5%8c%96" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li><strong>动态 favicon 切换</strong>：根据色彩偏好自动更新网站图标</li>
+<li><strong>反向分页</strong>：支持通过页面 front matter 设置 <code>reversePagination</code></li>
+<li><strong>Google 索引控制</strong>：新增页面参数控制是否允许 Google 索引</li>
+<li><strong>宽度处理改进</strong>：通过 CSS 变量优化响应式设计控制</li>
+<li><strong>样式改进</strong>：现代化 Markdown 表格和水平线样式</li>
+</ul>
+<h2>错误修复与稳定性<span class="hx:absolute hx:-mt-20" id="错误修复与稳定性"></span>
+    <a href="#%e9%94%99%e8%af%af%e4%bf%ae%e5%a4%8d%e4%b8%8e%e7%a8%b3%e5%ae%9a%e6%80%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li><strong>Giscus 主题同步</strong>：评论模块现在正确跟随暗黑/明亮模式切换</li>
+<li><strong>搜索结果准确性</strong>：修复搜索结果链接和标题转义问题</li>
+<li><strong>标签页切换</strong>：解决非同步模式下的导航问题</li>
+<li><strong>幽灵滚动</strong>：修复禁用页脚时出现的异常滚动行为</li>
+<li><strong>图片可访问性</strong>：避免重复渲染 alt 文本</li>
+<li><strong>链接渲染</strong>：改进复杂站点结构下的基础 URL 处理</li>
+</ul>
+<hr>
+<h2>迁移指南<span class="hx:absolute hx:-mt-20" id="迁移指南"></span>
+    <a href="#%e8%bf%81%e7%a7%bb%e6%8c%87%e5%8d%97" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li><a href="#hugo-version-requirements" ><strong>Hugo 版本要求</strong></a>：需 Hugo v0.146.0+（扩展版）</li>
+<li><a href="#css-class-prefix-changes" ><strong>CSS 类前缀变更</strong></a>：组件 CSS 类现统一使用 <code>hextra-</code> 前缀</li>
+<li><a href="#asset-management-for-katex-and-mermaid" ><strong>资源管理</strong></a>：KaTeX 和 Mermaid 资源改为构建时下载</li>
+<li><a href="#tailwind-css-v4" ><strong>Tailwind CSS v4</strong></a>：内部 CSS 编译现使用 Tailwind CSS v4.x 并采用 <code>hx:</code> 前缀</li>
+</ul>
+<h4>Hugo 版本要求<span class="hx:absolute hx:-mt-20" id="hugo-版本要求"></span>
+    <a href="#hugo-%e7%89%88%e6%9c%ac%e8%a6%81%e6%b1%82" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><strong>影响</strong>：使用旧版 Hugo 的站点</p>
+<p>Hextra v0.10.0 因采用新模板系统，要求 Hugo v0.146.0 或更高版本（扩展版）。</p>
+<p><strong>需执行操作</strong>：升级 Hextra 前先更新 Hugo 至 v0.146.0+</p>
+<h4>CSS 类前缀变更<span class="hx:absolute hx:-mt-20" id="css-类前缀变更"></span>
+    <a href="#css-%e7%b1%bb%e5%89%8d%e7%bc%80%e5%8f%98%e6%9b%b4" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><strong>影响</strong>：自定义 CSS 中引用了 Hextra 组件类的站点</p>
+<p>v0.10.0 为大多数组件 CSS 类引入统一的 <code>hextra-</code> 前缀，以提高可维护性并避免与用户样式冲突。</p>
+<p><strong>需执行操作</strong>：如果自定义 CSS 中引用了 Hextra 组件，请更新以下类名：</p>
+<table>
+  <thead>
+      <tr>
+          <th>区域</th>
+          <th>旧类名</th>
+          <th>新类名</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>搜索（容器）</td>
+          <td><code>.search-wrapper</code></td>
+          <td><code>.hextra-search-wrapper</code></td>
+      </tr>
+      <tr>
+          <td>搜索（输入框）</td>
+          <td><code>.search-input</code></td>
+          <td><code>.hextra-search-input</code></td>
+      </tr>
+      <tr>
+          <td>搜索（结果）</td>
+          <td><code>.search-results</code></td>
+          <td><code>.hextra-search-results</code></td>
+      </tr>
+      <tr>
+          <td>搜索（标题）</td>
+          <td><code>.search-wrapper .title</code></td>
+          <td><code>.hextra-search-wrapper .hextra-search-title</code></td>
+      </tr>
+      <tr>
+          <td>搜索（活动项）</td>
+          <td><code>.search-wrapper .active</code></td>
+          <td><code>.hextra-search-wrapper .hextra-search-active</code></td>
+      </tr>
+      <tr>
+          <td>搜索（无结果）</td>
+          <td><code>.search-wrapper .no-result</code></td>
+          <td><code>.hextra-search-wrapper .hextra-search-no-result</code></td>
+      </tr>
+      <tr>
+          <td>搜索（前缀）</td>
+          <td><code>.search-wrapper .prefix</code></td>
+          <td><code>.hextra-search-wrapper .hextra-search-prefix</code></td>
+      </tr>
+      <tr>
+          <td>搜索（摘要）</td>
+          <td><code>.search-wrapper .excerpt</code></td>
+          <td><code>.hextra-search-wrapper .hextra-search-excerpt</code></td>
+      </tr>
+      <tr>
+          <td>搜索（匹配项）</td>
+          <td><code>.search-wrapper .match</code></td>
+          <td><code>.hextra-search-wrapper .hextra-search-match</code></td>
+      </tr>
+      <tr>
+          <td>导航栏模糊效果</td>
+          <td><code>.nav-container-blur</code></td>
+          <td><code>.hextra-nav-container-blur</code></td>
+      </tr>
+      <tr>
+          <td>汉堡菜单</td>
+          <td><code>.hamburger-menu</code></td>
+          <td><code>.hextra-hamburger-menu</code></td>
+      </tr>
+      <tr>
+          <td>主题切换</td>
+          <td><code>.theme-toggle</code></td>
+          <td><code>.hextra-theme-toggle</code></td>
+      </tr>
+      <tr>
+          <td>语言切换器</td>
+          <td><code>.language-switcher</code></td>
+          <td><code>.hextra-language-switcher</code></td>
+      </tr>
+      <tr>
+          <td>侧边栏容器</td>
+          <td><code>.sidebar-container</code></td>
+          <td><code>.hextra-sidebar-container</code></td>
+      </tr>
+      <tr>
+          <td>侧边栏活动项</td>
+          <td><code>.sidebar-active-item</code></td>
+          <td><code>.hextra-sidebar-active-item</code></td>
+      </tr>
+      <tr>
+          <td>代码文件名</td>
+          <td><code>.filename</code></td>
+          <td><code>.hextra-code-filename</code></td>
+      </tr>
+      <tr>
+          <td>复制图标</td>
+          <td><code>.copy-icon</code></td>
+          <td><code>.hextra-copy-icon</code></td>
+      </tr>
+      <tr>
+          <td>成功图标</td>
+          <td><code>.success-icon</code></td>
+          <td><code>.hextra-success-icon</code></td>
+      </tr>
+      <tr>
+          <td>步骤组件</td>
+          <td><code>.steps</code></td>
+          <td><code>.hextra-steps</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4>KaTeX 和 Mermaid 资源管理<span class="hx:absolute hx:-mt-20" id="katex-和-mermaid-资源管理"></span>
+    <a href="#katex-%e5%92%8c-mermaid-%e8%b5%84%e6%ba%90%e7%ae%a1%e7%90%86" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><strong>影响</strong>：使用 KaTeX 或 Mermaid 的站点</p>
+<p>v0.10.0 改为在构建时从 CDN 下载 KaTeX 和 Mermaid 资源。</p>
+<p><strong>变更内容：</strong></p>
+<ul>
+<li>构建过程需要联网下载这些资源</li>
+<li>构建后不再需要外部 CDN 调用</li>
+</ul>
+<p><strong>需执行操作：</strong></p>
+<ul>
+<li>确保构建环境可访问互联网以下载资源</li>
+<li>隔离环境中的站点需预下载资源并配置 Hextra 加载路径</li>
+</ul>
+<h4>Tailwind CSS v4<span class="hx:absolute hx:-mt-20" id="tailwind-css-v4"></span>
+    <a href="#tailwind-css-v4" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p><strong>影响</strong>：大量自定义 CSS 引用了 <code>hx-*</code> 类名的站点</p>
+<p>虽然 Hextra 内部已处理 Tailwind CSS v4 迁移，但深度定制的站点可能需要额外调整。</p>
+<p><strong>变更内容：</strong></p>
+<ul>
+<li>内部 CSS 编译使用 Tailwind CSS v4.x</li>
+<li>工具类前缀改为 <code>hx:</code> 而非 <code>hx-</code></li>
+</ul>
+<h2>贡献者<span class="hx:absolute hx:-mt-20" id="贡献者"></span>
+    <a href="#%e8%b4%a1%e7%8c%ae%e8%80%85" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>本次发布得益于 10 位新贡献者的代码提交：</p>
+<ul>
+<li><a href="https://github.com/oosquare" target="_blank" rel="noopener">@oosquare</a> - KaTeX 字体、图片渲染钩子、链接处理改进</li>
+<li><a href="https://github.com/Zabriskije" target="_blank" rel="noopener">@Zabriskije</a> - 修复幽灵滚动问题</li>
+<li><a href="https://github.com/miniwater" target="_blank" rel="noopener">@miniwater</a> - 自定义页脚居中、图片 alt 文本优化</li>
+<li><a href="https://github.com/MattDodsonEnglish" target="_blank" rel="noopener">@MattDodsonEnglish</a> - Google 索引控制、OpenGraph 文档</li>
+<li><a href="https://github.com/KStocky" target="_blank" rel="noopener">@KStocky</a> - 反向分页功能</li>
+<li><a href="https://github.com/PrintN" target="_blank" rel="noopener">@PrintN</a> - 文档展示增强</li>
+<li><a href="https://github.com/hobobandy" target="_blank" rel="noopener">@hobobandy</a> - 标题间距优化</li>
+<li><a href="https://github.com/dlwocks31" target="_blank" rel="noopener">@dlwocks31</a> - 韩语翻译更新</li>
+<li><a href="https://github.com/TwoAnts" target="_blank" rel="noopener">@TwoAnts</a> - 修复 Giscus 主题切换</li>
+<li><a href="https://github.com/ldez" target="_blank" rel="noopener">@ldez</a> - 搜索功能改进与错误修复</li>
+</ul>
+<p>同时感谢长期贡献者 <a href="https://github.com/deining" target="_blank" rel="noopener">@deining</a> 和 <a href="https://github.com/yuri1969" target="_blank" rel="noopener">@yuri1969</a> 在文档、翻译和技术改进方面的持续支持。</p>
+<p><strong>完整更新日志</strong>：https://github.com/imfing/hextra/compare/v0.9.7&hellip;v0.10.0</p>
+        </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="http://localhost:1313/zh-cn/blog/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"
+        title="Markdown 语法指南"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Markdown 语法指南</a></div></main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start ">
+    <button
+      title="切换语言"
+      data-state="closed"
+      class="hextra-language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>简体中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/en/blog/hextra-v0.10/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/zh-cn/blog/hextra-v0.10/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >简体中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=light]:hidden">浅色</span><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=dark]:hidden">深色</span></div>
+</button>
+</div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 MainStruct · All Rights Reserved.</div></div>
+    </div></footer>
+    
+    <script defer src="http://localhost:1313/js/main.js" integrity=""></script>
+<script defer src="http://localhost:1313/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
+        <script defer src="http://localhost:1313/zh-cn.search.js" integrity=""></script>
+  </body>
+</html>

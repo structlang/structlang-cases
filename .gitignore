@@ -1,11 +1,30 @@
-﻿public/
-resources/
-hugo_stats.json
-.hugo_build.lock
+﻿# === Hugo Build Output ===
+/public/             # Hugo 构建产物，不要推
+/resources/_gen/     # 本地缓存
+/hugo_stats.json     # 主题生成的分析文件
 
-# editors & OS
+# === OS / 编辑器垃圾文件 ===
 .DS_Store
 Thumbs.db
-.idea/
-.vscode/
+*.swp
+*.swo
+*.tmp
 *.log
+
+# === Node / JS 依赖（部分主题用到，如 tailwind/postcss）===
+/node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+
+# === Hugo / Go 模块相关（如果启用）===
+/go.sum
+/go.mod
+
+# === 备份/临时文件 ===
+*.bak
+*.old
+*.orig
+*.lock
+*.zip
+*.tar.gz

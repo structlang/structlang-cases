@@ -1,0 +1,2082 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MainStruct – 第6章 · 六位结构：角色与互动</title>
+    <link>//localhost:1313/zh-cn/docs/chapter6-six-positions/</link>
+    <description>Recent content in 第6章 · 六位结构：角色与互动 on MainStruct</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    
+	  <atom:link href="//localhost:1313/zh-cn/docs/chapter6-six-positions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>六位结构的编号原则</title>
+      <link>//localhost:1313/zh-cn/docs/chapter6-six-positions/numbering-principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter6-six-positions/numbering-principle/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;6.1 六位结构的编号原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;61-六位结构的编号原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#61-%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e7%9a%84%e7%bc%96%e5%8f%b7%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;当我们从个体的结构判断扩展到多主体的关系分析时，就需要一套能够精确标记每个参与者位置和作用方向的编号系统。六位结构正是为此而设计的关系建模框架。&lt;/p&gt;
+&lt;h3&gt;一、为什么需要六位结构？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;一为什么需要六位结构&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在前面的章节中，我们处理的都是单一主体的判断结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点结构：个体的未分辨状态&lt;/li&gt;
+&lt;li&gt;线结构：个体的二元判断&lt;/li&gt;
+&lt;li&gt;面结构：个体的双维判断&lt;/li&gt;
+&lt;li&gt;体结构：个体的三维判断&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但现实中的大多数情况，都涉及多个主体的相互作用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;谈判双方的博弈&lt;/li&gt;
+&lt;li&gt;团队内部的协作与冲突&lt;/li&gt;
+&lt;li&gt;上下级之间的权力关系&lt;/li&gt;
+&lt;li&gt;家庭成员间的情感互动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些场景中，仅仅分析单一主体的判断结构是不够的，我们需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;明确每个参与者的位置&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标记作用的方向性&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;描述主客的对照关系&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;追踪影响的传递路径&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;二、六位结构的基本框架&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;二六位结构的基本框架&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8c%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e7%9a%84%e5%9f%ba%e6%9c%ac%e6%a1%86%e6%9e%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;根据主客结构理论，六位结构将任何一个关系系统中的参与者分配到六个基本位置：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主位（1、2、3）&lt;/strong&gt;：主方的三元结构
+&lt;strong&gt;客位（4、5、6）&lt;/strong&gt;：客方的三元结构&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;编号&lt;/th&gt;
+          &lt;th&gt;位置属性&lt;/th&gt;
+          &lt;th&gt;结构层次&lt;/th&gt;
+          &lt;th&gt;主要功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;主方行动位&lt;/td&gt;
+          &lt;td&gt;执行层&lt;/td&gt;
+          &lt;td&gt;主方的外在行为表现&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;主方素质位&lt;/td&gt;
+          &lt;td&gt;能力层&lt;/td&gt;
+          &lt;td&gt;主方的资源、能力基础&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;主方态度位&lt;/td&gt;
+          &lt;td&gt;立场层&lt;/td&gt;
+          &lt;td&gt;主方的内在意图、态度&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;客方行动位&lt;/td&gt;
+          &lt;td&gt;执行层&lt;/td&gt;
+          &lt;td&gt;客方的反应、回应行为&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;客方素质位&lt;/td&gt;
+          &lt;td&gt;能力层&lt;/td&gt;
+          &lt;td&gt;客方的实力、资源状况&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;客方态度位&lt;/td&gt;
+          &lt;td&gt;立场层&lt;/td&gt;
+          &lt;td&gt;客方的立场、意图倾向&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;三、编号的逻辑原理&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;三编号的逻辑原理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e7%bc%96%e5%8f%b7%e7%9a%84%e9%80%bb%e8%be%91%e5%8e%9f%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;3.1 主客对照原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-主客对照原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-%e4%b8%bb%e5%ae%a2%e5%af%b9%e7%85%a7%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;六位结构的核心是主客对照关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主位（1-2-3）&lt;/strong&gt;：从判断者&amp;quot;我&amp;quot;的视角出发的主体结构&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;客位（4-5-6）&lt;/strong&gt;：作为&amp;quot;我&amp;quot;的判断对象的客体结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对照关系形成三组结构张力轴：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1-4对照&lt;/strong&gt;：主方行动 ↔ 客方反应&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2-5对照&lt;/strong&gt;：主方实力 ↔ 客方实力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3-6对照&lt;/strong&gt;：主方态度 ↔ 客方态度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.2 三元结构原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-三元结构原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-%e4%b8%89%e5%85%83%e7%bb%93%e6%9e%84%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;主客双方都遵循相同的三元结构排列：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从外到内的观察顺序&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;行动层&lt;/strong&gt;：最外在、最容易观察的行为表现&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;素质层&lt;/strong&gt;：中间层，资源、能力、实力状况&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;态度层&lt;/strong&gt;：最内在、最深层的意图和立场&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;主方结构（1-2-3）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1位：我做了什么行动？&lt;/li&gt;
+&lt;li&gt;2位：我有什么能力支撑？&lt;/li&gt;
+&lt;li&gt;3位：我的真实态度如何？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;客方结构（4-5-6）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4位：对方如何回应？&lt;/li&gt;
+&lt;li&gt;5位：对方实力如何？&lt;/li&gt;
+&lt;li&gt;6位：对方态度如何？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.3 编号的固定性与功能性&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;33-编号的固定性与功能性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#33-%e7%bc%96%e5%8f%b7%e7%9a%84%e5%9b%ba%e5%ae%9a%e6%80%a7%e4%b8%8e%e5%8a%9f%e8%83%bd%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;六位结构的编号是基于&lt;strong&gt;结构功能&lt;/strong&gt;的固定对应关系：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;无论在任何场景中：
+- 1位始终代表主方的行动表现
+- 2位始终代表主方的能力基础
+- 3位始终代表主方的态度立场
+- 4位始终代表客方的行动反应
+- 5位始终代表客方的实力状况
+- 6位始终代表客方的态度立场&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这种固定对应关系确保了结构分析的一致性和可比较性。&lt;/p&gt;
+&lt;h3&gt;四、主客视角的相对性&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;四主客视角的相对性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e4%b8%bb%e5%ae%a2%e8%a7%86%e8%a7%92%e7%9a%84%e7%9b%b8%e5%af%b9%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;需要特别强调的是：&lt;strong&gt;主客关系是相对的，取决于分析的视角&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4&gt;4.1 视角决定主客&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-视角决定主客&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-%e8%a7%86%e8%a7%92%e5%86%b3%e5%ae%9a%e4%b8%bb%e5%ae%a2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;站在A的角度分析A-B关系：A是主方（1-2-3），B是客方（4-5-6）&lt;/li&gt;
+&lt;li&gt;站在B的角度分析A-B关系：B是主方（1-2-3），A是客方（4-5-6）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;4.2 同一人在不同关系中的位置变化&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-同一人在不同关系中的位置变化&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-%e5%90%8c%e4%b8%80%e4%ba%ba%e5%9c%a8%e4%b8%8d%e5%90%8c%e5%85%b3%e7%b3%bb%e4%b8%ad%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8f%98%e5%8c%96&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;示例：张总在公司中的多重位置&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;在董事会会议中（相对于董事长）：
+张总是客方 → 可能占据4、5、6位
+
+在部门会议中（相对于下属）：
+张总是主方 → 占据1、2、3位
+
+在谈判中（相对于合作伙伴）：
+根据谈判角色确定主客关系&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;五、位置的动态性与结构完整性&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;五位置的动态性与结构完整性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e4%bd%8d%e7%bd%ae%e7%9a%84%e5%8a%a8%e6%80%81%e6%80%a7%e4%b8%8e%e7%bb%93%e6%9e%84%e5%ae%8c%e6%95%b4%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;5.1 位置的动态占据&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-位置的动态占据&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%e4%bd%8d%e7%bd%ae%e7%9a%84%e5%8a%a8%e6%80%81%e5%8d%a0%e6%8d%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;同一个人可能同时占据多个位置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;角色重叠&lt;/strong&gt;：既是1位（行动发起者）又是3位（态度表达者）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;功能转换&lt;/strong&gt;：从4位（被动反应）转为1位（主动行动）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;结构切换&lt;/strong&gt;：在不同的互动阶段占据不同位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5.2 结构的完整性要求&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-结构的完整性要求&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-%e7%bb%93%e6%9e%84%e7%9a%84%e5%ae%8c%e6%95%b4%e6%80%a7%e8%a6%81%e6%b1%82&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;有效的六位结构分析需要：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主客双方结构相对完整&lt;/strong&gt;：至少各有两个位置明确&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关键对照关系清晰&lt;/strong&gt;：至少一组对照关系（如1-4或3-6）运行有效&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;得位失位状况明确&lt;/strong&gt;：各位置是否发挥应有功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5.3 特殊情况的处理&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;53-特殊情况的处理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#53-%e7%89%b9%e6%ae%8a%e6%83%85%e5%86%b5%e7%9a%84%e5%a4%84%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;空位情况&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某些位置可能暂时空缺或不明确&lt;/li&gt;
+&lt;li&gt;空位不影响其他位置的分析&lt;/li&gt;
+&lt;li&gt;可以预测哪些位置需要填补&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;冲突占位&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多人争夺同一位置时的竞争分析&lt;/li&gt;
+&lt;li&gt;位置冲突往往是关系紧张的根源&lt;/li&gt;
+&lt;li&gt;需要通过协调或博弈解决位置分配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;六、编号原则的实践应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;六编号原则的实践应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%85%ad%e7%bc%96%e5%8f%b7%e5%8e%9f%e5%88%99%e7%9a%84%e5%ae%9e%e8%b7%b5%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;6.1 快速定位方法&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;61-快速定位方法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#61-%e5%bf%ab%e9%80%9f%e5%ae%9a%e4%bd%8d%e6%96%b9%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;面对复杂的关系场景，按以下步骤进行六位定位：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;确定分析视角&lt;/strong&gt;：明确以谁为主方，谁为客方&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别行动层&lt;/strong&gt;：主方做了什么（1位），客方如何反应（4位）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评估能力层&lt;/strong&gt;：双方的资源实力对比（2位 vs 5位）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析态度层&lt;/strong&gt;：双方的真实意图和立场（3位 vs 6位）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;检查对照关系&lt;/strong&gt;：三组对照是否形成有效张力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评估结构完整性&lt;/strong&gt;：是否存在关键位置缺失或失位&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;6.2 结构分析的质量控制&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;62-结构分析的质量控制&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#62-%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90%e7%9a%84%e8%b4%a8%e9%87%8f%e6%8e%a7%e5%88%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;一致性检查&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主客位置分配是否符合实际关系&lt;/li&gt;
+&lt;li&gt;三元结构是否遵循从外到内的逻辑&lt;/li&gt;
+&lt;li&gt;对照关系是否反映真实的相互作用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;有效性验证&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;各位置是否发挥应有功能（得位检查）&lt;/li&gt;
+&lt;li&gt;结构分析是否有助于理解关系动态&lt;/li&gt;
+&lt;li&gt;是否为行动决策提供有用指导&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;div class=&#34;hx:select-none hx:text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;strong&gt;核心原则&lt;/strong&gt;：六位结构是分析工具，不是身份标签。重点在于理解主客双方在三个层次上的结构对照关系，以及这种对照如何影响互动结果。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;六位结构的编号原则为我们提供了一个系统化的关系分析框架。掌握这套编号逻辑，是运用六位结构进行复杂关系建模的基础。 提供资源、技能、能力支持 |
+| 4位 | 能力约束位 | 客位/限制 | 构成障碍、制造约束条件 |
+| 5位 | 立场判断位 | 主位/评价 | 进行评判、设定标准 |
+| 6位 | 立场承担位 | 客位/承担 | 承受评价、接受判断结果 |&lt;/p&gt;
+&lt;h3&gt;三、编号的逻辑原理&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;三编号的逻辑原理-1&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e7%bc%96%e5%8f%b7%e7%9a%84%e9%80%bb%e8%be%91%e5%8e%9f%e7%90%86-1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;3.1 主客对应原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-主客对应原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-%e4%b8%bb%e5%ae%a2%e5%af%b9%e5%ba%94%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;六位结构遵循严格的主客对应关系：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;奇数位（1、3、5）&lt;/strong&gt;：主位，具有主动性、发起性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;偶数位（2、4、6）&lt;/strong&gt;：客位，具有被动性、承受性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每一对主客位置形成相互作用的基本单元：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1-2：执行与承受的作用对&lt;/li&gt;
+&lt;li&gt;3-4：支持与约束的能力对&lt;/li&gt;
+&lt;li&gt;5-6：评价与被评价的立场对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.2 功能层次原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-功能层次原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-%e5%8a%9f%e8%83%bd%e5%b1%82%e6%ac%a1%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;三对位置代表三个不同的作用层次：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;执行层（1-2位）&lt;/strong&gt;：直接的行动与反应&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;谁在做什么？&lt;/li&gt;
+&lt;li&gt;谁在承受什么？&lt;/li&gt;
+&lt;li&gt;行动的直接对象是谁？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;能力层（3-4位）&lt;/strong&gt;：资源与约束的配置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;谁提供支持？&lt;/li&gt;
+&lt;li&gt;谁构成障碍？&lt;/li&gt;
+&lt;li&gt;能力的分布如何？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;立场层（5-6位）&lt;/strong&gt;：价值判断与标准设定&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;谁在评价？&lt;/li&gt;
+&lt;li&gt;谁被评价？&lt;/li&gt;
+&lt;li&gt;标准由谁确定？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.3 编号的稳定性与可预测性&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;33-编号的稳定性与可预测性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#33-%e7%bc%96%e5%8f%b7%e7%9a%84%e7%a8%b3%e5%ae%9a%e6%80%a7%e4%b8%8e%e5%8f%af%e9%a2%84%e6%b5%8b%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;六位结构的编号不是随意分配的，而是基于&lt;strong&gt;结构功能&lt;/strong&gt;的固定对应关系：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;在任何场景中：
+- 1位始终是主动发起行动的角色
+- 2位始终是直接承受行动的角色
+- 3位始终是提供能力支持的角色
+- 4位始终是构成能力约束的角色
+- 5位始终是进行立场评价的角色
+- 6位始终是承担立场后果的角色&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;这种固定对应关系确保了结构分析的一致性和可比较性。&lt;/p&gt;
+&lt;h3&gt;四、位置的动态性与角色切换&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;四位置的动态性与角色切换&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e4%bd%8d%e7%bd%ae%e7%9a%84%e5%8a%a8%e6%80%81%e6%80%a7%e4%b8%8e%e8%a7%92%e8%89%b2%e5%88%87%e6%8d%a2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;需要特别强调的是：&lt;strong&gt;六位结构描述的是功能位置，而不是固定身份&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;同一个人在不同的互动中，可能占据不同的位置：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例：团队会议中的张三&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在提案环节：张三是1位（主动提出方案）&lt;/li&gt;
+&lt;li&gt;在资源讨论中：张三是4位（预算限制的代表）&lt;/li&gt;
+&lt;li&gt;在最终决策时：张三是6位（承受评价的对象）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例：亲子互动中的父亲&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在教育孩子时：父亲是1位（主动教导）&lt;/li&gt;
+&lt;li&gt;在经济支持上：父亲是3位（提供资源）&lt;/li&gt;
+&lt;li&gt;在家庭和谐评价中：父亲是5位（判断标准的设定者）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;五、特殊情况的处理原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;五特殊情况的处理原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e7%89%b9%e6%ae%8a%e6%83%85%e5%86%b5%e7%9a%84%e5%a4%84%e7%90%86%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;5.1 空位情况&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-空位情况&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%e7%a9%ba%e4%bd%8d%e6%83%85%e5%86%b5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;并非所有互动都需要填满六个位置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;三方博弈&lt;/strong&gt;：可能只用到1-2-5位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;能力分析&lt;/strong&gt;：可能重点关注3-4位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简单执行&lt;/strong&gt;：可能只涉及1-2位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;空位不代表结构缺失，而是该功能在当前分析中不是重点。&lt;/p&gt;
+&lt;h4&gt;5.2 重叠占位&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-重叠占位&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-%e9%87%8d%e5%8f%a0%e5%8d%a0%e4%bd%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;同一个人可能同时占据多个位置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;老板既是1位（下达指令）又是5位（评价结果）&lt;/li&gt;
+&lt;li&gt;项目经理既是1位（推进项目）又是3位（协调资源）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5.3 位置冲突&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;53-位置冲突&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#53-%e4%bd%8d%e7%bd%ae%e5%86%b2%e7%aa%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;当多个主体争夺同一位置时，会产生结构张力：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;两个人都想当1位：权力争夺&lt;/li&gt;
+&lt;li&gt;没人愿意当2位：责任推诿&lt;/li&gt;
+&lt;li&gt;都想当5位：标准竞争&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;六、编号原则的实际应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;六编号原则的实际应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%85%ad%e7%bc%96%e5%8f%b7%e5%8e%9f%e5%88%99%e7%9a%84%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;6.1 快速定位法&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;61-快速定位法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#61-%e5%bf%ab%e9%80%9f%e5%ae%9a%e4%bd%8d%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;面对复杂的关系场景，按以下步骤进行六位定位：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;识别核心行动&lt;/strong&gt;：什么是这个场景的主要行为？→ 确定1位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;找到直接对象&lt;/strong&gt;：谁是行动的直接承受者？→ 确定2位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析支持力量&lt;/strong&gt;：谁在提供关键资源？→ 确定3位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别约束因素&lt;/strong&gt;：什么在限制或阻碍？→ 确定4位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;确定评价主体&lt;/strong&gt;：谁在进行判断和评价？→ 确定5位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;找到评价对象&lt;/strong&gt;：谁在承受评价和后果？→ 确定6位&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;6.2 结构完整性检查&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;62-结构完整性检查&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#62-%e7%bb%93%e6%9e%84%e5%ae%8c%e6%95%b4%e6%80%a7%e6%a3%80%e6%9f%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;完成初步定位后，检查结构的合理性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主客位是否形成有效对应？&lt;/li&gt;
+&lt;li&gt;是否存在明显的功能重叠或冲突？&lt;/li&gt;
+&lt;li&gt;关键的作用关系是否都得到体现？&lt;/li&gt;
+&lt;li&gt;位置分配是否符合实际的权力和影响分布？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-yellow-100 hx:bg-yellow-50 hx:text-yellow-900 hx:dark:border-yellow-200/30 hx:dark:bg-yellow-700/30 hx:dark:text-yellow-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;div class=&#34;hx:select-none hx:text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;⚠️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;strong&gt;注意&lt;/strong&gt;：六位结构是分析工具，不是价值判断。1位不一定比2位&amp;quot;重要&amp;quot;，5位不一定比6位&amp;quot;高级&amp;quot;。每个位置都有其结构功能和价值。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;六位结构的编号原则为我们提供了一个稳定、可预测、可操作的关系分析框架。掌握这套编号逻辑，是运用六位结构进行复杂关系建模的基础。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>主位与客位的对应关系</title>
+      <link>//localhost:1313/zh-cn/docs/chapter6-six-positions/host-guest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter6-six-positions/host-guest/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;6.2 主位与客位的对应关系&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;62-主位与客位的对应关系&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#62-%e4%b8%bb%e4%bd%8d%e4%b8%8e%e5%ae%a2%e4%bd%8d%e7%9a%84%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;六位结构的核心逻辑在于主位（1-2-3）与客位（4-5-6）的对应关系。这种对应不仅仅是数字的配对，而是表达了主客双方在三个结构层次上的张力对照和相互作用。&lt;/p&gt;
+&lt;h3&gt;一、主客对应的基本原理&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;一主客对应的基本原理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e4%b8%bb%e5%ae%a2%e5%af%b9%e5%ba%94%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;1.1 主客结构的镜像关系&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;11-主客结构的镜像关系&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11-%e4%b8%bb%e5%ae%a2%e7%bb%93%e6%9e%84%e7%9a%84%e9%95%9c%e5%83%8f%e5%85%b3%e7%b3%bb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;根据主客结构理论，六位结构体现了一种&lt;strong&gt;对称而反向的镜像关系&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主位（1-2-3）&lt;/strong&gt;：从下往上排列，代表主方的三元结构&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;客位（4-5-6）&lt;/strong&gt;：从上往下排列，代表客方的三元结构&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中轴线&lt;/strong&gt;：2位和5位构成结构的中枢，是实力对比的关键&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;1.2 三层对应关系的刚性&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;12-三层对应关系的刚性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#12-%e4%b8%89%e5%b1%82%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb%e7%9a%84%e5%88%9a%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;六位结构中的主客对应是固定的、不可调换的：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主位&lt;/th&gt;
+          &lt;th&gt;客位&lt;/th&gt;
+          &lt;th&gt;结构层次&lt;/th&gt;
+          &lt;th&gt;对应性质&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;执行层&lt;/td&gt;
+          &lt;td&gt;行动 ↔ 反应&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;能力层&lt;/td&gt;
+          &lt;td&gt;主方实力 ↔ 客方实力&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;立场层&lt;/td&gt;
+          &lt;td&gt;主方态度 ↔ 客方态度&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这种刚性确保了结构分析的一致性和可预测性。&lt;/p&gt;
+&lt;h3&gt;二、三对主客关系的深度解析&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;二三对主客关系的深度解析&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8c%e4%b8%89%e5%af%b9%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;2.1 执行对应（1位-4位）：行动与反应&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;21-执行对应1位-4位行动与反应&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-%e6%89%a7%e8%a1%8c%e5%af%b9%e5%ba%941%e4%bd%8d-4%e4%bd%8d%e8%a1%8c%e5%8a%a8%e4%b8%8e%e5%8f%8d%e5%ba%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1位：主方行动位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：主方的外在行为表现，主动发起的动作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特征&lt;/strong&gt;：具有行动的主动权和首发优势&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在对照中的作用&lt;/strong&gt;：设定互动的节奏和方向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;4位：客方行动位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：客方对主方行动的反应和回应&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特征&lt;/strong&gt;：反应性、适应性，回应主方的行动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在对照中的作用&lt;/strong&gt;：体现客方的应对策略和行动能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;对应关系的特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;时序性&lt;/strong&gt;：1位行动在前，4位反应在后&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;互动性&lt;/strong&gt;：形成行动-反应的互动循环&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;节奏性&lt;/strong&gt;：共同决定关系发展的节奏&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;示例分析&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;商务谈判场景：
+1位：主方率先提出合作方案（主动行动）
+4位：客方对方案的具体回应（反应行为）
+
+对应关系分析：
+- 如果4位积极回应，形成良性互动
+- 如果4位消极回应，可能导致谈判停滞
+- 如果4位过度反应，可能引发冲突升级&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;2.2 能力对应（2位-5位）：实力的中轴对抗&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;22-能力对应2位-5位实力的中轴对抗&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#22-%e8%83%bd%e5%8a%9b%e5%af%b9%e5%ba%942%e4%bd%8d-5%e4%bd%8d%e5%ae%9e%e5%8a%9b%e7%9a%84%e4%b8%ad%e8%bd%b4%e5%af%b9%e6%8a%97&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;2位：主方素质位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：主方的资源、能力、实力基础&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特征&lt;/strong&gt;：决定主方行动的可持续性和可信度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在对照中的作用&lt;/strong&gt;：主方力量的根本支撑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;5位：客方素质位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：客方的实力状况和资源配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特征&lt;/strong&gt;：决定客方应对能力和抗衡实力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在对照中的作用&lt;/strong&gt;：客方是否能够有效应对的关键&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;对应关系的特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;中轴性&lt;/strong&gt;：位于六位结构的中心，是力量对比的核心&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;根本性&lt;/strong&gt;：决定了其他层次能否有效运行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;持续性&lt;/strong&gt;：影响关系的长期发展和稳定性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;实力对比的四种模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;对比模式&lt;/th&gt;
+          &lt;th&gt;2位状况&lt;/th&gt;
+          &lt;th&gt;5位状况&lt;/th&gt;
+          &lt;th&gt;关系特征&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;均势型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;强&lt;/td&gt;
+          &lt;td&gt;强&lt;/td&gt;
+          &lt;td&gt;势均力敌，需要策略博弈&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;主导型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;强&lt;/td&gt;
+          &lt;td&gt;弱&lt;/td&gt;
+          &lt;td&gt;主方占优，客方被动适应&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;压制型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;弱&lt;/td&gt;
+          &lt;td&gt;强&lt;/td&gt;
+          &lt;td&gt;客方反制，主方处于劣势&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;虚弱型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;弱&lt;/td&gt;
+          &lt;td&gt;弱&lt;/td&gt;
+          &lt;td&gt;双方都缺乏实力支撑&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;示例分析&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;投资谈判场景：
+2位：主方的资金实力和投资能力
+5位：客方的项目质量和团队能力
+
+均势型对应：
+- 双方都有充足资源，谈判地位相对平等
+- 需要通过细节博弈达成平衡
+
+主导型对应：
+- 主方资金充足，客方项目一般
+- 主方可以设定更多条件和要求&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;2.3 立场对应（3位-6位）：态度与价值的深层博弈&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;23-立场对应3位-6位态度与价值的深层博弈&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#23-%e7%ab%8b%e5%9c%ba%e5%af%b9%e5%ba%943%e4%bd%8d-6%e4%bd%8d%e6%80%81%e5%ba%a6%e4%b8%8e%e4%bb%b7%e5%80%bc%e7%9a%84%e6%b7%b1%e5%b1%82%e5%8d%9a%e5%bc%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;3位：主方态度位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：主方的内在意图、真实态度和价值立场&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特征&lt;/strong&gt;：最深层的动机和目标导向&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在对照中的作用&lt;/strong&gt;：决定主方的根本诉求和底线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;6位：客方态度位&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能&lt;/strong&gt;：客方的立场、态度和价值取向&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特征&lt;/strong&gt;：客方的深层动机和原则立场&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在对照中的作用&lt;/strong&gt;：决定客方的接受度和合作意愿&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;对应关系的特点&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;深层性&lt;/strong&gt;：涉及最根本的价值观和利益诉求&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;决定性&lt;/strong&gt;：最终决定合作还是对抗的关键因素&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;稳定性&lt;/strong&gt;：相对最难改变，影响关系的根本走向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;态度对应的五种模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;对应模式&lt;/th&gt;
+          &lt;th&gt;3位态度&lt;/th&gt;
+          &lt;th&gt;6位态度&lt;/th&gt;
+          &lt;th&gt;关系前景&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;共鸣型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;积极开放&lt;/td&gt;
+          &lt;td&gt;积极回应&lt;/td&gt;
+          &lt;td&gt;深度合作的基础&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;单向型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;积极主动&lt;/td&gt;
+          &lt;td&gt;消极被动&lt;/td&gt;
+          &lt;td&gt;需要主方持续努力&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;冷漠型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;消极冷淡&lt;/td&gt;
+          &lt;td&gt;消极冷淡&lt;/td&gt;
+          &lt;td&gt;关系难以发展&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;错位型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;积极合作&lt;/td&gt;
+          &lt;td&gt;误解排斥&lt;/td&gt;
+          &lt;td&gt;需要澄清和沟通&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;对立型&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;强硬立场&lt;/td&gt;
+          &lt;td&gt;强硬反对&lt;/td&gt;
+          &lt;td&gt;结构性冲突&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;三、主客关系的动态特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;三主客关系的动态特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e5%8a%a8%e6%80%81%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;3.1 对应关系的相互影响&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-对应关系的相互影响&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb%e7%9a%84%e7%9b%b8%e4%ba%92%e5%bd%b1%e5%93%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;主客各位置之间不是孤立的，而是相互影响的：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;向上影响&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1位的行动效果影响2位的资源投入&lt;/li&gt;
+&lt;li&gt;2位的实力展示影响3位的态度坚定性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;向下影响&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3位的态度决定影响2位的资源配置&lt;/li&gt;
+&lt;li&gt;2位的实力支撑影响1位的行动策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;横向影响&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1位与4位的互动影响2位与5位的实力评估&lt;/li&gt;
+&lt;li&gt;2位与5位的对比影响3位与6位的态度调整&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.2 关系的可逆性与转换&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-关系的可逆性与转换&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-%e5%85%b3%e7%b3%bb%e7%9a%84%e5%8f%af%e9%80%86%e6%80%a7%e4%b8%8e%e8%bd%ac%e6%8d%a2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在某些情况下，主客关系可能发生逆转：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主客转换的触发条件&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;实力逆转&lt;/strong&gt;：5位实力显著超过2位&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主动权转移&lt;/strong&gt;：4位从反应转为主动出击&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;态度转变&lt;/strong&gt;：6位从被动适应转为积极主导&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;转换的影响&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原有的对应关系需要重新建立&lt;/li&gt;
+&lt;li&gt;互动模式发生根本性改变&lt;/li&gt;
+&lt;li&gt;可能导致关系的重新定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.3 多重对应关系的复合效应&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;33-多重对应关系的复合效应&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#33-%e5%a4%9a%e9%87%8d%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb%e7%9a%84%e5%a4%8d%e5%90%88%e6%95%88%e5%ba%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;复杂场景中，可能存在多重对应关系的叠加：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;时间维度的多重性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不同时期的主客关系可能不同&lt;/li&gt;
+&lt;li&gt;需要追踪关系的演化轨迹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;场景维度的多重性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同一对主客在不同场景中角色可能互换&lt;/li&gt;
+&lt;li&gt;需要区分不同场景下的关系模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;层次维度的多重性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在不同问题上可能有不同的主客关系&lt;/li&gt;
+&lt;li&gt;需要分层分析各种关系模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;四、主客关系的失衡与调节&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;四主客关系的失衡与调节&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e5%a4%b1%e8%a1%a1%e4%b8%8e%e8%b0%83%e8%8a%82&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;4.1 常见的失衡模式&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-常见的失衡模式&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-%e5%b8%b8%e8%a7%81%e7%9a%84%e5%a4%b1%e8%a1%a1%e6%a8%a1%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主位过强失衡&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1位过度主动，4位完全被动&lt;/li&gt;
+&lt;li&gt;2位资源垄断，5位缺乏实力&lt;/li&gt;
+&lt;li&gt;3位态度专断，6位失去话语权&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;客位反制失衡&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;4位拒绝配合，1位无法推进&lt;/li&gt;
+&lt;li&gt;5位实力反超，2位被动应对&lt;/li&gt;
+&lt;li&gt;6位态度强硬，3位被迫妥协&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;对应关系断裂&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;各层次的对应关系失去连接&lt;/li&gt;
+&lt;li&gt;主客双方缺乏有效互动&lt;/li&gt;
+&lt;li&gt;关系进入僵化或冲突状态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;4.2 平衡调节的策略&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-平衡调节的策略&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-%e5%b9%b3%e8%a1%a1%e8%b0%83%e8%8a%82%e7%9a%84%e7%ad%96%e7%95%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;结构性调整&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重新分配资源和权力&lt;/li&gt;
+&lt;li&gt;调整主客角色定位&lt;/li&gt;
+&lt;li&gt;建立新的互动机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;过程性优化&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;改善沟通和反馈机制&lt;/li&gt;
+&lt;li&gt;增强相互理解和信任&lt;/li&gt;
+&lt;li&gt;建立冲突解决机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;关系性重构&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重新定义合作目标&lt;/li&gt;
+&lt;li&gt;调整期望和标准&lt;/li&gt;
+&lt;li&gt;建立长期合作框架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;五、主客关系分析的实践方法&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;五主客关系分析的实践方法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e5%88%86%e6%9e%90%e7%9a%84%e5%ae%9e%e8%b7%b5%e6%96%b9%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;5.1 关系诊断的系统方法&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-关系诊断的系统方法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%e5%85%b3%e7%b3%bb%e8%af%8a%e6%96%ad%e7%9a%84%e7%b3%bb%e7%bb%9f%e6%96%b9%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;确定主客视角&lt;/strong&gt;：明确分析的立场和角度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;映射三层对应&lt;/strong&gt;：分析1-4、2-5、3-6的对应状况&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评估对应质量&lt;/strong&gt;：判断各层对应的有效性和平衡性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别关键问题&lt;/strong&gt;：找出影响关系的主要失衡点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预测发展趋势&lt;/strong&gt;：基于对应关系预判关系走向&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;5.2 关系优化的干预策略&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-关系优化的干预策略&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-%e5%85%b3%e7%b3%bb%e4%bc%98%e5%8c%96%e7%9a%84%e5%b9%b2%e9%a2%84%e7%ad%96%e7%95%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;针对执行层失衡&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;调整行动策略和节奏&lt;/li&gt;
+&lt;li&gt;改善反应机制和效率&lt;/li&gt;
+&lt;li&gt;建立有效的行动反馈循环&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;针对能力层失衡&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;平衡资源配置和实力对比&lt;/li&gt;
+&lt;li&gt;加强能力建设和支撑体系&lt;/li&gt;
+&lt;li&gt;建立实力制衡和合作机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;针对立场层失衡&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;增进相互理解和认同&lt;/li&gt;
+&lt;li&gt;寻找共同利益和价值基础&lt;/li&gt;
+&lt;li&gt;建立态度沟通和调整机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;strong&gt;实践要点&lt;/strong&gt;：主客关系分析的目标不是消除所有不平衡，而是建立动态的、有效的、可持续的对应关系。适度的结构张力往往能够推动关系的发展和优化。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;主位与客位的对应关系构成了六位结构的核心逻辑。理解和掌握这种对应关系，是运用六位结构进行关系分析和系统设计的关键基础。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>执行位、能力位、立场位</title>
+      <link>//localhost:1313/zh-cn/docs/chapter6-six-positions/execution-capacity-stance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter6-six-positions/execution-capacity-stance/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;6.3 执行位、能力位、立场位（博弈意图下）&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;63-执行位能力位立场位博弈意图下&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#63-%e6%89%a7%e8%a1%8c%e4%bd%8d%e8%83%bd%e5%8a%9b%e4%bd%8d%e7%ab%8b%e5%9c%ba%e4%bd%8d%e5%8d%9a%e5%bc%88%e6%84%8f%e5%9b%be%e4%b8%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;根据你提供的资料，六位结构中主位是1、2、3，客位是4、5、6。这构成了主客结构的对照关系，在博弈分析中具有特殊的战略意义。&lt;/p&gt;
+&lt;h3&gt;一、博弈意图下的主客结构对照&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;一博弈意图下的主客结构对照&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e5%8d%9a%e5%bc%88%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e4%b8%bb%e5%ae%a2%e7%bb%93%e6%9e%84%e5%af%b9%e7%85%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;在博弈场景中，六位结构体现了主客双方在三个层次的对照关系：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;结构层次&lt;/th&gt;
+          &lt;th&gt;主位&lt;/th&gt;
+          &lt;th&gt;客位&lt;/th&gt;
+          &lt;th&gt;对照关系&lt;/th&gt;
+          &lt;th&gt;博弈含义&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;执行层&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;1位（主行动）&lt;/td&gt;
+          &lt;td&gt;4位（客行动）&lt;/td&gt;
+          &lt;td&gt;行动 ↔ 反应&lt;/td&gt;
+          &lt;td&gt;谁主动出击，谁被动应对&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;能力层&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;2位（主素质）&lt;/td&gt;
+          &lt;td&gt;5位（客素质）&lt;/td&gt;
+          &lt;td&gt;资源 ↔ 实力&lt;/td&gt;
+          &lt;td&gt;双方的资源和能力对比&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;立场层&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;3位（主态度）&lt;/td&gt;
+          &lt;td&gt;6位（客态度）&lt;/td&gt;
+          &lt;td&gt;意图 ↔ 立场&lt;/td&gt;
+          &lt;td&gt;深层动机和价值取向的对抗&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这种对照结构形成了博弈的&lt;strong&gt;三轴张力系统&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3&gt;二、执行层的博弈对照（1位-4位）&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;二执行层的博弈对照1位-4位&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8c%e6%89%a7%e8%a1%8c%e5%b1%82%e7%9a%84%e5%8d%9a%e5%bc%88%e5%af%b9%e7%85%a71%e4%bd%8d-4%e4%bd%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;2.1 1位：主动执行位的战略优势&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;21-1位主动执行位的战略优势&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-1%e4%bd%8d%e4%b8%bb%e5%8a%a8%e6%89%a7%e8%a1%8c%e4%bd%8d%e7%9a%84%e6%88%98%e7%95%a5%e4%bc%98%e5%8a%bf&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;核心战略价值&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;首发优势&lt;/strong&gt;：掌握行动的主动权和时机选择&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;节奏控制&lt;/strong&gt;：决定博弈的推进速度和方向&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;议程设定&lt;/strong&gt;：确定博弈的焦点和框架&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;在主客对照中的位置&lt;/strong&gt;：
+作为主方的行动代表，1位承担着将主方意图转化为实际行动的功能。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;典型战略运用&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;商务谈判中的主方（1位）：
+- 选择谈判时机和地点
+- 率先提出核心议题
+- 控制谈判节奏和进程
+- 通过行动试探对方底线&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;2.2 4位：客方反应位的应对模式&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;22-4位客方反应位的应对模式&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#22-4%e4%bd%8d%e5%ae%a2%e6%96%b9%e5%8f%8d%e5%ba%94%e4%bd%8d%e7%9a%84%e5%ba%94%e5%af%b9%e6%a8%a1%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;结构特征&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;反应性&lt;/strong&gt;：必须回应主方的行动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;适应性&lt;/strong&gt;：根据主方动作调整自己的策略&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;反制性&lt;/strong&gt;：寻找机会转守为攻&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;在主客对照中的功能&lt;/strong&gt;：
+4位体现了客方对主方行动的直接反应和回应能力。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;典型应对策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;谈判中的客方（4位）反应：
+- 通过延迟回应争取思考时间
+- 设置回应条件，增加谈判筹码
+- 转移议题焦点，改变博弈方向
+- 寻找反攻机会，争取主动权&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;三、能力层的博弈对照（2位-5位）&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;三能力层的博弈对照2位-5位&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e8%83%bd%e5%8a%9b%e5%b1%82%e7%9a%84%e5%8d%9a%e5%bc%88%e5%af%b9%e7%85%a72%e4%bd%8d-5%e4%bd%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;3.1 2位：主方素质位的资源基础&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-2位主方素质位的资源基础&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-2%e4%bd%8d%e4%b8%bb%e6%96%b9%e7%b4%a0%e8%b4%a8%e4%bd%8d%e7%9a%84%e8%b5%84%e6%ba%90%e5%9f%ba%e7%a1%80&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;核心功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;资源支撑&lt;/strong&gt;：为主方行动提供实力基础&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;能力展示&lt;/strong&gt;：通过实力影响客方判断&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可信度建立&lt;/strong&gt;：证明主方的执行能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;在主客对照中的意义&lt;/strong&gt;：
+2位是主方能够持续博弈的根本保障，决定了主方威胁或承诺的可信度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;实力展示策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;主方（2位）的能力展示：
+- 适度展示资源实力，建立威慑
+- 保留部分实力，维持神秘感
+- 通过过往成功案例建立可信度
+- 联合盟友，放大整体实力&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;3.2 5位：客方素质位的实力对抗&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-5位客方素质位的实力对抗&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-5%e4%bd%8d%e5%ae%a2%e6%96%b9%e7%b4%a0%e8%b4%a8%e4%bd%8d%e7%9a%84%e5%ae%9e%e5%8a%9b%e5%af%b9%e6%8a%97&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;结构特征&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;实力评估&lt;/strong&gt;：客方的真实能力和资源状况&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;抗衡能力&lt;/strong&gt;：能否与主方实力相抗衡&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支撑度&lt;/strong&gt;：为客方态度和行动提供支撑&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;在主客对照中的作用&lt;/strong&gt;：
+5位决定了客方是否有足够实力与主方博弈，是博弈能否持续的关键。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;实力运用策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;客方（5位）的实力运用：
+- 适时展示实力，避免被轻视
+- 隐藏真实实力，制造信息不对称
+- 寻找主方实力薄弱环节
+- 联合第三方，改变力量对比&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;四、立场层的博弈对照（3位-6位）&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;四立场层的博弈对照3位-6位&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e7%ab%8b%e5%9c%ba%e5%b1%82%e7%9a%84%e5%8d%9a%e5%bc%88%e5%af%b9%e7%85%a73%e4%bd%8d-6%e4%bd%8d&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;4.1 3位：主方态度位的意图表达&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-3位主方态度位的意图表达&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-3%e4%bd%8d%e4%b8%bb%e6%96%b9%e6%80%81%e5%ba%a6%e4%bd%8d%e7%9a%84%e6%84%8f%e5%9b%be%e8%a1%a8%e8%be%be&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;核心功能&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;动机明确&lt;/strong&gt;：清晰表达主方的真实意图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;立场坚定&lt;/strong&gt;：展示主方的决心和底线&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;价值导向&lt;/strong&gt;：体现主方的价值判断标准&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;在主客对照中的作用&lt;/strong&gt;：
+3位是主方所有行动背后的深层驱动力，决定了博弈的最终目标。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;态度策略运用&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;主方（3位）的态度策略：
+- 明确表达核心诉求和底线
+- 保持立场的一致性和坚定性
+- 适时展示妥协意愿，促进合作
+- 通过态度变化传递战略信号&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;4.2 6位：客方态度位的立场回应&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-6位客方态度位的立场回应&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-6%e4%bd%8d%e5%ae%a2%e6%96%b9%e6%80%81%e5%ba%a6%e4%bd%8d%e7%9a%84%e7%ab%8b%e5%9c%ba%e5%9b%9e%e5%ba%94&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;结构特征&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;立场表态&lt;/strong&gt;：客方对主方意图的态度回应&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;价值对抗&lt;/strong&gt;：可能与主方存在价值观冲突&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;底线坚持&lt;/strong&gt;：客方的核心利益和原则立场&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;在主客对照中的意义&lt;/strong&gt;：
+6位体现了客方的深层立场，决定了双方能否找到合作的基础。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;立场应对策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;客方（6位）的立场策略：
+- 明确表达自己的核心关切
+- 识别与主方的共同利益点
+- 坚持不可妥协的底线原则
+- 寻找双方都能接受的解决方案&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;五、主客结构的博弈动态&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;五主客结构的博弈动态&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e4%b8%bb%e5%ae%a2%e7%bb%93%e6%9e%84%e7%9a%84%e5%8d%9a%e5%bc%88%e5%8a%a8%e6%80%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;5.1 结构张力的三个层次&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-结构张力的三个层次&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%e7%bb%93%e6%9e%84%e5%bc%a0%e5%8a%9b%e7%9a%84%e4%b8%89%e4%b8%aa%e5%b1%82%e6%ac%a1&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;执行层张力（1-4）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;行动与反应的时机博弈&lt;/li&gt;
+&lt;li&gt;主动与被动的角色转换&lt;/li&gt;
+&lt;li&gt;攻守节奏的控制争夺&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;能力层张力（2-5）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实力对比的评估和展示&lt;/li&gt;
+&lt;li&gt;资源优势的争夺和运用&lt;/li&gt;
+&lt;li&gt;能力短板的保护和攻击&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;立场层张力（3-6）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;价值观和原则的冲突&lt;/li&gt;
+&lt;li&gt;最终目标的竞争和妥协&lt;/li&gt;
+&lt;li&gt;深层动机的博弈和理解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5.2 主客结构的互动模式&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-主客结构的互动模式&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-%e4%b8%bb%e5%ae%a2%e7%bb%93%e6%9e%84%e7%9a%84%e4%ba%92%e5%8a%a8%e6%a8%a1%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主导型模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主方在三个层次都占优势&lt;/li&gt;
+&lt;li&gt;客方处于全面被动状态&lt;/li&gt;
+&lt;li&gt;博弈结果倾向于主方&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;均衡型模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主客双方在不同层次各有优势&lt;/li&gt;
+&lt;li&gt;需要通过谈判寻找平衡点&lt;/li&gt;
+&lt;li&gt;博弈结果取决于具体策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;逆转型模式&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;客方通过某个层次的优势实现反制&lt;/li&gt;
+&lt;li&gt;主客角色可能发生转换&lt;/li&gt;
+&lt;li&gt;博弈格局出现根本性变化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;六、博弈策略的实践应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;六博弈策略的实践应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%85%ad%e5%8d%9a%e5%bc%88%e7%ad%96%e7%95%a5%e7%9a%84%e5%ae%9e%e8%b7%b5%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;6.1 结构诊断方法&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;61-结构诊断方法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#61-%e7%bb%93%e6%9e%84%e8%af%8a%e6%96%ad%e6%96%b9%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;评估主客实力对比&lt;/strong&gt;：分析2位和5位的能力差距&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别行动优劣势&lt;/strong&gt;：判断1位和4位的主动性差异&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;理解立场分歧&lt;/strong&gt;：分析3位和6位的价值冲突点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预测博弈走向&lt;/strong&gt;：基于三层结构预判可能结果&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;6.2 策略选择原则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;62-策略选择原则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#62-%e7%ad%96%e7%95%a5%e9%80%89%e6%8b%a9%e5%8e%9f%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;优势放大策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;发挥自己在优势层次的主导作用&lt;/li&gt;
+&lt;li&gt;通过优势层次带动其他层次&lt;/li&gt;
+&lt;li&gt;避免在劣势层次过度消耗&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;弱点补强策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重点加强薄弱环节&lt;/li&gt;
+&lt;li&gt;寻求外部支持和联盟&lt;/li&gt;
+&lt;li&gt;避免暴露关键短板&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;动态调整策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据对方反应调整策略重点&lt;/li&gt;
+&lt;li&gt;在不同层次间灵活切换&lt;/li&gt;
+&lt;li&gt;保持战略的灵活性和适应性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;div class=&#34;hx:select-none hx:text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;strong&gt;核心原理&lt;/strong&gt;：博弈的胜负不是单一层次的比拼，而是主客结构在三个层次上的综合较量。理解主位（1-2-3）与客位（4-5-6）的对照关系，是制定有效博弈策略的基础。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;六位结构的博弈分析为我们提供了一个系统化的框架，帮助我们在复杂的对抗与合作中找到最优的战略路径。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>不同意图下的六位解释</title>
+      <link>//localhost:1313/zh-cn/docs/chapter6-six-positions/alternative-intents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter6-six-positions/alternative-intents/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;6.4 不同意图下的六位解释&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;64-不同意图下的六位解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#64-%e4%b8%8d%e5%90%8c%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;六位结构的强大之处在于它的多重解释能力。同样的六个位置，在不同的分析意图下，会呈现出不同的功能含义和作用关系。这种灵活性使得六位结构能够适应各种复杂的人际和组织情境。&lt;/p&gt;
+&lt;h3&gt;一、意图决定结构的解释框架&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;一意图决定结构的解释框架&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e6%84%8f%e5%9b%be%e5%86%b3%e5%ae%9a%e7%bb%93%e6%9e%84%e7%9a%84%e8%a7%a3%e9%87%8a%e6%a1%86%e6%9e%b6&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;1.1 为什么需要多重解释？&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;11-为什么需要多重解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11-%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e5%a4%9a%e9%87%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;现实中的关系是多维度的，单一的解释框架往往无法完全覆盖：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;同一组关系&lt;/strong&gt;可能同时涉及多种互动目的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不同的分析目的&lt;/strong&gt;需要突出不同的结构特征&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;情境的变化&lt;/strong&gt;要求调整结构的理解角度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;1.2 意图与结构的对应关系&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;12-意图与结构的对应关系&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#12-%e6%84%8f%e5%9b%be%e4%b8%8e%e7%bb%93%e6%9e%84%e7%9a%84%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;分析意图&lt;/th&gt;
+          &lt;th&gt;结构焦点&lt;/th&gt;
+          &lt;th&gt;主要关注&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;博弈分析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;竞争与制衡&lt;/td&gt;
+          &lt;td&gt;谁在主导，谁在应对，力量对比如何&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;合作分析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;协调与配合&lt;/td&gt;
+          &lt;td&gt;如何分工，如何配合，如何共赢&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;管理分析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;权责与执行&lt;/td&gt;
+          &lt;td&gt;谁负责什么，如何监督，如何激励&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;情感分析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;关怀与支持&lt;/td&gt;
+          &lt;td&gt;谁在给予，谁在接受，情感如何流动&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;学习分析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;传授与接受&lt;/td&gt;
+          &lt;td&gt;谁在教，谁在学，知识如何传递&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;创新分析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;创造与支持&lt;/td&gt;
+          &lt;td&gt;谁在创新，谁在支持，如何突破&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;二、博弈意图下的六位解释（重点模式）&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;二博弈意图下的六位解释重点模式&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8c%e5%8d%9a%e5%bc%88%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a%e9%87%8d%e7%82%b9%e6%a8%a1%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;2.1 博弈结构的特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;21-博弈结构的特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-%e5%8d%9a%e5%bc%88%e7%bb%93%e6%9e%84%e7%9a%84%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在博弈意图下，六位结构主要关注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主动权的争夺&lt;/strong&gt;：谁掌握行动的主导权&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实力的对比&lt;/strong&gt;：双方的资源和能力较量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;立场的对抗&lt;/strong&gt;：价值观和利益的根本冲突&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;2.2 博弈模式下的位置功能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;22-博弈模式下的位置功能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#22-%e5%8d%9a%e5%bc%88%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8a%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;位置&lt;/th&gt;
+          &lt;th&gt;博弈功能&lt;/th&gt;
+          &lt;th&gt;战略价值&lt;/th&gt;
+          &lt;th&gt;典型表现&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;主攻手&lt;/td&gt;
+          &lt;td&gt;掌握主动权&lt;/td&gt;
+          &lt;td&gt;率先出击，设定节奏&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;主方资源&lt;/td&gt;
+          &lt;td&gt;提供火力支持&lt;/td&gt;
+          &lt;td&gt;实力展示，威慑对方&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;主方态度&lt;/td&gt;
+          &lt;td&gt;表明立场决心&lt;/td&gt;
+          &lt;td&gt;底线坚持，目标明确&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;客方反击&lt;/td&gt;
+          &lt;td&gt;防御反制&lt;/td&gt;
+          &lt;td&gt;应对主攻，寻找反击机会&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;客方实力&lt;/td&gt;
+          &lt;td&gt;抗衡能力&lt;/td&gt;
+          &lt;td&gt;实力对抗，不示弱&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;客方立场&lt;/td&gt;
+          &lt;td&gt;坚持原则&lt;/td&gt;
+          &lt;td&gt;立场坚定，不妥协&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;三、合作意图下的六位解释&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;三合作意图下的六位解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e5%90%88%e4%bd%9c%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;3.1 合作结构的特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-合作结构的特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-%e5%90%88%e4%bd%9c%e7%bb%93%e6%9e%84%e7%9a%84%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在合作意图下，六位结构关注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;分工的合理性&lt;/strong&gt;：各自发挥优势，避免重复&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配合的有效性&lt;/strong&gt;：互动顺畅，信息共享&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;目标的一致性&lt;/strong&gt;：共同目标，利益共享&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;3.2 合作模式下的位置功能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-合作模式下的位置功能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-%e5%90%88%e4%bd%9c%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8a%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;位置&lt;/th&gt;
+          &lt;th&gt;合作功能&lt;/th&gt;
+          &lt;th&gt;价值贡献&lt;/th&gt;
+          &lt;th&gt;典型表现&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;主推动者&lt;/td&gt;
+          &lt;td&gt;项目推进&lt;/td&gt;
+          &lt;td&gt;主动发起，协调推进&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;主方资源&lt;/td&gt;
+          &lt;td&gt;资源投入&lt;/td&gt;
+          &lt;td&gt;提供支持，承担责任&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;主方承诺&lt;/td&gt;
+          &lt;td&gt;合作诚意&lt;/td&gt;
+          &lt;td&gt;积极态度，长期承诺&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;客方配合&lt;/td&gt;
+          &lt;td&gt;积极响应&lt;/td&gt;
+          &lt;td&gt;及时配合，主动反馈&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;客方贡献&lt;/td&gt;
+          &lt;td&gt;能力投入&lt;/td&gt;
+          &lt;td&gt;发挥专长，资源共享&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;客方认同&lt;/td&gt;
+          &lt;td&gt;目标一致&lt;/td&gt;
+          &lt;td&gt;理念认同，共同愿景&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;合作模式示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;项目合作场景：
+1位：项目发起方（推动项目启动和执行）
+2位：主方资源团队（提供资金、人员支持）
+3位：主方高层（表达合作诚意和承诺）
+4位：合作方执行团队（积极配合，及时响应）
+5位：合作方专业团队（投入专业能力）
+6位：合作方决策层（战略认同，长期支持）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;四、管理意图下的六位解释&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;四管理意图下的六位解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e7%ae%a1%e7%90%86%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;4.1 管理结构的特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-管理结构的特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-%e7%ae%a1%e7%90%86%e7%bb%93%e6%9e%84%e7%9a%84%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在管理意图下，六位结构强调：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;权责的明确&lt;/strong&gt;：谁负责什么，谁对什么负责&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;执行的有效&lt;/strong&gt;：指令传达，执行反馈&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;目标的达成&lt;/strong&gt;：结果导向，绩效管理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;4.2 管理模式下的位置功能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-管理模式下的位置功能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-%e7%ae%a1%e7%90%86%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8a%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;位置&lt;/th&gt;
+          &lt;th&gt;管理功能&lt;/th&gt;
+          &lt;th&gt;责任范围&lt;/th&gt;
+          &lt;th&gt;典型表现&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;决策执行&lt;/td&gt;
+          &lt;td&gt;指令下达&lt;/td&gt;
+          &lt;td&gt;制定计划，下达指令&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;管理支撑&lt;/td&gt;
+          &lt;td&gt;资源保障&lt;/td&gt;
+          &lt;td&gt;提供资源，政策支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;管理态度&lt;/td&gt;
+          &lt;td&gt;价值导向&lt;/td&gt;
+          &lt;td&gt;文化引领，价值观塑造&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;执行反馈&lt;/td&gt;
+          &lt;td&gt;任务完成&lt;/td&gt;
+          &lt;td&gt;执行任务，及时反馈&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;执行能力&lt;/td&gt;
+          &lt;td&gt;专业胜任&lt;/td&gt;
+          &lt;td&gt;专业能力，执行质量&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;执行态度&lt;/td&gt;
+          &lt;td&gt;工作投入&lt;/td&gt;
+          &lt;td&gt;工作态度，组织认同&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;五、情感意图下的六位解释&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;五情感意图下的六位解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e6%83%85%e6%84%9f%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;5.1 情感结构的特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-情感结构的特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%e6%83%85%e6%84%9f%e7%bb%93%e6%9e%84%e7%9a%84%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在情感意图下，六位结构关注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;情感的流向&lt;/strong&gt;：谁在给予关爱，谁在接受&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持的方式&lt;/strong&gt;：如何表达关心，如何提供支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关系的深度&lt;/strong&gt;：情感连接的强度和质量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;5.2 情感模式下的位置功能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-情感模式下的位置功能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-%e6%83%85%e6%84%9f%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8a%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;位置&lt;/th&gt;
+          &lt;th&gt;情感功能&lt;/th&gt;
+          &lt;th&gt;关爱表达&lt;/th&gt;
+          &lt;th&gt;典型表现&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;主动关怀&lt;/td&gt;
+          &lt;td&gt;情感表达&lt;/td&gt;
+          &lt;td&gt;主动关心，情感投入&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;关怀资源&lt;/td&gt;
+          &lt;td&gt;实际支持&lt;/td&gt;
+          &lt;td&gt;物质帮助，实际行动&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;关爱态度&lt;/td&gt;
+          &lt;td&gt;内心真诚&lt;/td&gt;
+          &lt;td&gt;真心关爱，长期承诺&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;情感回应&lt;/td&gt;
+          &lt;td&gt;接受关爱&lt;/td&gt;
+          &lt;td&gt;感受关怀，情感反馈&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;接受能力&lt;/td&gt;
+          &lt;td&gt;承受支持&lt;/td&gt;
+          &lt;td&gt;接受帮助的能力和意愿&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;感恩态度&lt;/td&gt;
+          &lt;td&gt;情感认同&lt;/td&gt;
+          &lt;td&gt;感激之心，情感认同&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;情感模式示例&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;家庭关怀场景：
+1位：父母（主动关心子女）
+2位：家庭经济支持（提供物质保障）
+3位：父母的爱（无条件的关爱态度）
+4位：子女的回应（接受关爱，情感反馈）
+5位：子女的接受能力（理解和接受帮助）
+6位：子女的感恩（感激和认同家庭价值）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;六、学习意图下的六位解释&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;六学习意图下的六位解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%85%ad%e5%ad%a6%e4%b9%a0%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;6.1 学习结构的特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;61-学习结构的特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#61-%e5%ad%a6%e4%b9%a0%e7%bb%93%e6%9e%84%e7%9a%84%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在学习意图下，六位结构关注：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;知识的传递&lt;/strong&gt;：从谁那里学，学什么内容&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;学习的过程&lt;/strong&gt;：如何教，如何学，如何反馈&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成长的目标&lt;/strong&gt;：学习的目的和期望成果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;6.2 学习模式下的位置功能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;62-学习模式下的位置功能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#62-%e5%ad%a6%e4%b9%a0%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8a%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;位置&lt;/th&gt;
+          &lt;th&gt;学习功能&lt;/th&gt;
+          &lt;th&gt;教学作用&lt;/th&gt;
+          &lt;th&gt;典型表现&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;主动教学&lt;/td&gt;
+          &lt;td&gt;知识传授&lt;/td&gt;
+          &lt;td&gt;主动教导，方法指导&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;教学资源&lt;/td&gt;
+          &lt;td&gt;资源支持&lt;/td&gt;
+          &lt;td&gt;教材提供，环境创造&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;教育理念&lt;/td&gt;
+          &lt;td&gt;价值传递&lt;/td&gt;
+          &lt;td&gt;教育目标，价值观引导&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;学习行为&lt;/td&gt;
+          &lt;td&gt;积极学习&lt;/td&gt;
+          &lt;td&gt;参与学习，练习实践&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;学习能力&lt;/td&gt;
+          &lt;td&gt;接受理解&lt;/td&gt;
+          &lt;td&gt;理解能力，学习天赋&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;学习态度&lt;/td&gt;
+          &lt;td&gt;成长意愿&lt;/td&gt;
+          &lt;td&gt;学习动机，成长渴望&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;七、创新意图下的六位解释&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;七创新意图下的六位解释&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%83%e5%88%9b%e6%96%b0%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e8%a7%a3%e9%87%8a&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;7.1 创新结构的特征&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;71-创新结构的特征&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#71-%e5%88%9b%e6%96%b0%e7%bb%93%e6%9e%84%e7%9a%84%e7%89%b9%e5%be%81&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;在创新意图下，六位结构强调：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;创新的发起&lt;/strong&gt;：谁在推动创新，如何启动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;创新的支持&lt;/strong&gt;：需要什么资源和环境支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;创新的突破&lt;/strong&gt;：如何克服阻力，实现突破&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;7.2 创新模式下的位置功能&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;72-创新模式下的位置功能&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#72-%e5%88%9b%e6%96%b0%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e4%bd%8d%e7%bd%ae%e5%8a%9f%e8%83%bd&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;位置&lt;/th&gt;
+          &lt;th&gt;创新功能&lt;/th&gt;
+          &lt;th&gt;创新作用&lt;/th&gt;
+          &lt;th&gt;典型表现&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1位&lt;/td&gt;
+          &lt;td&gt;创新发起&lt;/td&gt;
+          &lt;td&gt;创意驱动&lt;/td&gt;
+          &lt;td&gt;提出创意，推动创新&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2位&lt;/td&gt;
+          &lt;td&gt;创新资源&lt;/td&gt;
+          &lt;td&gt;支持保障&lt;/td&gt;
+          &lt;td&gt;资金支持，团队配置&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3位&lt;/td&gt;
+          &lt;td&gt;创新文化&lt;/td&gt;
+          &lt;td&gt;理念支持&lt;/td&gt;
+          &lt;td&gt;鼓励创新，包容失败&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位&lt;/td&gt;
+          &lt;td&gt;创新实践&lt;/td&gt;
+          &lt;td&gt;试验执行&lt;/td&gt;
+          &lt;td&gt;尝试实验，快速迭代&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5位&lt;/td&gt;
+          &lt;td&gt;创新能力&lt;/td&gt;
+          &lt;td&gt;技术实力&lt;/td&gt;
+          &lt;td&gt;技术能力，专业素养&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6位&lt;/td&gt;
+          &lt;td&gt;创新开放性&lt;/td&gt;
+          &lt;td&gt;接受新事物&lt;/td&gt;
+          &lt;td&gt;开放心态，拥抱变化&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3&gt;八、多重意图下的结构复合&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;八多重意图下的结构复合&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%85%ab%e5%a4%9a%e9%87%8d%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e7%bb%93%e6%9e%84%e5%a4%8d%e5%90%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;8.1 意图的层次性&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;81-意图的层次性&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#81-%e6%84%8f%e5%9b%be%e7%9a%84%e5%b1%82%e6%ac%a1%e6%80%a7&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;现实中的关系往往包含多重意图：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主要意图&lt;/strong&gt;：当前阶段的核心目标&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;次要意图&lt;/strong&gt;：伴随的其他目的&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;潜在意图&lt;/strong&gt;：可能发展的未来目标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;8.2 意图转换的动态过程&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;82-意图转换的动态过程&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#82-%e6%84%8f%e5%9b%be%e8%bd%ac%e6%8d%a2%e7%9a%84%e5%8a%a8%e6%80%81%e8%bf%87%e7%a8%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;关系中的意图可能发生转换：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从合作到博弈&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;初期：合作意图占主导
+- 1位：项目推进者 → 后期：主攻方
+- 4位：积极配合者 → 后期：防御反击
+
+触发因素：利益冲突、信任破裂、外部压力&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;从博弈到合作&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;初期：博弈意图占主导
+- 1位：主攻方 → 后期：合作发起者
+- 4位：防御方 → 后期：合作响应者
+
+触发因素：共同威胁、互利发现、调解介入&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;8.3 复合意图的分析方法&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;83-复合意图的分析方法&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#83-%e5%a4%8d%e5%90%88%e6%84%8f%e5%9b%be%e7%9a%84%e5%88%86%e6%9e%90%e6%96%b9%e6%b3%95&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;分层分析法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;识别主要意图&lt;/strong&gt;：当前最重要的分析角度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析次要意图&lt;/strong&gt;：其他同时存在的意图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;预测意图演化&lt;/strong&gt;：可能的意图转换方向&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设计应对策略&lt;/strong&gt;：针对不同意图的策略组合&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;时序分析法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;过去意图&lt;/strong&gt;：关系的历史发展脉络&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;当前意图&lt;/strong&gt;：现阶段的主要特征&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;未来意图&lt;/strong&gt;：可能的发展趋势&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;关键转折点&lt;/strong&gt;：意图可能发生转换的节点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;九、意图选择的实践指导&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;九意图选择的实践指导&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b9%9d%e6%84%8f%e5%9b%be%e9%80%89%e6%8b%a9%e7%9a%84%e5%ae%9e%e8%b7%b5%e6%8c%87%e5%af%bc&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;9.1 如何选择分析意图&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;91-如何选择分析意图&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#91-%e5%a6%82%e4%bd%95%e9%80%89%e6%8b%a9%e5%88%86%e6%9e%90%e6%84%8f%e5%9b%be&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;情境判断标准&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;关系的现状&lt;/strong&gt;：当前最突出的互动特征&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析的目的&lt;/strong&gt;：希望解决什么问题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;决策的需要&lt;/strong&gt;：需要什么样的行动指导&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;时间的阶段&lt;/strong&gt;：关系发展的当前阶段&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;选择优先级&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;问题导向&lt;/strong&gt;：根据要解决的核心问题选择&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;目标导向&lt;/strong&gt;：根据期望达成的目标选择&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现状导向&lt;/strong&gt;：根据当前关系特征选择&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;发展导向&lt;/strong&gt;：根据关系发展趋势选择&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;9.2 多意图整合的策略&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;92-多意图整合的策略&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#92-%e5%a4%9a%e6%84%8f%e5%9b%be%e6%95%b4%e5%90%88%e7%9a%84%e7%ad%96%e7%95%a5&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;并行分析法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;同时使用多种意图框架分析同一关系&lt;/li&gt;
+&lt;li&gt;比较不同意图下的结构特征差异&lt;/li&gt;
+&lt;li&gt;寻找不同分析结果的交集和互补&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;权重调配法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据情境给不同意图分配权重&lt;/li&gt;
+&lt;li&gt;主要意图占60-70%权重&lt;/li&gt;
+&lt;li&gt;次要意图占20-30%权重&lt;/li&gt;
+&lt;li&gt;潜在意图占10%权重&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;动态切换法&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据情况变化动态调整分析意图&lt;/li&gt;
+&lt;li&gt;建立意图转换的触发机制&lt;/li&gt;
+&lt;li&gt;及时调整策略和应对方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;十、实践案例：意图转换的管理&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;十实践案例意图转换的管理&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%8d%81%e5%ae%9e%e8%b7%b5%e6%a1%88%e4%be%8b%e6%84%8f%e5%9b%be%e8%bd%ac%e6%8d%a2%e7%9a%84%e7%ae%a1%e7%90%86&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;案例：从博弈到合作的转换&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;案例从博弈到合作的转换&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%a1%88%e4%be%8b%e4%bb%8e%e5%8d%9a%e5%bc%88%e5%88%b0%e5%90%88%e4%bd%9c%e7%9a%84%e8%bd%ac%e6%8d%a2&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;背景&lt;/strong&gt;：两个部门因为资源分配产生冲突&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;初期博弈阶段&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1位：部门A主管（争取更多资源）
+2位：部门A实力（过往业绩展示）
+3位：部门A立场（坚持公平分配）
+4位：部门B主管（防御既得利益）
+5位：部门B实力（现有资源优势）
+6位：部门B立场（维护现状）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;转换触发因素&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;公司整体业绩下滑&lt;/li&gt;
+&lt;li&gt;外部竞争加剧&lt;/li&gt;
+&lt;li&gt;高层要求协作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;后期合作阶段&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1位：联合项目发起（共同推进项目）
+2位：资源整合（两部门资源合并）
+3位：合作愿景（共同发展目标）
+4位：积极配合（主动支持项目）
+5位：能力互补（发挥各自优势）
+6位：目标认同（认同合作价值）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;管理策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;识别转换信号&lt;/strong&gt;：监控外部环境变化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;创造转换条件&lt;/strong&gt;：设计共同利益点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;引导意图转换&lt;/strong&gt;：通过沟通改变认知&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;固化合作模式&lt;/strong&gt;：建立长期合作机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-blue-200 hx:bg-blue-100 hx:text-blue-900 hx:dark:border-blue-200/30 hx:dark:bg-blue-900/30 hx:dark:text-blue-200&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;div class=&#34;hx:select-none hx:text-xl&#34; style=&#34;font-family: &#39;Apple Color Emoji&#39;, &#39;Segoe UI Emoji&#39;, &#39;Segoe UI Symbol&#39;;&#34;&gt;ℹ️&lt;/div&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;strong&gt;核心洞察&lt;/strong&gt;：六位结构的多重解释能力使其成为一个强大的分析工具。关键在于根据具体情境选择合适的分析意图，并能够敏锐地识别意图转换的时机和条件。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不同意图下的六位解释为我们提供了一个多维度的分析框架，帮助我们更全面地理解复杂的人际关系和组织动态。掌握这种多重解释能力，是运用六位结构的高级技能。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>应用示例</title>
+      <link>//localhost:1313/zh-cn/docs/chapter6-six-positions/examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/zh-cn/docs/chapter6-six-positions/examples/</guid>
+      <description>
+        
+        
+        &lt;h2&gt;6.5 六位结构的应用示例&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;65-六位结构的应用示例&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#65-%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e7%9a%84%e5%ba%94%e7%94%a8%e7%a4%ba%e4%be%8b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;六位结构的真正价值在于其实际应用能力。通过具体的案例分析，我们可以看到这套框架如何帮助我们理解复杂的关系动态，并为实际决策提供指导。&lt;/p&gt;
+&lt;h3&gt;一、商务谈判中的六位结构应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;一商务谈判中的六位结构应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%80%e5%95%86%e5%8a%a1%e8%b0%88%e5%88%a4%e4%b8%ad%e7%9a%84%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;案例背景：软件采购谈判&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;案例背景软件采购谈判&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%a1%88%e4%be%8b%e8%83%8c%e6%99%af%e8%bd%af%e4%bb%b6%e9%87%87%e8%b4%ad%e8%b0%88%e5%88%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;情境&lt;/strong&gt;：一家制造企业需要采购ERP系统，与软件供应商进行谈判。&lt;/p&gt;
+&lt;h4&gt;1.1 初期博弈阶段的六位分析&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;11-初期博弈阶段的六位分析&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#11-%e5%88%9d%e6%9c%9f%e5%8d%9a%e5%bc%88%e9%98%b6%e6%ae%b5%e7%9a%84%e5%85%ad%e4%bd%8d%e5%88%86%e6%9e%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主方视角（采购企业）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1位：采购总监（主导谈判进程）
+- 行动表现：主动约见，提出需求，设定谈判议程
+- 得位状态：得位（行动明确，节奏掌控良好）
+
+2位：采购团队资源实力（IT预算、决策权限）
+- 能力基础：3000万预算，董事会授权，技术团队支持
+- 得位状态：得位（资源充足，权限明确）
+
+3位：采购企业的态度立场（成本控制，质量要求）
+- 态度表现：要求高性价比，强调长期合作
+- 得位状态：得位（立场明确，目标清晰）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;客方视角（软件供应商）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;4位：销售总监（回应谈判，应对需求）
+- 反应行为：积极响应，详细介绍产品，提供方案
+- 得位状态：得位（专业回应，方案完整）
+
+5位：供应商实力（技术能力、实施经验）
+- 能力状况：行业领先技术，丰富实施经验，强大研发团队
+- 得位状态：得位（实力雄厚，案例丰富）
+
+6位：供应商态度（市场扩张，利润追求）
+- 立场表现：希望进入制造业市场，追求合理利润
+- 得位状态：得位（态度积极，目标明确）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;1.2 结构分析与策略建议&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;12-结构分析与策略建议&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#12-%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90%e4%b8%8e%e7%ad%96%e7%95%a5%e5%bb%ba%e8%ae%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主客对照分析&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1-4对照&lt;/strong&gt;：双方都积极主动，形成良性互动&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2-5对照&lt;/strong&gt;：实力相对均衡，有博弈空间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3-6对照&lt;/strong&gt;：目标有交集也有分歧，需要寻找平衡点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;关键洞察&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;双方都处于得位状态，谈判基础良好&lt;/li&gt;
+&lt;li&gt;2-5对照是关键，需要重点关注实力对比&lt;/li&gt;
+&lt;li&gt;价格vs价值将是主要博弈点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;策略建议&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;对采购方（主方）：
+- 充分利用1位优势，掌控谈判节奏
+- 适度展示2位实力，建立谈判筹码
+- 在3位立场上保持一定灵活性
+
+对供应商（客方）：
+- 4位要及时专业回应，展现服务能力
+- 5位要突出技术优势和成功案例
+- 6位要表达长期合作意愿，降低客户顾虑&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;二、团队管理中的六位结构应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;二团队管理中的六位结构应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%8c%e5%9b%a2%e9%98%9f%e7%ae%a1%e7%90%86%e4%b8%ad%e7%9a%84%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;案例背景：新产品开发团队的管理挑战&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;案例背景新产品开发团队的管理挑战&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%a1%88%e4%be%8b%e8%83%8c%e6%99%af%e6%96%b0%e4%ba%a7%e5%93%81%e5%bc%80%e5%8f%91%e5%9b%a2%e9%98%9f%e7%9a%84%e7%ae%a1%e7%90%86%e6%8c%91%e6%88%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;情境&lt;/strong&gt;：产品经理需要协调设计、开发、测试三个团队完成新产品开发。&lt;/p&gt;
+&lt;h4&gt;2.1 管理意图下的六位分析&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;21-管理意图下的六位分析&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#21-%e7%ae%a1%e7%90%86%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e5%88%86%e6%9e%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主方（产品经理及管理层）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1位：产品经理（推动项目执行）
+- 行动表现：制定计划，分配任务，跟踪进度
+- 得位状态：部分得位（计划清晰，但执行跟踪有待加强）
+
+2位：管理资源支持（预算、人员、工具）
+- 资源状况：预算充足，人员配置到位，开发工具完善
+- 得位状态：得位（资源保障充分）
+
+3位：管理层态度（创新支持，绩效要求）
+- 态度表现：鼓励创新，要求按时交付，关注市场反馈
+- 得位状态：得位（目标明确，支持到位）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;客方（执行团队）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;4位：各团队响应（设计、开发、测试的配合度）
+- 反应行为：设计团队积极，开发团队中等，测试团队消极
+- 得位状态：部分失位（响应不均衡，测试团队配合度低）
+
+5位：团队能力（专业技能、协作能力）
+- 能力状况：设计能力强，开发能力中等，测试能力不足
+- 得位状态：部分失位（能力分布不均，测试短板明显）
+
+6位：团队态度（工作投入度，目标认同）
+- 态度表现：设计团队热情高，开发团队态度一般，测试团队抵触
+- 得位状态：失位（态度分化严重，团队凝聚力不足）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;2.2 问题诊断与解决方案&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;22-问题诊断与解决方案&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#22-%e9%97%ae%e9%a2%98%e8%af%8a%e6%96%ad%e4%b8%8e%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;关键问题识别&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;4位失位&lt;/strong&gt;：测试团队配合度低，影响整体进度&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;5位失位&lt;/strong&gt;：测试能力不足，存在质量风险&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;6位失位&lt;/strong&gt;：团队态度分化，缺乏共同目标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;根本原因分析&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;测试团队感觉被边缘化，参与感不足&lt;/li&gt;
+&lt;li&gt;测试工作压力大，支持资源不够&lt;/li&gt;
+&lt;li&gt;缺乏有效的激励机制和团队建设&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;解决方案设计&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;针对4位失位（提升配合度）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 让测试团队提前参与需求讨论
+- 建立定期沟通机制，增强参与感
+- 设置测试团队的发言权和话语权&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;针对5位失位（能力建设）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 增加测试人员和工具投入
+- 提供专业培训和技能提升
+- 引入外部测试专家支持&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;针对6位失位（态度调整）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 重新定义团队共同目标
+- 建立公平的激励和认可机制
+- 加强团队建设和文化塑造&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;三、家庭关系中的六位结构应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;三家庭关系中的六位结构应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%b8%89%e5%ae%b6%e5%ba%ad%e5%85%b3%e7%b3%bb%e4%b8%ad%e7%9a%84%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;案例背景：青春期子女教育问题&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;案例背景青春期子女教育问题&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%a1%88%e4%be%8b%e8%83%8c%e6%99%af%e9%9d%92%e6%98%a5%e6%9c%9f%e5%ad%90%e5%a5%b3%e6%95%99%e8%82%b2%e9%97%ae%e9%a2%98&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;情境&lt;/strong&gt;：父母与16岁高中生在学习和生活安排上产生冲突。&lt;/p&gt;
+&lt;h4&gt;3.1 情感关怀意图下的分析&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;31-情感关怀意图下的分析&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#31-%e6%83%85%e6%84%9f%e5%85%b3%e6%80%80%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%88%86%e6%9e%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主方（父母）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1位：父母的关怀行为（督促学习，生活关心）
+- 行动表现：每天询问学习情况，安排课外辅导，控制娱乐时间
+- 得位状态：过度得位（关心过度，缺乏方式方法）
+
+2位：家庭支持资源（经济支持，教育资源）
+- 资源状况：经济条件良好，教育投入充足，关系网络丰富
+- 得位状态：得位（资源充分，支持到位）
+
+3位：父母的爱与期望（望子成龙，关爱之心）
+- 态度表现：深爱孩子，期望很高，担心未来
+- 得位状态：得位（爱心真诚，期望合理）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;客方（子女）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;4位：子女的回应行为（学习表现，生活反应）
+- 反应行为：表面配合，内心抵触，偶有爆发
+- 得位状态：失位（回应消极，情绪不稳定）
+
+5位：子女接受能力（理解能力，承受压力）
+- 能力状况：学习能力正常，但压力承受能力有限
+- 得位状态：部分失位（学习OK，但心理压力大）
+
+6位：子女的感受态度（感恩之心，独立需求）
+- 态度表现：理解父母用心，但渴望独立和自主
+- 得位状态：部分失位（内心矛盾，表达不清）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;3.2 问题分析与改善建议&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;32-问题分析与改善建议&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#32-%e9%97%ae%e9%a2%98%e5%88%86%e6%9e%90%e4%b8%8e%e6%94%b9%e5%96%84%e5%bb%ba%e8%ae%ae&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主要问题&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1位过度得位&lt;/strong&gt;：父母关心方式过于直接和频繁&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4位失位&lt;/strong&gt;：子女回应消极，沟通不畅&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;6位失位&lt;/strong&gt;：子女内心矛盾，需求表达不清&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;改善策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;调整1位（改善关怀方式）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 从直接督促转向间接关心
+- 减少频繁询问，增加倾听时间
+- 关心方式从控制转向支持&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;帮助4位得位（改善回应）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 创造安全的表达环境
+- 鼓励子女表达真实想法
+- 建立定期沟通时间和方式&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;支持6位得位（理解需求）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 尊重子女的独立需求
+- 给予适当的自主空间
+- 帮助子女学会表达需求&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;四、创新项目中的六位结构应用&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;四创新项目中的六位结构应用&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e5%9b%9b%e5%88%9b%e6%96%b0%e9%a1%b9%e7%9b%ae%e4%b8%ad%e7%9a%84%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e5%ba%94%e7%94%a8&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;案例背景：企业内部创新项目推进&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;案例背景企业内部创新项目推进&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e6%a1%88%e4%be%8b%e8%83%8c%e6%99%af%e4%bc%81%e4%b8%9a%e5%86%85%e9%83%a8%e5%88%9b%e6%96%b0%e9%a1%b9%e7%9b%ae%e6%8e%a8%e8%bf%9b&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;情境&lt;/strong&gt;：技术团队提出新技术应用方案，需要获得管理层支持和资源投入。&lt;/p&gt;
+&lt;h4&gt;4.1 创新意图下的六位分析&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;41-创新意图下的六位分析&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#41-%e5%88%9b%e6%96%b0%e6%84%8f%e5%9b%be%e4%b8%8b%e7%9a%84%e5%85%ad%e4%bd%8d%e5%88%86%e6%9e%90&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;主方（技术创新团队）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;1位：技术负责人（推动创新项目）
+- 行动表现：提出创新方案，进行技术演示，申请资源支持
+- 得位状态：得位（方案清晰，演示有力）
+
+2位：技术团队实力（技术能力，研发经验）
+- 能力基础：技术扎实，有成功经验，团队稳定
+- 得位状态：得位（实力雄厚，经验丰富）
+
+3位：创新热情（技术追求，创新愿望）
+- 态度表现：技术热情高，创新动力强，愿意承担风险
+- 得位状态：得位（热情真诚，动机纯正）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;客方（管理决策层）&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;4位：管理层响应（决策反应，支持行动）
+- 反应行为：认真听取汇报，提出关键问题，考虑投入产出
+- 得位状态：得位（反应专业，决策谨慎）
+
+5位：公司资源实力（资金能力，资源配置）
+- 能力状况：资金充足，但需要平衡多个项目需求
+- 得位状态：得位（有实力，但需要权衡）
+
+6位：管理层态度（创新支持，风险控制）
+- 态度表现：支持创新，但关注风险和回报
+- 得位状态：得位（态度平衡，考虑全面）&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h4&gt;4.2 推进策略与成功要素&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;42-推进策略与成功要素&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#42-%e6%8e%a8%e8%bf%9b%e7%ad%96%e7%95%a5%e4%b8%8e%e6%88%90%e5%8a%9f%e8%a6%81%e7%b4%a0&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;结构优势分析&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主客双方都基本得位，合作基础良好&lt;/li&gt;
+&lt;li&gt;1-4对照积极，管理层响应专业&lt;/li&gt;
+&lt;li&gt;2-5对照需要重点关注，资源分配是关键&lt;/li&gt;
+&lt;li&gt;3-6对照存在分歧，需要在创新与风险间找平衡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;推进策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;强化1位优势&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 提供更详细的技术方案和实施计划
+- 展示类似项目的成功案例
+- 建立分阶段实施和验证机制&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;促进2-5对照平衡&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 提出分阶段资源需求方案
+- 展示项目的商业价值和市场前景
+- 建立风险控制和退出机制&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;协调3-6态度差异&lt;/strong&gt;：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;- 强调创新项目的战略意义
+- 提供详细的风险评估和应对方案
+- 建立持续沟通和反馈机制&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3&gt;五、六位结构应用的方法论总结&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;五六位结构应用的方法论总结&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#%e4%ba%94%e5%85%ad%e4%bd%8d%e7%bb%93%e6%9e%84%e5%ba%94%e7%94%a8%e7%9a%84%e6%96%b9%e6%b3%95%e8%ae%ba%e6%80%bb%e7%bb%93&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h4&gt;5.1 应用步骤&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;51-应用步骤&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#51-%e5%ba%94%e7%94%a8%e6%ad%a5%e9%aa%a4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;确定分析视角&lt;/strong&gt;：明确主客双方的身份&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择分析意图&lt;/strong&gt;：根据情境选择合适的分析框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完成六位映射&lt;/strong&gt;：将相关人员分配到六个位置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;进行得失位分析&lt;/strong&gt;：评估各位置的功能发挥情况&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析主客对照&lt;/strong&gt;：重点关注三组对照关系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;识别关键问题&lt;/strong&gt;：找出影响关系的主要失衡点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;制定应对策略&lt;/strong&gt;：针对问题设计具体的解决方案&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跟踪效果评估&lt;/strong&gt;：监控策略实施效果，及时调整&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4&gt;5.2 应用要点&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;52-应用要点&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#52-%e5%ba%94%e7%94%a8%e8%a6%81%e7%82%b9&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;视角的一致性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;始终保持清晰的主客视角&lt;/li&gt;
+&lt;li&gt;避免随意切换分析角度&lt;/li&gt;
+&lt;li&gt;必要时可以进行多角度分析对比&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;意图的针对性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据具体情境选择最合适的分析意图&lt;/li&gt;
+&lt;li&gt;避免使用过于复杂的多重意图框架&lt;/li&gt;
+&lt;li&gt;重点突出当前最重要的关系特征&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;分析的系统性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;完整考虑六个位置的状况&lt;/li&gt;
+&lt;li&gt;重点关注主客对照关系&lt;/li&gt;
+&lt;li&gt;既要看静态结构，也要看动态趋势&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;策略的可操作性&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提出具体可行的改善建议&lt;/li&gt;
+&lt;li&gt;区分短期和长期策略&lt;/li&gt;
+&lt;li&gt;考虑策略实施的资源和条件要求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;hx:overflow-x-auto hx:mt-6 hx:flex hx:rounded-lg hx:border hx:py-2 hx:ltr:pr-4 hx:rtl:pl-4 hx:contrast-more:border-current hx:contrast-more:dark:border-current hx:border-orange-100 hx:bg-orange-50 hx:text-orange-800 hx:dark:border-orange-400/30 hx:dark:bg-orange-400/20 hx:dark:text-orange-300&#34;&gt;
+  &lt;div class=&#34;hx:ltr:pl-3 hx:ltr:pr-2 hx:rtl:pr-3 hx:rtl:pl-2&#34;&gt;&lt;/div&gt;
+
+  &lt;div class=&#34;hx:w-full hx:min-w-0 hx:leading-7&#34;&gt;
+    &lt;div class=&#34;hx:mt-6 hx:leading-7 hx:first:mt-0&#34;&gt;&lt;strong&gt;应用心得&lt;/strong&gt;：六位结构最大的价值在于提供了一个系统化的关系分析框架。通过这个框架，我们可以更清晰地理解复杂的人际关系，更有针对性地制定应对策略。关键在于灵活运用，根据具体情况调整分析重点。&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;六位结构的应用示例展示了这套工具的强大实用性。无论是商务谈判、团队管理、家庭关系还是创新推进，六位结构都能够为我们提供清晰的分析框架和有效的行动指导。掌握这些应用方法，将大大提升我们处理复杂关系的能力。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

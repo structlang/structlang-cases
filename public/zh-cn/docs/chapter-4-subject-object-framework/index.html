@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="http://localhost:1313/favicon.ico" sizes="32x32" />
+<link rel="icon" href="http://localhost:1313/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="http://localhost:1313/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="http://localhost:1313/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="http://localhost:1313/site.webmanifest" rel="manifest" />
+<title>第4章：主客关系分析框架 | MainStruct 结构语言 – StructLang</title>
+  <meta name="description" content="多方博弈中如何进行精确分析？本章提出主客关系框架，解释八态、双方叠加、主客立场与结构压缩的分析方法，帮助在复杂互动中找到策略突破口。" /><link rel="canonical" href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/" itemprop="url" />
+
+<meta property="og:title" content="第4章：主客关系分析框架 | MainStruct 结构语言" />
+<meta property="og:description" content="多方博弈中如何进行精确分析？本章提出主客关系框架，解释八态、双方叠加、主客立场与结构压缩的分析方法，帮助在复杂互动中找到策略突破口。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2025-08-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-08-24T00:00:00+00:00" />
+
+  <meta itemprop="name" content="第4章：主客关系分析框架 | MainStruct 结构语言">
+  <meta itemprop="description" content="多方博弈中如何进行精确分析？本章提出主客关系框架，解释八态、双方叠加、主客立场与结构压缩的分析方法，帮助在复杂互动中找到策略突破口。">
+  <meta itemprop="datePublished" content="2025-08-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-08-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="464">
+  <meta itemprop="keywords" content="主客关系,结构语言,八态分析,结构压缩,博弈分析">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="第4章：主客关系分析框架 | MainStruct 结构语言">
+  <meta name="twitter:description" content="多方博弈中如何进行精确分析？本章提出主客关系框架，解释八态、双方叠加、主客立场与结构压缩的分析方法，帮助在复杂互动中找到策略突破口。">
+<link href="http://localhost:1313/css/compiled/main.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/variables.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/custom.css" rel="stylesheet" />
+
+  
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  
+  <script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const anchor = document.querySelector('.hextra-search-wrapper') ||
+                 document.querySelector('.hextra-nav-container');
+  if (!anchor) return;
+
+   
+  function readAlternates() {
+    const m = new Map();
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l=>{
+      const lang=(l.getAttribute('hreflang')||'').toLowerCase();
+      const href=l.getAttribute('href'); if(lang && href) m.set(lang, href);
+    });
+    return m;
+  }
+  function currentLang() {
+    const htmlLang=(document.documentElement.lang||'').toLowerCase();
+    if (htmlLang) return htmlLang;
+    const p=location.pathname.toLowerCase();
+    if (p.startsWith('/zh-cn/')) return 'zh-cn';
+    if (p.startsWith('/en/'))    return 'en';
+    return 'en';
+  }
+  function switchURL(target) {
+    const alts = readAlternates();
+    if (alts.size && alts.get(target)) return alts.get(target);
+    const u = new URL(location.href), p=u.pathname;
+    if (target==='zh-cn') {
+      if (p.startsWith('/en/')) u.pathname=p.replace(/^\/en\//,'/zh-cn/');
+      else if (!p.startsWith('/zh-cn/')) u.pathname='/zh-cn'+(p.startsWith('/')?p:'/'+p);
+    } else {
+      if (p.startsWith('/zh-cn/')) u.pathname=p.replace(/^\/zh-cn\//,'/en/');
+      else if (!p.startsWith('/en/'))    u.pathname='/en'+(p.startsWith('/')?p:'/'+p);
+    }
+    return u.toString();
+  }
+
+  const labels={ 'en':'English', 'zh-cn':'简体中文' };
+  const langs=['en','zh-cn'];
+  const cur=currentLang();
+
+  const langSelect=document.createElement('select');
+  langSelect.className='hx-navbar-lang';
+  langs.forEach(code=>{
+    const opt=document.createElement('option');
+    opt.value=switchURL(code);
+    opt.textContent=labels[code]||code;
+    if(code===cur) opt.selected=true;
+    langSelect.appendChild(opt);
+  });
+  langSelect.addEventListener('change', e => { const url=e.target.value; if(url) location.href=url; });
+  anchor.insertAdjacentElement('afterend', langSelect);
+
+   
+  const origTheme = document.querySelector('.hextra-theme-toggle'); 
+  const topTheme  = document.createElement('button');
+  topTheme.type   = 'button';
+  topTheme.className = 'hextra-theme-toggle in-navbar hx-top-theme';
+  langSelect.insertAdjacentElement('afterend', topTheme);
+
+  function isDark(){
+    
+    return document.documentElement.classList.contains('dark') ||
+           (document.documentElement.getAttribute('data-theme')||'').toLowerCase()==='dark';
+  }
+  function renderThemeIcon(){
+    if (isDark()){
+      topTheme.setAttribute('aria-label','Light');
+      topTheme.title='Light';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 4V2M12 22v-2M4.93 4.93 3.51 3.51M20.49 20.49l-1.42-1.42M4 12H2M22 12h-2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    } else {
+      topTheme.setAttribute('aria-label','Dark');
+      topTheme.title='Dark';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    }
+  }
+  function toggleTheme(){
+    if (origTheme) {
+      
+      origTheme.click();
+    } else {
+      
+      document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('theme', isDark() ? 'dark' : 'light'); } catch(e){}
+    }
+    
+    requestAnimationFrame(()=>setTimeout(renderThemeIcon,0));
+  }
+topTheme.addEventListener('click', toggleTheme);
+
+  
+  renderThemeIcon();
+  const obs = new MutationObserver(renderThemeIcon);
+  obs.observe(document.documentElement, {attributes:true, attributeFilter:['class','data-theme']});
+  if (origTheme) obs.observe(origTheme, {attributes:true, childList:true, subtree:true});
+  window.addEventListener('storage', (e)=>{ if ((e.key||'').toLowerCase().includes('theme')) renderThemeIcon(); });
+
+   
+  const style=document.createElement('style');
+  style.textContent=`
+    @media (min-width:1024px){
+      select.hx-navbar-lang{
+        width:auto; max-width:14rem; height:2rem;
+        padding:0 .55rem; border-radius:9999px;
+        border:1px solid var(--hx-border, rgba(0,0,0,.14));
+        background:transparent; color:var(--hx-fg, inherit);
+        font-size:.9rem; line-height:2rem; cursor:pointer; margin-left:.5rem;
+        color-scheme: light dark;
+      }
+      html.dark select.hx-navbar-lang{
+        color: rgba(255,255,255,.92);
+        border-color: rgba(255,255,255,.22);
+        background-color: rgba(255,255,255,.06);
+      }
+      html.dark select.hx-navbar-lang option{ color:#111; background:#fff; }
+
+      .hextra-theme-toggle.in-navbar{ margin-left:.5rem; background:transparent; border:0; padding:0 .25rem; }
+      .hextra-theme-toggle.in-navbar svg{ display:block; }
+
+      /* 新增：桌面端隐藏原位置的日/夜切换按钮（保留顶部的） */
+      .hextra-theme-toggle:not(.in-navbar){ display: none !important; }
+
+      /* 桌面端也隐藏原位置的语言切换器，避免重复 */
+      .hextra-language-switcher{ display:none !important; }
+    }
+    @media (max-width:1023.98px){
+      /* 移动端：顶部语言下拉不显示；底部的日/夜按钮继续保留 */
+      select.hx-navbar-lang{ display:none !important; }
+    }
+  `;
+  document.head.appendChild(style);
+
+});
+</script>
+</head>
+<body dir="ltr"><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="http://localhost:1313/zh-cn/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="StructLang">StructLang</span>
+</a>
+
+            <a
+              title="首页"
+              href="http://localhost:1313/zh-cn/"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">首页</span>
+            </a>
+            <a
+              title="文档"
+              href="http://localhost:1313/zh-cn/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">文档</span>
+            </a>
+            <a
+              title="博客"
+              href="http://localhost:1313/zh-cn/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">博客</span>
+            </a>
+            <a
+              title="关于"
+              href="http://localhost:1313/zh-cn/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">关于</span>
+            </a><div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx:sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
+    <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:sticky">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/"
+    
+  >文档
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入 MainStruct 社群
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-traditional-analysis-limitations/"
+    
+  >第1章 · 传统分析方法的缺陷
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-human-thinking-structure/"
+    
+  >第2章 · 人类思维的结构本质
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-chaos-to-structure/"
+    
+  >第3章 · 混沌到结构的认知过程
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+    
+  >第4章 · 主客关系分析框架
+    </a>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#%e4%bb%8e%e5%9b%9b%e8%b1%a1%e5%88%b0%e5%85%ab%e6%80%81%e6%84%8f%e5%9b%be%e9%a9%b1%e5%8a%a8%e7%9a%84%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >从四象到八态：意图驱动的第三维度</a>
+            </li>
+          <li>
+              <a
+                href="#%e5%8f%8c%e6%96%b9%e7%bb%93%e6%9e%84%e5%8f%a0%e5%8a%a0%e4%b8%bb%e5%ae%a2%e4%ba%a4%e4%ba%92%e7%9a%84%e5%85%ad%e7%bb%b4%e7%a9%ba%e9%97%b4"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >双方结构叠加：主客交互的六维空间</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%bb%80%e4%b9%88%e6%98%af%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%a1%ae%e5%ae%9a%e5%88%86%e6%9e%90%e7%9a%84%e4%b8%bb%e8%a7%82%e7%ab%8b%e5%9c%ba"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >什么是主客关系：确定分析的主观立场</a>
+            </li>
+          <li>
+              <a
+                href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e5%a4%8d%e6%9d%82%e7%bb%93%e6%9e%84%e7%9a%84%e4%bb%a3%e6%95%b0%e5%8c%96%e5%a4%84%e7%90%86"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >结构压缩：复杂结构的代数化处理</a>
+            </li>
+          <li>
+              <a
+                href="#%e6%a1%88%e4%be%8b%e5%ae%8c%e6%95%b4%e7%9a%84%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >案例：完整的主客关系结构分析</a>
+            </li>
+          <li>
+              <a
+                href="#%e5%b0%8f%e7%bb%93%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e5%88%86%e6%9e%90%e7%9a%84%e6%a0%b8%e5%bf%83%e4%bb%b7%e5%80%bc"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >小结：主客关系分析的核心价值</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+    
+  >第5章 · 64种基本结构模式
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-structural-change-mechanisms/"
+    
+  >第6章 · 规律和触发机制
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-future-of-structlang/"
+    
+  >第7章 · 结构语言的未来
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/"
+    
+  >博客
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/hextra-v0.10/"
+    
+  >Hextra v0.10
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"
+    
+  >Markdown 语法指南
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/about/"
+    
+  >关于
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/showcase/"
+    
+  >项目展示
+    </a></li>
+    </ul>
+
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
+        
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入 MainStruct 社群
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-traditional-analysis-limitations/"
+    
+  >第1章 · 传统分析方法的缺陷
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-human-thinking-structure/"
+    
+  >第2章 · 人类思维的结构本质
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-chaos-to-structure/"
+    
+  >第3章 · 混沌到结构的认知过程
+    </a></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+    
+  >第4章 · 主客关系分析框架
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+    
+  >第5章 · 64种基本结构模式
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-structural-change-mechanisms/"
+    
+  >第6章 · 规律和触发机制
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-future-of-structlang/"
+    
+  >第7章 · 结构语言的未来
+    </a></li>
+        
+      </ul>
+    </div>
+  
+  
+    <div class=" hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="切换语言"
+      data-state="closed"
+      class="hextra-language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>简体中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/en/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >简体中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">此页上</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%bb%8e%e5%9b%9b%e8%b1%a1%e5%88%b0%e5%85%ab%e6%80%81%e6%84%8f%e5%9b%be%e9%a9%b1%e5%8a%a8%e7%9a%84%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6">从四象到八态：意图驱动的第三维度
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%9b%9b%e8%b1%a1%e7%9a%84%e7%bb%93%e6%9e%84%e5%b1%80%e9%99%90">四象的结构局限
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6%e7%9a%84%e8%87%aa%e7%84%b6%e6%bf%80%e6%b4%bb">第三维度的自然激活
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%85%ab%e6%80%81%e5%ae%8c%e6%95%b4%e7%9a%84%e7%bb%93%e6%9e%84%e7%bc%96%e7%a0%81">八态：完整的结构编码
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%89%e7%bb%b4%e5%ba%a6%e7%9a%84%e6%84%8f%e4%b9%89">三维度的意义
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%ae%9e%e9%99%85%e6%a1%88%e4%be%8b%e5%88%9b%e4%b8%9a%e8%80%85%e7%9a%84%e7%bb%93%e6%9e%84%e8%af%86%e5%88%ab">实际案例：创业者的结构识别
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6%e7%9a%84%e7%81%b5%e6%b4%bb%e6%80%a7">第三维度的灵活性
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8f%8c%e6%96%b9%e7%bb%93%e6%9e%84%e5%8f%a0%e5%8a%a0%e4%b8%bb%e5%ae%a2%e4%ba%a4%e4%ba%92%e7%9a%84%e5%85%ad%e7%bb%b4%e7%a9%ba%e9%97%b4">双方结构叠加：主客交互的六维空间
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8d%95%e6%96%b9%e5%88%86%e6%9e%90%e7%9a%84%e5%b1%80%e9%99%90">单方分析的局限
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86">双方叠加的基本原理
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%85%ad%e7%bb%b4%e7%bb%93%e6%9e%84%e7%9a%84%e5%88%86%e6%9e%90%e6%a8%a1%e5%bc%8f">六维结构的分析模式
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e5%88%86%e6%9e%90%e7%9a%84%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8">双方叠加分析的实际应用
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e5%88%86%e6%9e%90%e7%9a%84%e4%bc%98%e5%8a%bf">双方叠加分析的优势
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%bb%80%e4%b9%88%e6%98%af%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%a1%ae%e5%ae%9a%e5%88%86%e6%9e%90%e7%9a%84%e4%b8%bb%e8%a7%82%e7%ab%8b%e5%9c%ba">什么是主客关系：确定分析的主观立场
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e6%a0%b8%e5%bf%83%e5%ae%9a%e4%b9%89">主客关系的核心定义
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e7%9b%b8%e5%af%b9%e6%80%a7">主客关系的相对性
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%a6%82%e4%bd%95%e7%a1%ae%e5%ae%9a%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb">如何确定主客关系
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e5%ae%9e%e9%99%85%e7%a1%ae%e5%ae%9a">主客关系的实际确定
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e5%af%b9%e5%88%86%e6%9e%90%e7%9a%84%e5%bd%b1%e5%93%8d">主客关系对分析的影响
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e5%a4%8d%e6%9d%82%e7%bb%93%e6%9e%84%e7%9a%84%e4%bb%a3%e6%95%b0%e5%8c%96%e5%a4%84%e7%90%86">结构压缩：复杂结构的代数化处理
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9">什么是结构压缩
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e5%85%b8%e5%9e%8b%e4%be%8b%e5%ad%90">结构压缩的典型例子
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e6%9c%ba%e5%88%b6">结构压缩的机制
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e5%8a%9f%e8%83%bd">结构压缩的功能
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%9b%9b%e8%b1%a1%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%a2%ab%e5%8e%8b%e7%bc%a9">四象也可以被压缩
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e8%af%86%e5%88%ab">结构压缩的识别
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e5%ba%94%e7%94%a8%e7%ad%96%e7%95%a5">结构压缩的应用策略
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%a1%88%e4%be%8b%e5%ae%8c%e6%95%b4%e7%9a%84%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90">案例：完整的主客关系结构分析
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e8%83%8c%e6%99%af%e8%ae%be%e5%ae%9a">背景设定
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e7%a1%ae%e5%ae%9a%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb">第一步：确定主客关系
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e4%b8%bb%e4%bd%93%e5%bc%a0%e6%80%bb%e7%9a%84%e5%85%ab%e6%80%81%e5%88%86%e6%9e%90">第二步：主体（张总）的八态分析
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%ae%a2%e4%bd%93%e6%99%ba%e8%83%bd%e7%a7%91%e6%8a%80%e7%9a%84%e5%85%ab%e6%80%81%e5%88%86%e6%9e%90">第三步：客体（智能科技）的八态分析
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e5%9b%9b%e6%ad%a5%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90">第四步：双方叠加结构分析
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%ba%94%e6%ad%a5%e7%bb%93%e6%9e%84%e4%ba%92%e5%8a%a8%e5%88%86%e6%9e%90">第五步：结构互动分析
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e5%85%ad%e6%ad%a5%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e8%af%86%e5%88%ab">第六步：结构压缩识别
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e4%b8%83%e6%ad%a5%e7%ad%96%e7%95%a5%e5%88%b6%e5%ae%9a">第七步：策略制定
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%ac%ac%e5%85%ab%e6%ad%a5%e9%a2%84%e6%9c%9f%e7%bb%93%e6%9e%9c%e5%92%8c%e7%9b%91%e6%8e%a7">第八步：预期结果和监控
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%b0%8f%e7%bb%93%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e5%88%86%e6%9e%90%e7%9a%84%e6%a0%b8%e5%bf%83%e4%bb%b7%e5%80%bc">小结：主客关系分析的核心价值
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%9b%9b%e4%b8%aa%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5">四个核心概念
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%89%e4%b8%aa%e5%88%86%e6%9e%90%e5%b1%82%e6%ac%a1">三个分析层次
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%a4%e4%b8%aa%e5%ae%9e%e8%b7%b5%e8%a6%81%e7%82%b9">两个实践要点
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>返回顶部</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="http://localhost:1313/zh-cn/docs/">文档</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">第4章 · 主客关系分析框架</div>
+  </div>
+
+        <div class="content">
+          <h1>第4章：主客关系分析框架 | MainStruct 结构语言</h1>
+          <h1>第4章：主客关系分析框架</h1><p>在前三章，我们建立了结构语言的基础：从点结构到线结构再到面结构的认知演化，以及主观建模的基本方法。现在我们要进入一个更复杂的层面：<strong>多方博弈中的结构分析</strong>。</p>
+<p>这一章将揭示人类认知如何从简单的面结构发展为更复杂的结构系统，以及如何在多方互动中进行准确的结构分析。</p>
+<h2>从四象到八态：意图驱动的第三维度<span class="hx:absolute hx:-mt-20" id="从四象到八态意图驱动的第三维度"></span>
+    <a href="#%e4%bb%8e%e5%9b%9b%e8%b1%a1%e5%88%b0%e5%85%ab%e6%80%81%e6%84%8f%e5%9b%be%e9%a9%b1%e5%8a%a8%e7%9a%84%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>四象的结构局限<span class="hx:absolute hx:-mt-20" id="四象的结构局限"></span>
+    <a href="#%e5%9b%9b%e8%b1%a1%e7%9a%84%e7%bb%93%e6%9e%84%e5%b1%80%e9%99%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在面结构中，我们用两个判断维度的组合产生了四种状态：++、+-、-+、&ndash;。这四种状态我们称为&quot;四象&quot;，它们是认知乘法的基本产物。</p>
+<p>但在实际运用中，你会发现四象有时候不够用。同样是++状态（比如&quot;想吃且吃了&quot;），在不同情境下可能有完全不同的含义：</p>
+<p><strong>场景1</strong>：饿了很久终于吃到美食 → 满足愉快 <strong>场景2</strong>：明知道不该吃但还是吃了 → 愧疚后悔 <strong>场景3</strong>：为了应酬不得不吃 → 无奈妥协</p>
+<p>同样的++组合，背后的结构含义截然不同。这说明什么？</p>
+<p><strong>四象只是结构的&quot;表面状态&quot;，缺少关键的深层维度。</strong></p>
+<h3>第三维度的自然激活<span class="hx:absolute hx:-mt-20" id="第三维度的自然激活"></span>
+    <a href="#%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6%e7%9a%84%e8%87%aa%e7%84%b6%e6%bf%80%e6%b4%bb" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>当四象不足以描述复杂情况时，大脑会<strong>自然激活第三个判断维度</strong>。这个维度的选择完全取决于当前的意图和神经网络的既有关联。</p>
+<p><strong>听鸟叫的例子</strong>：</p>
+<p>当你闲坐听到鸟叫时：</p>
+<ul>
+<li>第一维度：有没有声音？（有）</li>
+<li>第二维度：需不需要反应？（看情况）</li>
+</ul>
+<p>如果只有这两个维度，你无法决定如何反应。这时第三维度自动激活：</p>
+<ul>
+<li>第三维度：这个声音安全吗？</li>
+</ul>
+<p><strong>正常鸟叫</strong>：有声音 + 需要判断 + 安全 → 不行动 <strong>凄厉叫声</strong>：有声音 + 需要判断 + 危险 → 戒备</p>
+<p>第三维度的出现，让原本模糊的判断变得清晰可操作。</p>
+<h3>八态：完整的结构编码<span class="hx:absolute hx:-mt-20" id="八态完整的结构编码"></span>
+    <a href="#%e5%85%ab%e6%80%81%e5%ae%8c%e6%95%b4%e7%9a%84%e7%bb%93%e6%9e%84%e7%bc%96%e7%a0%81" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>当三个判断维度组合时，我们得到了八种可能的状态组合：</p>
+<table>
+  <thead>
+      <tr>
+          <th>第一维度</th>
+          <th>第二维度</th>
+          <th>第三维度</th>
+          <th>编码</th>
+          <th>简称</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>+</td>
+          <td>+</td>
+          <td>+</td>
+          <td>+++</td>
+          <td>全正态</td>
+      </tr>
+      <tr>
+          <td>+</td>
+          <td>+</td>
+          <td>-</td>
+          <td>++-</td>
+          <td>表里不一态</td>
+      </tr>
+      <tr>
+          <td>+</td>
+          <td>-</td>
+          <td>+</td>
+          <td>+-+</td>
+          <td>有心无力态</td>
+      </tr>
+      <tr>
+          <td>+</td>
+          <td>-</td>
+          <td>-</td>
+          <td>+&ndash;</td>
+          <td>盲动态</td>
+      </tr>
+      <tr>
+          <td>-</td>
+          <td>+</td>
+          <td>+</td>
+          <td>-++</td>
+          <td>潜力态</td>
+      </tr>
+      <tr>
+          <td>-</td>
+          <td>+</td>
+          <td>-</td>
+          <td>-+-</td>
+          <td>观望态</td>
+      </tr>
+      <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>+</td>
+          <td>&ndash;+</td>
+          <td>蓄势态</td>
+      </tr>
+      <tr>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>&mdash;</td>
+          <td>全负态</td>
+      </tr>
+  </tbody>
+</table>
+<p>这就是<strong>八态结构</strong>，它不是神秘的符号，而是<strong>三维判断空间中的八个基本状态</strong>。</p>
+<h3>三维度的意义<span class="hx:absolute hx:-mt-20" id="三维度的意义"></span>
+    <a href="#%e4%b8%89%e7%bb%b4%e5%ba%a6%e7%9a%84%e6%84%8f%e4%b9%89" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>为什么是三个维度，不是更多？</p>
+<p><strong>认知经济原理</strong>：大脑在处理复杂情况时，会自动寻找<strong>最少维度的完整描述</strong>。三个维度通常足够构成一个完整的&quot;叙事结构&quot;：</p>
+<ul>
+<li><strong>第一维度</strong>：通常是行动或表现层面（做了什么？）</li>
+<li><strong>第二维度</strong>：通常是能力或资源层面（能不能做？）</li>
+<li><strong>第三维度</strong>：通常是意图或态度层面（真心想做吗？）</li>
+</ul>
+<p>这三个层面的组合，基本能够完整描述一个人在特定情境中的结构状态。</p>
+<h3>实际案例：创业者的结构识别<span class="hx:absolute hx:-mt-20" id="实际案例创业者的结构识别"></span>
+    <a href="#%e5%ae%9e%e9%99%85%e6%a1%88%e4%be%8b%e5%88%9b%e4%b8%9a%e8%80%85%e7%9a%84%e7%bb%93%e6%9e%84%e8%af%86%e5%88%ab" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>场景</strong>：你在评估一个创业者是否值得投资</p>
+<p><strong>观察到的现象</strong>：</p>
+<ul>
+<li>他经常出席各种活动，积极发声</li>
+<li>他有团队，有产品样品</li>
+<li>但在回答关键问题时眼神游移，答非所问</li>
+</ul>
+<p><strong>三维度分析</strong>：</p>
+<ul>
+<li>第一维度（行动）：+ （有明显的行动表现）</li>
+<li>第二维度（能力）：+ （具备基本的创业素质）</li>
+<li>第三维度（态度）：- （真实动机可疑）</li>
+</ul>
+<p><strong>结构编码</strong>：++- （表里不一态）</p>
+<p><strong>结构含义</strong>：有行动、有能力，但态度层有问题。这种组合通常意味着&quot;为了做给别人看&quot;，可能是为了骗取投资或补贴。</p>
+<h3>第三维度的灵活性<span class="hx:absolute hx:-mt-20" id="第三维度的灵活性"></span>
+    <a href="#%e7%ac%ac%e4%b8%89%e7%bb%b4%e5%ba%a6%e7%9a%84%e7%81%b5%e6%b4%bb%e6%80%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>需要强调的是，<strong>第三维度不固定是&quot;态度&quot;</strong>。根据不同的意图，第三维度可能是：</p>
+<ul>
+<li><strong>时机判断</strong>：现在做这件事合适吗？</li>
+<li><strong>风险评估</strong>：这样做安全吗？</li>
+<li><strong>价值判断</strong>：这样做值得吗？</li>
+<li><strong>可持续性</strong>：这种状态能维持多久？</li>
+</ul>
+<p><strong>具体的第三维度取决于你的意图和神经网络的训练结果</strong>。</p>
+<h2>双方结构叠加：主客交互的六维空间<span class="hx:absolute hx:-mt-20" id="双方结构叠加主客交互的六维空间"></span>
+    <a href="#%e5%8f%8c%e6%96%b9%e7%bb%93%e6%9e%84%e5%8f%a0%e5%8a%a0%e4%b8%bb%e5%ae%a2%e4%ba%a4%e4%ba%92%e7%9a%84%e5%85%ad%e7%bb%b4%e7%a9%ba%e9%97%b4" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>单方分析的局限<span class="hx:absolute hx:-mt-20" id="单方分析的局限"></span>
+    <a href="#%e5%8d%95%e6%96%b9%e5%88%86%e6%9e%90%e7%9a%84%e5%b1%80%e9%99%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>八态能够完整描述单个主体的结构状态，但在多方博弈中，我们需要同时分析多个主体的互动关系。</p>
+<p><strong>问题</strong>：当A是全正态(+++)，B是观望态(-+-)时，他们的互动会是什么样的？</p>
+<p>单纯的八态组合无法回答这个问题，我们需要更复杂的分析框架。</p>
+<h3>双方叠加的基本原理<span class="hx:absolute hx:-mt-20" id="双方叠加的基本原理"></span>
+    <a href="#%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e7%9a%84%e5%9f%ba%e6%9c%ac%e5%8e%9f%e7%90%86" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>双方叠加 = 主体八态 + 客体八态</strong></p>
+<p>我们可以将两个三维结构叠加，形成六维分析空间：</p>
+<ul>
+<li><strong>主体结构</strong>：我方的三个维度状态</li>
+<li><strong>客体结构</strong>：对方的三个维度状态</li>
+</ul>
+<h3>六维结构的分析模式<span class="hx:absolute hx:-mt-20" id="六维结构的分析模式"></span>
+    <a href="#%e5%85%ad%e7%bb%b4%e7%bb%93%e6%9e%84%e7%9a%84%e5%88%86%e6%9e%90%e6%a8%a1%e5%bc%8f" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>以全正态(+++)作为主体、观望态(-+-)作为客体的叠加为例：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>客体（对方）观望态：- &#43; -
+第6维（客体态度）：-
+第5维（客体能力）：&#43;  
+第4维（客体行动）：-
+
+主体（我方）全正态：&#43; &#43; &#43;
+第3维（主体态度）：&#43;
+第2维（主体能力）：&#43;
+第1维（主体行动）：&#43;</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<p><strong>结构解读</strong>：</p>
+<ul>
+<li>主体（我）：想干、能干、真心想干</li>
+<li>客体（对方）：不怎么行动、但有资源、态度犹豫</li>
+</ul>
+<p><strong>互动预判</strong>：</p>
+<ul>
+<li>主体动力十足，但客体在观望</li>
+<li>可能的发展：主体需要证明价值，打消客体疑虑</li>
+<li>或者：客体等待更好时机，主体需要耐心</li>
+</ul>
+<h3>双方叠加分析的实际应用<span class="hx:absolute hx:-mt-20" id="双方叠加分析的实际应用"></span>
+    <a href="#%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e5%88%86%e6%9e%90%e7%9a%84%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>案例：商务合作谈判</strong></p>
+<p><strong>背景</strong>：你的公司（主）要与一家供应商（客）建立长期合作关系</p>
+<p><strong>你方状态分析</strong>：</p>
+<ul>
+<li>行动层：积极推进合作洽谈 (+)</li>
+<li>能力层：有足够的采购量和资金 (+)</li>
+<li>态度层：真心希望建立长期关系 (+) → 主体结构：全正态(+++)</li>
+</ul>
+<p><strong>对方状态分析</strong>：</p>
+<ul>
+<li>行动层：回应比较被动，不主动推进 (-)</li>
+<li>能力层：产品质量不错，有供应能力 (+)</li>
+<li>态度层：似乎在等待更好的条件 (-) → 客体结构：观望态(-+-)</li>
+</ul>
+<p><strong>双方叠加结构</strong>：全正态 + 观望态</p>
+<p><strong>结构分析</strong>： 这是一个&quot;主强客弱&quot;但&quot;客有资源优势&quot;的组合。对方虽然有能力，但缺乏主动性和明确态度，可能在观望或等待更好机会。</p>
+<p><strong>策略建议</strong>：</p>
+<ul>
+<li>不要急于推进，展示长期合作的诚意</li>
+<li>提供一些优惠条件，降低对方的风险感知</li>
+<li>强调你方的稳定性和可靠性</li>
+<li>给对方时间考虑，但设定合理的决策期限</li>
+</ul>
+<h3>双方叠加分析的优势<span class="hx:absolute hx:-mt-20" id="双方叠加分析的优势"></span>
+    <a href="#%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e5%88%86%e6%9e%90%e7%9a%84%e4%bc%98%e5%8a%bf" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>相比传统的博弈分析，双方叠加分析的优势在于：</p>
+<ol>
+<li><strong>结构完整性</strong>：同时考虑了行动、能力、态度三个层面</li>
+<li><strong>动态预测性</strong>：可以预判互动的可能发展方向</li>
+<li><strong>策略指导性</strong>：直接指向具体的应对策略</li>
+<li><strong>模式识别性</strong>：相同的叠加结构在不同场景中有相似的处理方式</li>
+</ol>
+<h2>什么是主客关系：确定分析的主观立场<span class="hx:absolute hx:-mt-20" id="什么是主客关系确定分析的主观立场"></span>
+    <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%a1%ae%e5%ae%9a%e5%88%86%e6%9e%90%e7%9a%84%e4%b8%bb%e8%a7%82%e7%ab%8b%e5%9c%ba" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>主客关系的核心定义<span class="hx:absolute hx:-mt-20" id="主客关系的核心定义"></span>
+    <a href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e6%a0%b8%e5%bf%83%e5%ae%9a%e4%b9%89" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在进行结构分析时，<strong>最关键的第一步是确定：我站在谁的角度进行分析？</strong></p>
+<p><strong>主客关系</strong>不是指谁主动谁被动，而是指<strong>分析者选择的主观立场</strong>：</p>
+<ul>
+<li><strong>主体（我方）</strong>：分析视角所站的立场</li>
+<li><strong>客体（他方）</strong>：被分析的对象或环境</li>
+</ul>
+<h3>主客关系的相对性<span class="hx:absolute hx:-mt-20" id="主客关系的相对性"></span>
+    <a href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e7%9b%b8%e5%af%b9%e6%80%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>重要特征</strong>：主客关系完全取决于分析者的选择，同一个互动可以从不同角度分析：</p>
+<p><strong>例子：求职面试</strong></p>
+<p><strong>从求职者角度分析</strong>：</p>
+<ul>
+<li>主体：我（求职者）</li>
+<li>客体：面试官/公司</li>
+</ul>
+<p><strong>从面试官角度分析</strong>：</p>
+<ul>
+<li>主体：我（面试官）</li>
+<li>客体：求职者</li>
+</ul>
+<p><strong>从公司角度分析</strong>：</p>
+<ul>
+<li>主体：我们公司</li>
+<li>客体：这个岗位的所有候选人</li>
+</ul>
+<p>每个角度都会产生不同的六维结构和分析结果。</p>
+<h3>如何确定主客关系<span class="hx:absolute hx:-mt-20" id="如何确定主客关系"></span>
+    <a href="#%e5%a6%82%e4%bd%95%e7%a1%ae%e5%ae%9a%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>原则1：利益相关性</strong></p>
+<ul>
+<li>选择与分析结果最相关的一方作为主体</li>
+<li>通常是需要做决策或承担后果的一方</li>
+</ul>
+<p><strong>原则2：信息充分性</strong></p>
+<ul>
+<li>选择你最了解的一方作为主体</li>
+<li>避免分析你缺乏信息的一方</li>
+</ul>
+<p><strong>原则3：行动指导性</strong></p>
+<ul>
+<li>选择能够基于分析结果采取行动的一方作为主体</li>
+<li>分析的目的是指导实践，不是纯粹的观察</li>
+</ul>
+<h3>主客关系的实际确定<span class="hx:absolute hx:-mt-20" id="主客关系的实际确定"></span>
+    <a href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%9a%84%e5%ae%9e%e9%99%85%e7%a1%ae%e5%ae%9a" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>场景：商业谈判</strong></p>
+<p><strong>情况1：你是买方</strong></p>
+<ul>
+<li>主体：我方采购团队</li>
+<li>客体：供应商</li>
+<li>分析重点：供应商的真实意图和底线</li>
+</ul>
+<p><strong>情况2：你是卖方</strong></p>
+<ul>
+<li>主体：我方销售团队</li>
+<li>客体：客户</li>
+<li>分析重点：客户的决策流程和关键需求</li>
+</ul>
+<p><strong>情况3：你是第三方顾问</strong></p>
+<ul>
+<li>需要选择：站在买方角度还是卖方角度？</li>
+<li>或者：分别从两个角度进行分析，提供双重视角</li>
+</ul>
+<h3>主客关系对分析的影响<span class="hx:absolute hx:-mt-20" id="主客关系对分析的影响"></span>
+    <a href="#%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e5%af%b9%e5%88%86%e6%9e%90%e7%9a%84%e5%bd%b1%e5%93%8d" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>主客关系决定了</strong>：</p>
+<ol>
+<li><strong>观察焦点</strong>：关注对方的哪些方面</li>
+<li><strong>判断标准</strong>：什么是对我方有利的结果</li>
+<li><strong>策略方向</strong>：应该采取什么样的应对策略</li>
+<li><strong>风险识别</strong>：什么样的变化对我方不利</li>
+</ol>
+<p><strong>案例：员工离职分析</strong></p>
+<p><strong>从公司角度</strong>（主体=公司，客体=离职员工）：</p>
+<ul>
+<li>关注：员工离职的真实原因，如何挽留</li>
+<li>策略：改善工作条件，提供发展机会</li>
+</ul>
+<p><strong>从员工角度</strong>（主体=员工，客体=公司）：</p>
+<ul>
+<li>关注：公司是否会挽留，如何谈判更好条件</li>
+<li>策略：明确表达需求，给公司改进的机会</li>
+</ul>
+<p><strong>从团队角度</strong>（主体=团队，客体=离职员工+公司）：</p>
+<ul>
+<li>关注：如何最小化对团队的影响</li>
+<li>策略：做好交接准备，争取合理的过渡期</li>
+</ul>
+<h2>结构压缩：复杂结构的代数化处理<span class="hx:absolute hx:-mt-20" id="结构压缩复杂结构的代数化处理"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e5%a4%8d%e6%9d%82%e7%bb%93%e6%9e%84%e7%9a%84%e4%bb%a3%e6%95%b0%e5%8c%96%e5%a4%84%e7%90%86" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>什么是结构压缩<span class="hx:absolute hx:-mt-20" id="什么是结构压缩"></span>
+    <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在实际分析中，我们经常遇到这样的情况：某个复杂的结构过程需要被简化，以便在更高层次的结构中进行运算。这就是<strong>结构压缩</strong>。</p>
+<p><strong>结构压缩的本质就是代数</strong>：把某个结构看作一个整体，代入另一个结构的某一维度。</p>
+<h3>结构压缩的典型例子<span class="hx:absolute hx:-mt-20" id="结构压缩的典型例子"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e5%85%b8%e5%9e%8b%e4%be%8b%e5%ad%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>背景</strong>：我能力不足，去应聘一家跨国公司。结果因为我爸爸是这家公司的董事长，HR让我入职了。</p>
+<p><strong>多重结构分析</strong>：</p>
+<p><strong>结构1：我与HR的直接关系</strong></p>
+<ul>
+<li>主体：我（想要获得这个职位）</li>
+<li>客体：HR（按标准评估候选人）</li>
+<li>我的状态：能力不足，正常情况下会被拒绝</li>
+</ul>
+<p><strong>结构2：HR与董事长的权力关系</strong></p>
+<ul>
+<li>主体：HR（需要做录用决策）</li>
+<li>客体：董事长（公司最高权力层）</li>
+<li>HR的考量：不能得罪董事长 vs 维护录用标准</li>
+</ul>
+<p><strong>结构跳转过程</strong>：</p>
+<ul>
+<li><strong>原始结构</strong>：我-HR（基于能力评估的博弈）</li>
+<li><strong>跳转结构</strong>：HR-董事长（基于权力关系的考量）</li>
+<li><strong>最终结果</strong>：我被录用（但不是原始结构的直接结果）</li>
+</ul>
+<p><strong>结构压缩过程</strong>：</p>
+<p>当我向朋友讲述时：</p>
+<ul>
+<li><strong>原始复杂过程</strong>：多个主客关系结构的跳转和博弈</li>
+<li><strong>压缩叙事</strong>：&ldquo;我刚应聘了某某跨国公司&rdquo;</li>
+<li><strong>朋友的理解</strong>：他通过正常的&quot;我-公司&quot;能力博弈获得了职位</li>
+</ul>
+<p><strong>代数操作</strong>：多个结构的复杂跳转过程被压缩成了一个简单的&quot;成功应聘&quot;信息，代入到我和朋友的对话结构中，完全掩盖了真实的权力博弈机制。</p>
+<h3>结构压缩的机制<span class="hx:absolute hx:-mt-20" id="结构压缩的机制"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e6%9c%ba%e5%88%b6" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>压缩过程包含三个步骤</strong>：</p>
+<ol>
+<li><strong>维度选择</strong>：从复杂结构中选择最相关的信息</li>
+<li><strong>叙事控制</strong>：决定如何表达这个信息</li>
+<li><strong>符号代入</strong>：将压缩结果作为新结构中的一个元素</li>
+</ol>
+<p><strong>例子中的压缩</strong>：</p>
+<ol>
+<li><strong>维度选择</strong>：选择&quot;结果&quot;（成功入职），忽略&quot;过程&quot;（权力关系）</li>
+<li><strong>叙事控制</strong>：用&quot;应聘成功&quot;的表达方式</li>
+<li><strong>符号代入</strong>：这个&quot;成功&quot;成为我在朋友心中地位评估的一个正面因素</li>
+</ol>
+<h3>结构压缩的功能<span class="hx:absolute hx:-mt-20" id="结构压缩的功能"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e5%8a%9f%e8%83%bd" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>功能1：认知简化</strong></p>
+<ul>
+<li>将复杂的因果链条简化为可处理的信息单元</li>
+<li>避免信息过载，提高处理效率</li>
+</ul>
+<p><strong>功能2：叙事控制</strong></p>
+<ul>
+<li>通过选择性压缩，控制他人的理解和判断</li>
+<li>突出对自己有利的信息，淡化不利因素</li>
+</ul>
+<p><strong>功能3：模式复用</strong></p>
+<ul>
+<li>将复杂的个案压缩为标准模式</li>
+<li>便于在类似情况中快速应用</li>
+</ul>
+<h3>四象也可以被压缩<span class="hx:absolute hx:-mt-20" id="四象也可以被压缩"></span>
+    <a href="#%e5%9b%9b%e8%b1%a1%e4%b9%9f%e5%8f%af%e4%bb%a5%e8%a2%ab%e5%8e%8b%e7%bc%a9" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>例子：项目汇报</strong></p>
+<p><strong>完整的四象结构</strong>：</p>
+<ul>
+<li>想要项目成功 (+)</li>
+<li>实际进展缓慢 (-) → 处于 +- 象限（期待但受阻）</li>
+</ul>
+<p><strong>向上级汇报时的压缩</strong>：</p>
+<ul>
+<li>&ldquo;项目正在稳步推进中&rdquo;</li>
+<li>将复杂的 +- 状态压缩为简单的 + 信息</li>
+</ul>
+<p><strong>压缩的合理性</strong>：</p>
+<ul>
+<li>避免不必要的担忧和干预</li>
+<li>给自己更多时间解决问题</li>
+<li>保持上级对团队的信心</li>
+</ul>
+<h3>结构压缩的识别<span class="hx:absolute hx:-mt-20" id="结构压缩的识别"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e8%af%86%e5%88%ab" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>如何识别结构压缩</strong>：</p>
+<ol>
+<li><strong>信息丢失</strong>：原始情况比表达出来的更复杂</li>
+<li><strong>维度跳跃</strong>：从多维问题变成单维结论</li>
+<li><strong>时间省略</strong>：复杂的过程被简化为简单的结果</li>
+<li><strong>因果简化</strong>：多重原因被归结为单一原因</li>
+</ol>
+<p><strong>例子</strong>：</p>
+<ul>
+<li>&ldquo;他很有能力&rdquo;（可能压缩了：能力+机遇+支持+运气）</li>
+<li>&ldquo;这个项目很成功&rdquo;（可能压缩了：目标调整+团队努力+外部支持+市场变化）</li>
+</ul>
+<h3>结构压缩的应用策略<span class="hx:absolute hx:-mt-20" id="结构压缩的应用策略"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e7%9a%84%e5%ba%94%e7%94%a8%e7%ad%96%e7%95%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>策略1：主动压缩</strong></p>
+<ul>
+<li>在对自己有利的情况下，主动进行结构压缩</li>
+<li>突出积极因素，简化复杂过程</li>
+</ul>
+<p><strong>策略2：识别他人的压缩</strong></p>
+<ul>
+<li>当别人的表述过于简单时，询问更多细节</li>
+<li>还原被压缩的复杂结构</li>
+</ul>
+<p><strong>策略3：适度解压缩</strong></p>
+<ul>
+<li>在需要深入理解时，将压缩的结构展开</li>
+<li>分析被省略的关键环节</li>
+</ul>
+<h2>案例：完整的主客关系结构分析<span class="hx:absolute hx:-mt-20" id="案例完整的主客关系结构分析"></span>
+    <a href="#%e6%a1%88%e4%be%8b%e5%ae%8c%e6%95%b4%e7%9a%84%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>让我们通过一个完整案例，展示如何运用本章的所有概念进行实战分析。</p>
+<h3>背景设定<span class="hx:absolute hx:-mt-20" id="背景设定"></span>
+    <a href="#%e8%83%8c%e6%99%af%e8%ae%be%e5%ae%9a" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>场景</strong>：张总是一家传统制造企业的CEO，正在考虑与一家AI技术公司（智能科技）合作，进行数字化转型。双方已经进行了几轮谈判，现在到了关键的决策阶段。</p>
+<h3>第一步：确定主客关系<span class="hx:absolute hx:-mt-20" id="第一步确定主客关系"></span>
+    <a href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e7%a1%ae%e5%ae%9a%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>我们选择<strong>张总的角度</strong>作为分析视角：</p>
+<ul>
+<li><strong>主体</strong>：张总/制造企业</li>
+<li><strong>客体</strong>：智能科技公司</li>
+</ul>
+<h3>第二步：主体（张总）的八态分析<span class="hx:absolute hx:-mt-20" id="第二步主体张总的八态分析"></span>
+    <a href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e4%b8%bb%e4%bd%93%e5%bc%a0%e6%80%bb%e7%9a%84%e5%85%ab%e6%80%81%e5%88%86%e6%9e%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>第一维度（行动层）</strong>：+</p>
+<ul>
+<li>张总积极推进谈判，多次主动联系</li>
+<li>已经组织内部团队进行了初步规划</li>
+</ul>
+<p><strong>第二维度（资源层）</strong>：+</p>
+<ul>
+<li>公司有足够的资金投入</li>
+<li>有专门的项目团队配置</li>
+</ul>
+<p><strong>第三维度（态度层）</strong>：-</p>
+<ul>
+<li>对技术不够了解，内心有不确定感</li>
+<li>担心投入巨大但效果不明确</li>
+<li>对失去传统业务优势有顾虑</li>
+</ul>
+<p><strong>主体结构</strong>：++- （表里不一态）</p>
+<ul>
+<li>有行动、有资源，但态度层存在疑虑</li>
+</ul>
+<h3>第三步：客体（智能科技）的八态分析<span class="hx:absolute hx:-mt-20" id="第三步客体智能科技的八态分析"></span>
+    <a href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%ae%a2%e4%bd%93%e6%99%ba%e8%83%bd%e7%a7%91%e6%8a%80%e7%9a%84%e5%85%ab%e6%80%81%e5%88%86%e6%9e%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>第一维度（行动层）</strong>：-</p>
+<ul>
+<li>回应相对被动，不主动催促决策</li>
+<li>技术展示充分，但商务推进不积极</li>
+</ul>
+<p><strong>第二维度（资源层）</strong>：+</p>
+<ul>
+<li>技术实力强，有成功案例</li>
+<li>团队专业，解决方案成熟</li>
+</ul>
+<p><strong>第三维度（态度层）</strong>：+</p>
+<ul>
+<li>对合作前景有信心</li>
+<li>认为自己的方案有明显优势</li>
+<li>不急于成交，有其他项目选择</li>
+</ul>
+<p><strong>客体结构</strong>：-++ （潜力态）</p>
+<ul>
+<li>不主动行动，但有实力且态度积极</li>
+</ul>
+<h3>第四步：双方叠加结构分析<span class="hx:absolute hx:-mt-20" id="第四步双方叠加结构分析"></span>
+    <a href="#%e7%ac%ac%e5%9b%9b%e6%ad%a5%e5%8f%8c%e6%96%b9%e5%8f%a0%e5%8a%a0%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>叠加组成</strong>：</p>
+<ul>
+<li>客体：潜力态 (-++)</li>
+<li>主体：表里不一态 (++-)</li>
+</ul>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>客体潜力态：- &#43; &#43;
+第6维：&#43; （客体态度积极）
+第5维：&#43; （客体有技术实力）
+第4维：- （客体不主动推进）
+
+主体表里不一态：&#43; &#43; -
+第3维：- （主体态度有疑虑）
+第2维：&#43; （主体有资源）
+第1维：&#43; （主体积极行动）</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>第五步：结构互动分析<span class="hx:absolute hx:-mt-20" id="第五步结构互动分析"></span>
+    <a href="#%e7%ac%ac%e4%ba%94%e6%ad%a5%e7%bb%93%e6%9e%84%e4%ba%92%e5%8a%a8%e5%88%86%e6%9e%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>结构特征</strong>：</p>
+<ul>
+<li>主体：想做、能做，但心里没底</li>
+<li>客体：能做、愿做，但不着急</li>
+</ul>
+<p><strong>互动模式</strong>：</p>
+<ul>
+<li>主体在&quot;追求&quot;，客体在&quot;等待&quot;</li>
+<li>双方都有实力，但动机不对称</li>
+<li>存在信息不对称（技术理解差距）</li>
+</ul>
+<p><strong>结构张力</strong>：</p>
+<ul>
+<li>主体的态度疑虑 vs 客体的淡定自信</li>
+<li>主体的时间压力 vs 客体的从容选择</li>
+<li>这种张力可能导致主体妥协或寻找其他选择</li>
+</ul>
+<h3>第六步：结构压缩识别<span class="hx:absolute hx:-mt-20" id="第六步结构压缩识别"></span>
+    <a href="#%e7%ac%ac%e5%85%ad%e6%ad%a5%e7%bb%93%e6%9e%84%e5%8e%8b%e7%bc%a9%e8%af%86%e5%88%ab" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在这个案例中，可能出现的结构压缩：</p>
+<p><strong>智能科技的压缩</strong>：</p>
+<ul>
+<li>将复杂的技术实施过程压缩为&quot;成熟的解决方案&quot;</li>
+<li>将潜在的风险和挑战压缩为&quot;正常的项目管理问题&quot;</li>
+</ul>
+<p><strong>张总的压缩</strong>：</p>
+<ul>
+<li>将内心的复杂顾虑压缩为&quot;需要更多时间考虑&quot;</li>
+<li>将公司内部的不同意见压缩为&quot;决策程序问题&quot;</li>
+</ul>
+<h3>第七步：策略制定<span class="hx:absolute hx:-mt-20" id="第七步策略制定"></span>
+    <a href="#%e7%ac%ac%e4%b8%83%e6%ad%a5%e7%ad%96%e7%95%a5%e5%88%b6%e5%ae%9a" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>基于结构分析，张总的策略应该是：</p>
+<p><strong>短期策略</strong>：</p>
+<ol>
+<li>
+<p><strong>减少态度层疑虑</strong>（解决++- 中的-）</p>
+<ul>
+<li>要求智能科技提供更详细的风险分析</li>
+<li>安排技术团队深度对接，增进理解</li>
+<li>要求分阶段实施，降低一次性风险</li>
+</ul>
+</li>
+<li>
+<p><strong>利用对方的淡定</strong>（利用对方的-++特征）</p>
+<ul>
+<li>不要表现出过于急迫的态度</li>
+<li>提出一些合理的要求和条件</li>
+<li>争取更有利的合作条件</li>
+</ul>
+</li>
+</ol>
+<p><strong>中期策略</strong>：</p>
+<ol>
+<li>
+<p><strong>结构重平衡</strong></p>
+<ul>
+<li>通过学习和了解，将自己的态度层从-转为+</li>
+<li>建立内部技术理解能力，减少信息不对称</li>
+</ul>
+</li>
+<li>
+<p><strong>关系稳定化</strong></p>
+<ul>
+<li>建立长期合作框架，而非单一项目合作</li>
+<li>培养双方团队的深度协作关系</li>
+</ul>
+</li>
+</ol>
+<h3>第八步：预期结果和监控<span class="hx:absolute hx:-mt-20" id="第八步预期结果和监控"></span>
+    <a href="#%e7%ac%ac%e5%85%ab%e6%ad%a5%e9%a2%84%e6%9c%9f%e7%bb%93%e6%9e%9c%e5%92%8c%e7%9b%91%e6%8e%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>成功标志</strong>：</p>
+<ul>
+<li>主体态度层从-转为+（真正理解并认同技术价值）</li>
+<li>客体行动层从-转为+（更积极地推进合作）</li>
+<li>双方形成稳定的合作结构</li>
+</ul>
+<p><strong>风险预警</strong>：</p>
+<ul>
+<li>如果主体疑虑加深（-更强），可能导致合作失败</li>
+<li>如果客体失去兴趣（态度层从+转-），可能转向其他客户</li>
+<li>外部竞争者的介入可能改变整个结构</li>
+</ul>
+<h2>小结：主客关系分析的核心价值<span class="hx:absolute hx:-mt-20" id="小结主客关系分析的核心价值"></span>
+    <a href="#%e5%b0%8f%e7%bb%93%e4%b8%bb%e5%ae%a2%e5%85%b3%e7%b3%bb%e5%88%86%e6%9e%90%e7%9a%84%e6%a0%b8%e5%bf%83%e4%bb%b7%e5%80%bc" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>通过本章的学习，我们掌握了处理复杂互动关系的完整方法：</p>
+<h3>四个核心概念<span class="hx:absolute hx:-mt-20" id="四个核心概念"></span>
+    <a href="#%e5%9b%9b%e4%b8%aa%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li><strong>从四象到八态</strong>：通过第三维度的激活，获得完整的结构描述能力</li>
+<li><strong>双方结构叠加</strong>：将单方分析扩展为双方互动分析</li>
+<li><strong>主客关系</strong>：明确分析的主观立场，确保分析的针对性</li>
+<li><strong>结构压缩</strong>：理解复杂结构如何被简化和代数化处理</li>
+</ol>
+<h3>三个分析层次<span class="hx:absolute hx:-mt-20" id="三个分析层次"></span>
+    <a href="#%e4%b8%89%e4%b8%aa%e5%88%86%e6%9e%90%e5%b1%82%e6%ac%a1" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li><strong>单体分析</strong>：用八态描述单个主体的完整状态</li>
+<li><strong>互动分析</strong>：用双方叠加描述双方的交互结构</li>
+<li><strong>压缩分析</strong>：识别和运用结构压缩机制</li>
+</ol>
+<h3>两个实践要点<span class="hx:absolute hx:-mt-20" id="两个实践要点"></span>
+    <a href="#%e4%b8%a4%e4%b8%aa%e5%ae%9e%e8%b7%b5%e8%a6%81%e7%82%b9" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li><strong>视角清晰</strong>：始终明确你站在哪一方的角度进行分析</li>
+<li><strong>结构完整</strong>：确保分析包含了行动、能力、态度三个基本维度</li>
+</ol>
+<p><strong>核心洞察</strong>：复杂的人际互动并不是不可预测的。通过结构化的分析框架，我们可以将看似混乱的关系分解为清晰的结构要素，从而制定更加精准有效的策略。</p>
+<p><strong>重要提醒</strong>：这套分析方法的价值不在于得出&quot;标准答案&quot;，而在于<strong>提供一个清晰的思维框架，帮助你在复杂关系中保持清醒的判断力</strong>。</p>
+<p>接下来，我们将进入第5章，学习主观建模的核心方法，这将帮助我们将结构分析转化为实际的操作指南。</p>
+
+        </div>
+        <div class="hx:mt-16"></div>
+        <div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="http://localhost:1313/zh-cn/docs/chapter-3-chaos-to-structure/"
+        title="第3章 · 混沌到结构的认知过程"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>第3章 · 混沌到结构的认知过程</a><a
+        href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+        title="第5章 · 64种基本结构模式"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >第5章 · 64种基本结构模式<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 MainStruct · All Rights Reserved.</div></div>
+    </div></footer>
+    
+    <script defer src="http://localhost:1313/js/main.js" integrity=""></script>
+<script defer src="http://localhost:1313/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
+        <script defer src="http://localhost:1313/zh-cn.search.js" integrity=""></script>
+  </body>
+</html>
