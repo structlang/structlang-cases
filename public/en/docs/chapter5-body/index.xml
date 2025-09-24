@@ -1,0 +1,70 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MainStruct – Chapter 5 · Body Structure</title>
+    <link>//localhost:1313/en/docs/chapter5-body/</link>
+    <description>Recent content in Chapter 5 · Body Structure on MainStruct</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="//localhost:1313/en/docs/chapter5-body/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Definition</title>
+      <link>//localhost:1313/en/docs/chapter5-body/definition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter5-body/definition/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>3D Combination Rules</title>
+      <link>//localhost:1313/en/docs/chapter5-body/3d-rules/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter5-body/3d-rules/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Diversity</title>
+      <link>//localhost:1313/en/docs/chapter5-body/diversity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter5-body/diversity/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Dynamic Systems</title>
+      <link>//localhost:1313/en/docs/chapter5-body/dynamic-systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter5-body/dynamic-systems/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

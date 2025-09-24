@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="http://localhost:1313/favicon.ico" sizes="32x32" />
+<link rel="icon" href="http://localhost:1313/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="http://localhost:1313/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="http://localhost:1313/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="http://localhost:1313/site.webmanifest" rel="manifest" />
+<title>第5章：64种基本结构模式 | MainStruct 结构语言 – StructLang</title>
+  <meta name="description" content="复杂的人际互动可以分解为64种基本模式。本章推导64种模式的数学必然性，并通过案例展示如何利用结构相似性提炼通用策略。" /><link rel="canonical" href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/" itemprop="url" />
+
+<meta property="og:title" content="第5章：64种基本结构模式 | MainStruct 结构语言" />
+<meta property="og:description" content="复杂的人际互动可以分解为64种基本模式。本章推导64种模式的数学必然性，并通过案例展示如何利用结构相似性提炼通用策略。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2025-08-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-08-24T00:00:00+00:00" />
+
+  <meta itemprop="name" content="第5章：64种基本结构模式 | MainStruct 结构语言">
+  <meta itemprop="description" content="复杂的人际互动可以分解为64种基本模式。本章推导64种模式的数学必然性，并通过案例展示如何利用结构相似性提炼通用策略。">
+  <meta itemprop="datePublished" content="2025-08-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-08-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="369">
+  <meta itemprop="keywords" content="64种模式,结构语言,八态组合,人际关系分析,认知结构">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="第5章：64种基本结构模式 | MainStruct 结构语言">
+  <meta name="twitter:description" content="复杂的人际互动可以分解为64种基本模式。本章推导64种模式的数学必然性，并通过案例展示如何利用结构相似性提炼通用策略。">
+<link href="http://localhost:1313/css/compiled/main.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/variables.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/custom.css" rel="stylesheet" />
+
+  
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  
+  <script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const anchor = document.querySelector('.hextra-search-wrapper') ||
+                 document.querySelector('.hextra-nav-container');
+  if (!anchor) return;
+
+   
+  function readAlternates() {
+    const m = new Map();
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l=>{
+      const lang=(l.getAttribute('hreflang')||'').toLowerCase();
+      const href=l.getAttribute('href'); if(lang && href) m.set(lang, href);
+    });
+    return m;
+  }
+  function currentLang() {
+    const htmlLang=(document.documentElement.lang||'').toLowerCase();
+    if (htmlLang) return htmlLang;
+    const p=location.pathname.toLowerCase();
+    if (p.startsWith('/zh-cn/')) return 'zh-cn';
+    if (p.startsWith('/en/'))    return 'en';
+    return 'en';
+  }
+  function switchURL(target) {
+    const alts = readAlternates();
+    if (alts.size && alts.get(target)) return alts.get(target);
+    const u = new URL(location.href), p=u.pathname;
+    if (target==='zh-cn') {
+      if (p.startsWith('/en/')) u.pathname=p.replace(/^\/en\//,'/zh-cn/');
+      else if (!p.startsWith('/zh-cn/')) u.pathname='/zh-cn'+(p.startsWith('/')?p:'/'+p);
+    } else {
+      if (p.startsWith('/zh-cn/')) u.pathname=p.replace(/^\/zh-cn\//,'/en/');
+      else if (!p.startsWith('/en/'))    u.pathname='/en'+(p.startsWith('/')?p:'/'+p);
+    }
+    return u.toString();
+  }
+
+  const labels={ 'en':'English', 'zh-cn':'简体中文' };
+  const langs=['en','zh-cn'];
+  const cur=currentLang();
+
+  const langSelect=document.createElement('select');
+  langSelect.className='hx-navbar-lang';
+  langs.forEach(code=>{
+    const opt=document.createElement('option');
+    opt.value=switchURL(code);
+    opt.textContent=labels[code]||code;
+    if(code===cur) opt.selected=true;
+    langSelect.appendChild(opt);
+  });
+  langSelect.addEventListener('change', e => { const url=e.target.value; if(url) location.href=url; });
+  anchor.insertAdjacentElement('afterend', langSelect);
+
+   
+  const origTheme = document.querySelector('.hextra-theme-toggle'); 
+  const topTheme  = document.createElement('button');
+  topTheme.type   = 'button';
+  topTheme.className = 'hextra-theme-toggle in-navbar hx-top-theme';
+  langSelect.insertAdjacentElement('afterend', topTheme);
+
+  function isDark(){
+    
+    return document.documentElement.classList.contains('dark') ||
+           (document.documentElement.getAttribute('data-theme')||'').toLowerCase()==='dark';
+  }
+  function renderThemeIcon(){
+    if (isDark()){
+      topTheme.setAttribute('aria-label','Light');
+      topTheme.title='Light';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 4V2M12 22v-2M4.93 4.93 3.51 3.51M20.49 20.49l-1.42-1.42M4 12H2M22 12h-2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    } else {
+      topTheme.setAttribute('aria-label','Dark');
+      topTheme.title='Dark';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    }
+  }
+  function toggleTheme(){
+    if (origTheme) {
+      
+      origTheme.click();
+    } else {
+      
+      document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('theme', isDark() ? 'dark' : 'light'); } catch(e){}
+    }
+    
+    requestAnimationFrame(()=>setTimeout(renderThemeIcon,0));
+  }
+topTheme.addEventListener('click', toggleTheme);
+
+  
+  renderThemeIcon();
+  const obs = new MutationObserver(renderThemeIcon);
+  obs.observe(document.documentElement, {attributes:true, attributeFilter:['class','data-theme']});
+  if (origTheme) obs.observe(origTheme, {attributes:true, childList:true, subtree:true});
+  window.addEventListener('storage', (e)=>{ if ((e.key||'').toLowerCase().includes('theme')) renderThemeIcon(); });
+
+   
+  const style=document.createElement('style');
+  style.textContent=`
+    @media (min-width:1024px){
+      select.hx-navbar-lang{
+        width:auto; max-width:14rem; height:2rem;
+        padding:0 .55rem; border-radius:9999px;
+        border:1px solid var(--hx-border, rgba(0,0,0,.14));
+        background:transparent; color:var(--hx-fg, inherit);
+        font-size:.9rem; line-height:2rem; cursor:pointer; margin-left:.5rem;
+        color-scheme: light dark;
+      }
+      html.dark select.hx-navbar-lang{
+        color: rgba(255,255,255,.92);
+        border-color: rgba(255,255,255,.22);
+        background-color: rgba(255,255,255,.06);
+      }
+      html.dark select.hx-navbar-lang option{ color:#111; background:#fff; }
+
+      .hextra-theme-toggle.in-navbar{ margin-left:.5rem; background:transparent; border:0; padding:0 .25rem; }
+      .hextra-theme-toggle.in-navbar svg{ display:block; }
+
+      /* 新增：桌面端隐藏原位置的日/夜切换按钮（保留顶部的） */
+      .hextra-theme-toggle:not(.in-navbar){ display: none !important; }
+
+      /* 桌面端也隐藏原位置的语言切换器，避免重复 */
+      .hextra-language-switcher{ display:none !important; }
+    }
+    @media (max-width:1023.98px){
+      /* 移动端：顶部语言下拉不显示；底部的日/夜按钮继续保留 */
+      select.hx-navbar-lang{ display:none !important; }
+    }
+  `;
+  document.head.appendChild(style);
+
+});
+</script>
+</head>
+<body dir="ltr"><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="http://localhost:1313/zh-cn/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="StructLang">StructLang</span>
+</a>
+
+            <a
+              title="首页"
+              href="http://localhost:1313/zh-cn/"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">首页</span>
+            </a>
+            <a
+              title="文档"
+              href="http://localhost:1313/zh-cn/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">文档</span>
+            </a>
+            <a
+              title="博客"
+              href="http://localhost:1313/zh-cn/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">博客</span>
+            </a>
+            <a
+              title="关于"
+              href="http://localhost:1313/zh-cn/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">关于</span>
+            </a><div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx:sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
+    <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:sticky">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/"
+    
+  >文档
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入 MainStruct 社群
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/introduction/"
+    
+  >导论 · 分析方法的缺陷
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-traditional-analysis-limitations/"
+    
+  >第1章 · 传统分析方法的缺陷
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-human-thinking-structure/"
+    
+  >第2章 · 人类思维的结构本质
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-chaos-to-structure/"
+    
+  >第3章 · 混沌到结构的认知过程
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+    
+  >第4章 · 主客关系分析框架
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+    
+  >第5章 · 64种基本结构模式
+    </a>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#%e7%bb%93%e6%9e%84%e7%bb%84%e5%90%88%e7%9a%84%e6%95%b0%e5%ad%a6%e5%bf%85%e7%84%b6%e6%80%a7"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >结构组合的数学必然性</a>
+            </li>
+          <li>
+              <a
+                href="#%e4%b8%bb%e5%ae%a2%e5%8f%8c%e6%96%b9%e5%90%848%e7%a7%8d%e7%8a%b6%e6%80%81%e7%9a%84%e5%ae%8c%e6%95%b4%e6%9e%9a%e4%b8%be"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >主客双方各8种状态的完整枚举</a>
+            </li>
+          <li>
+              <a
+                href="#%e7%bb%93%e6%9e%84%e7%9b%b8%e4%bc%bc%e6%80%a7%e7%9a%84%e8%af%86%e5%88%ab%e5%8e%9f%e7%90%86"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >结构相似性的识别原理</a>
+            </li>
+          <li>
+              <a
+                href="#%e6%9c%89%e9%99%90%e5%8f%af%e4%bb%a5%e7%ae%97%e6%97%a0%e7%a9%b7"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >有限可以算无穷</a>
+            </li>
+          <li>
+              <a
+                href="#%e6%a1%88%e4%be%8b%e5%8e%86%e5%8f%b2%e4%ba%8b%e4%bb%b6%e7%9a%84%e7%bb%93%e6%9e%84%e5%88%86%e7%b1%bb"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >案例：历史事件的结构分类</a>
+            </li>
+          <li>
+              <a
+                href="#%e5%b0%8f%e7%bb%9364%e7%a7%8d%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%b3%bb%e7%bb%9f%e4%bb%b7%e5%80%bc"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >小结：64种模式的系统价值</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-structural-change-mechanisms/"
+    
+  >第6章 · 规律和触发机制
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-future-of-structlang/"
+    
+  >第7章 · 结构语言的未来
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/"
+    
+  >博客
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/hextra-v0.10/"
+    
+  >Hextra v0.10
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"
+    
+  >Markdown 语法指南
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/about/"
+    
+  >关于
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/showcase/"
+    
+  >项目展示
+    </a></li>
+    </ul>
+
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
+        
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入 MainStruct 社群
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/introduction/"
+    
+  >导论 · 分析方法的缺陷
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-traditional-analysis-limitations/"
+    
+  >第1章 · 传统分析方法的缺陷
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-human-thinking-structure/"
+    
+  >第2章 · 人类思维的结构本质
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-chaos-to-structure/"
+    
+  >第3章 · 混沌到结构的认知过程
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+    
+  >第4章 · 主客关系分析框架
+    </a></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+    
+  >第5章 · 64种基本结构模式
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-structural-change-mechanisms/"
+    
+  >第6章 · 规律和触发机制
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-future-of-structlang/"
+    
+  >第7章 · 结构语言的未来
+    </a></li>
+        
+      </ul>
+    </div>
+  
+  
+    <div class=" hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="切换语言"
+      data-state="closed"
+      class="hextra-language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>简体中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/en/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/zh-cn/docs/chapter-5-64-basic-structures/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >简体中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">此页上</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e7%bb%84%e5%90%88%e7%9a%84%e6%95%b0%e5%ad%a6%e5%bf%85%e7%84%b6%e6%80%a7">结构组合的数学必然性
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%98%af64%e7%a7%8d%e8%80%8c%e4%b8%8d%e6%98%af%e5%85%b6%e4%bb%96%e6%95%b0%e5%ad%97">为什么是64种而不是其他数字
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#64%e7%a7%8d%e6%a8%a1%e5%bc%8f%e7%9a%84%e6%8e%a8%e5%af%bc%e8%bf%87%e7%a8%8b">64种模式的推导过程
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%85%ab%e6%80%81%e6%98%af%e7%bb%93%e6%9e%84%e7%9a%84%e4%b8%8a%e9%99%90">为什么八态是结构的上限
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%bb%e5%ae%a2%e5%8f%8c%e6%96%b9%e5%90%848%e7%a7%8d%e7%8a%b6%e6%80%81%e7%9a%84%e5%ae%8c%e6%95%b4%e6%9e%9a%e4%b8%be">主客双方各8种状态的完整枚举
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#64%e7%a7%8d%e7%bb%84%e5%90%88%e7%9a%84%e9%80%bb%e8%be%91%e5%88%86%e5%b8%83">64种组合的逻辑分布
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%ae%9e%e9%99%85%e6%a1%88%e4%be%8b%e5%88%9b%e4%b8%9a%e8%80%85%e4%b8%8e%e6%8a%95%e8%b5%84%e4%ba%ba">实际案例：创业者与投资人
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e7%9b%b8%e4%bc%bc%e6%80%a7%e7%9a%84%e8%af%86%e5%88%ab%e5%8e%9f%e7%90%86">结构相似性的识别原理
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%93%e6%9e%84%e7%9b%b8%e4%bc%bc%e6%80%a7">什么是结构相似性
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e8%b7%a8%e9%a2%86%e5%9f%9f%e7%9a%84%e7%bb%93%e6%9e%84%e8%af%86%e5%88%ab">跨领域的结构识别
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e9%80%9a%e7%94%a8%e7%ad%96%e7%95%a5%e7%9a%84%e6%8f%90%e5%8f%96">通用策略的提取
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%9c%89%e9%99%90%e5%8f%af%e4%bb%a5%e7%ae%97%e6%97%a0%e7%a9%b7">有限可以算无穷
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%84%e5%90%88%e7%9a%84%e5%a8%81%e5%8a%9b">组合的威力
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e5%a4%8d%e6%9d%82%e9%a1%b9%e7%9b%ae%e7%9a%84%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90">实际应用：复杂项目的结构分析
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%97%a0%e7%a9%b7%e5%8f%98%e5%8c%96%e7%9a%84%e6%9c%ac%e8%b4%a8">无穷变化的本质
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%a1%88%e4%be%8b%e5%8e%86%e5%8f%b2%e4%ba%8b%e4%bb%b6%e7%9a%84%e7%bb%93%e6%9e%84%e5%88%86%e7%b1%bb">案例：历史事件的结构分类
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%95%86%e4%b8%9a%e5%8f%b2%e4%b8%ad%e7%9a%84%e7%bb%93%e6%9e%84%e9%87%8d%e7%8e%b0">商业史中的结构重现
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e6%94%bf%e6%b2%bb%e5%8f%b2%e4%b8%ad%e7%9a%84%e7%bb%93%e6%9e%84%e9%87%8d%e7%8e%b0">政治史中的结构重现
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e7%bb%93%e6%9e%84%e5%88%86%e7%b1%bb%e7%9a%84%e4%bb%b7%e5%80%bc">结构分类的价值
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e5%b0%8f%e7%bb%9364%e7%a7%8d%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%b3%bb%e7%bb%9f%e4%bb%b7%e5%80%bc">小结：64种模式的系统价值
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%89%e4%b8%aa%e6%a0%b8%e5%bf%83%e8%ae%a4%e7%9f%a5">三个核心认知
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%a4%e4%b8%aa%e5%88%86%e6%9e%90%e5%8e%9f%e7%90%86">两个分析原理
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%e4%b8%80%e4%b8%aa%e5%ae%9e%e8%b7%b5%e4%bb%b7%e5%80%bc">一个实践价值
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>返回顶部</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="http://localhost:1313/zh-cn/docs/">文档</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">第5章 · 64种基本结构模式</div>
+  </div>
+
+        <div class="content">
+          <h1>第5章：64种基本结构模式 | MainStruct 结构语言</h1>
+          <h1>第5章：64种基本结构模式</h1><p>在前四章，我们建立了结构语言的完整框架：从个人的主观建模到复杂的主客关系分析。现在我们要回答一个核心问题：<strong>如果结构语言是有限的，那么到底有多少种基本的结构模式？</strong></p>
+<p>这个问题的答案将揭示一个惊人的事实：看似无穷复杂的人类行为，实际上可以分解为<strong>有限的基本组合模式</strong>。</p>
+<h2>结构组合的数学必然性<span class="hx:absolute hx:-mt-20" id="结构组合的数学必然性"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e7%bb%84%e5%90%88%e7%9a%84%e6%95%b0%e5%ad%a6%e5%bf%85%e7%84%b6%e6%80%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>为什么是64种而不是其他数字<span class="hx:absolute hx:-mt-20" id="为什么是64种而不是其他数字"></span>
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%98%af64%e7%a7%8d%e8%80%8c%e4%b8%8d%e6%98%af%e5%85%b6%e4%bb%96%e6%95%b0%e5%ad%97" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>在我们的日常感受中，人际关系似乎有无穷无尽的变化。每个人都是独特的，每种情况都有其特殊性。但当我们用结构语言来分析时，会发现一个令人震撼的规律：</p>
+<p><strong>所有复杂的人际互动都可以归结为64种基本结构模式。</strong></p>
+<p>这个数字不是随意确定的，而是数学推导的必然结果：</p>
+<h3>64种模式的推导过程<span class="hx:absolute hx:-mt-20" id="64种模式的推导过程"></span>
+    <a href="#64%e7%a7%8d%e6%a8%a1%e5%bc%8f%e7%9a%84%e6%8e%a8%e5%af%bc%e8%bf%87%e7%a8%8b" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>第一步：个体的八种基本状态</strong></p>
+<p>在第5章中，我们已经确立了个体在特定情境中有8种基本状态：</p>
+<table>
+  <thead>
+      <tr>
+          <th>编码</th>
+          <th>行动层</th>
+          <th>能力层</th>
+          <th>态度层</th>
+          <th>状态名称</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>+++</td>
+          <td>有行动</td>
+          <td>有能力</td>
+          <td>态度积极</td>
+          <td>全正态</td>
+      </tr>
+      <tr>
+          <td>++-</td>
+          <td>有行动</td>
+          <td>有能力</td>
+          <td>态度消极</td>
+          <td>表里不一态</td>
+      </tr>
+      <tr>
+          <td>+-+</td>
+          <td>有行动</td>
+          <td>缺能力</td>
+          <td>态度积极</td>
+          <td>有心无力态</td>
+      </tr>
+      <tr>
+          <td>+&ndash;</td>
+          <td>有行动</td>
+          <td>缺能力</td>
+          <td>态度消极</td>
+          <td>盲动态</td>
+      </tr>
+      <tr>
+          <td>-++</td>
+          <td>无行动</td>
+          <td>有能力</td>
+          <td>态度积极</td>
+          <td>潜力态</td>
+      </tr>
+      <tr>
+          <td>-+-</td>
+          <td>无行动</td>
+          <td>有能力</td>
+          <td>态度消极</td>
+          <td>观望态</td>
+      </tr>
+      <tr>
+          <td>&ndash;+</td>
+          <td>无行动</td>
+          <td>缺能力</td>
+          <td>态度积极</td>
+          <td>蓄势态</td>
+      </tr>
+      <tr>
+          <td>&mdash;</td>
+          <td>无行动</td>
+          <td>缺能力</td>
+          <td>态度消极</td>
+          <td>全负态</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>第二步：双方叠加的必然结果</strong></p>
+<p>当两个个体发生互动时，就形成了<strong>双方叠加结构</strong>：</p>
+<p><strong>主体状态（8种）× 客体状态（8种）= 64种组合</strong></p>
+<p>这就是64种基本结构模式的数学来源。每一种组合都代表了一种独特的互动模式，具有其特定的动力学特征和发展趋势。</p>
+<h3>为什么八态是结构的上限<span class="hx:absolute hx:-mt-20" id="为什么八态是结构的上限"></span>
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%85%ab%e6%80%81%e6%98%af%e7%bb%93%e6%9e%84%e7%9a%84%e4%b8%8a%e9%99%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>你可能会问：为什么不继续扩展为16态、32态？这里有一个重要的结构原理：</p>
+<p><strong>八态已经形成了最小的&quot;全结构闭环&quot;</strong></p>
+<ul>
+<li><strong>三个维度</strong>：行动、能力、态度</li>
+<li><strong>功能完备</strong>：足以描述一个人在特定情境中的完整状态</li>
+<li><strong>认知边界</strong>：人类同时处理的结构变量上限约为3-4层</li>
+</ul>
+<p>如果强行增加第四个维度（比如情绪层），会导致：</p>
+<ol>
+<li><strong>语义混乱</strong>：想干、能干、愿意干，但焦虑？那到底是什么状态？</li>
+<li><strong>预测失效</strong>：情绪瞬变，不构成稳定的结构因子</li>
+<li><strong>认知过载</strong>：超出人类直觉理解的复杂度边界</li>
+</ol>
+<p><strong>关键洞察</strong>：八态不是上限，而是最优解。结构的发展不是&quot;纵向加位&quot;，而是&quot;横向叠加&quot;（主客关系、环境因素等）。</p>
+<h2>主客双方各8种状态的完整枚举<span class="hx:absolute hx:-mt-20" id="主客双方各8种状态的完整枚举"></span>
+    <a href="#%e4%b8%bb%e5%ae%a2%e5%8f%8c%e6%96%b9%e5%90%848%e7%a7%8d%e7%8a%b6%e6%80%81%e7%9a%84%e5%ae%8c%e6%95%b4%e6%9e%9a%e4%b8%be" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>64种组合的逻辑分布<span class="hx:absolute hx:-mt-20" id="64种组合的逻辑分布"></span>
+    <a href="#64%e7%a7%8d%e7%bb%84%e5%90%88%e7%9a%84%e9%80%bb%e8%be%91%e5%88%86%e5%b8%83" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>当我们把主客双方的8种状态进行组合时，64种模式并不是随机分布的，而是具有清晰的逻辑结构：</p>
+<p><strong>高和谐组合</strong>（16种）：</p>
+<ul>
+<li>全正态 × 全正态：双方都积极主动，完美配合</li>
+<li>潜力态 × 蓄势态：双方都有意愿但在等待时机</li>
+<li>观望态 × 观望态：双方都在谨慎评估，节奏一致</li>
+<li>&hellip;</li>
+</ul>
+<p><strong>高冲突组合</strong>（16种）：</p>
+<ul>
+<li>全正态 × 全负态：一方积极进取，一方消极回避</li>
+<li>表里不一态 × 有心无力态：双方都有问题但表现不同</li>
+<li>盲动态 × 观望态：一方盲目行动，一方冷静观察</li>
+<li>&hellip;</li>
+</ul>
+<p><strong>中等张力组合</strong>（32种）：</p>
+<ul>
+<li>大部分现实互动都属于这一类</li>
+<li>既有合作的可能，也有冲突的风险</li>
+<li>发展方向取决于具体的处理方式</li>
+</ul>
+<h3>实际案例：创业者与投资人<span class="hx:absolute hx:-mt-20" id="实际案例创业者与投资人"></span>
+    <a href="#%e5%ae%9e%e9%99%85%e6%a1%88%e4%be%8b%e5%88%9b%e4%b8%9a%e8%80%85%e4%b8%8e%e6%8a%95%e8%b5%84%e4%ba%ba" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>让我们用一个具体例子来展示64种模式中的一种：</p>
+<p><strong>场景设定</strong>：</p>
+<ul>
+<li>创业者正在向投资人展示项目</li>
+<li>我们分析这个特定时刻的结构状态</li>
+</ul>
+<p><strong>创业者状态分析</strong>：</p>
+<ul>
+<li>行动层：积极展示，准备充分 (+)</li>
+<li>能力层：有团队和产品，但经验不足 (-)</li>
+<li>态度层：真心想做这个项目 (+) → 创业者状态：有心无力态 (+-+)</li>
+</ul>
+<p><strong>投资人状态分析</strong>：</p>
+<ul>
+<li>行动层：认真听取，提出问题 (-)（更多是被动接受信息）</li>
+<li>能力层：有资金和判断经验 (+)</li>
+<li>态度层：对项目前景持谨慎态度 (-) → 投资人状态：观望态 (-+-)</li>
+</ul>
+<p><strong>结构组合</strong>：有心无力态 × 观望态</p>
+<p><strong>互动预测</strong>：</p>
+<ul>
+<li>创业者的热情可能无法立即打动投资人</li>
+<li>投资人会关注创业者的能力短板</li>
+<li>需要创业者证明学习能力和团队成长潜力</li>
+<li>或者投资人提供不仅是资金还包括指导的投资方案</li>
+</ul>
+<p>这种分析的价值在于：它不是在猜测，而是基于结构逻辑进行预判。</p>
+<h2>结构相似性的识别原理<span class="hx:absolute hx:-mt-20" id="结构相似性的识别原理"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e7%9b%b8%e4%bc%bc%e6%80%a7%e7%9a%84%e8%af%86%e5%88%ab%e5%8e%9f%e7%90%86" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>什么是结构相似性<span class="hx:absolute hx:-mt-20" id="什么是结构相似性"></span>
+    <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%93%e6%9e%84%e7%9b%b8%e4%bc%bc%e6%80%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>结构相似性是64种模式发挥作用的核心机制：<strong>当两个看似完全不同的场景具有相同的结构编码时，它们在本质上是相似的，可以应用相同的策略。</strong></p>
+<h3>跨领域的结构识别<span class="hx:absolute hx:-mt-20" id="跨领域的结构识别"></span>
+    <a href="#%e8%b7%a8%e9%a2%86%e5%9f%9f%e7%9a%84%e7%bb%93%e6%9e%84%e8%af%86%e5%88%ab" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>案例集合</strong>：</p>
+<p><strong>场景1</strong>：新员工想要参与重要项目</p>
+<ul>
+<li>新员工状态：有心无力态 (+-+)
+<ul>
+<li>行动层：主动表达意愿 (+)</li>
+<li>能力层：经验不足 (-)</li>
+<li>态度层：真心想贡献 (+)</li>
+</ul>
+</li>
+<li>项目负责人状态：观望态 (-+-)
+<ul>
+<li>行动层：没有主动邀请 (-)</li>
+<li>能力层：有项目决策权 (+)</li>
+<li>态度层：对新人能力有疑虑 (-)</li>
+</ul>
+</li>
+</ul>
+<p><strong>场景2</strong>：恋爱中的表白情况</p>
+<ul>
+<li>表白者状态：有心无力态 (+-+)
+<ul>
+<li>行动层：想要表达感情 (+)</li>
+<li>能力层：不确定如何表达 (-)</li>
+<li>态度层：真心喜欢对方 (+)</li>
+</ul>
+</li>
+<li>被表白者状态：观望态 (-+-)
+<ul>
+<li>行动层：没有主动暗示 (-)</li>
+<li>能力层：有选择权 (+)</li>
+<li>态度层：对关系发展不确定 (-)</li>
+</ul>
+</li>
+</ul>
+<p><strong>场景3</strong>：创业融资</p>
+<ul>
+<li>创业者状态：有心无力态 (+-+)
+<ul>
+<li>行动层：积极寻找投资 (+)</li>
+<li>能力层：缺乏成熟商业模式 (-)</li>
+<li>态度层：真心想把事业做成 (+)</li>
+</ul>
+</li>
+<li>投资人状态：观望态 (-+-)
+<ul>
+<li>行动层：被动等待优质项目 (-)</li>
+<li>能力层：有投资决策权 (+)</li>
+<li>态度层：对项目风险有顾虑 (-)</li>
+</ul>
+</li>
+</ul>
+<p><strong>结构编码</strong>：所有三个场景都是<strong>有心无力态 × 观望态</strong></p>
+<h3>通用策略的提取<span class="hx:absolute hx:-mt-20" id="通用策略的提取"></span>
+    <a href="#%e9%80%9a%e7%94%a8%e7%ad%96%e7%95%a5%e7%9a%84%e6%8f%90%e5%8f%96" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>既然三个场景具有相同的结构，我们就可以提取通用的应对策略：</p>
+<p><strong>对于有心无力态的主体</strong>：</p>
+<ol>
+<li><strong>能力补强</strong>：通过学习、练习或寻找帮助来提升能力层</li>
+<li><strong>分步证明</strong>：从小的、风险较低的行动开始证明自己</li>
+<li><strong>态度展示</strong>：让对方看到自己的真诚意图和长期承诺</li>
+<li><strong>降低门槛</strong>：提出对方容易接受的合作方式</li>
+</ol>
+<p><strong>对于观望态的客体</strong>：</p>
+<ol>
+<li><strong>信息收集</strong>：获得更多关于对方能力和意图的信息</li>
+<li><strong>风险控制</strong>：设计低风险的尝试机制</li>
+<li><strong>期待管理</strong>：明确表达自己的标准和担忧</li>
+<li><strong>渐进开放</strong>：根据对方表现逐步增加信任</li>
+</ol>
+<p><strong>通用原则</strong>：</p>
+<ul>
+<li>重点解决能力不足的问题（针对+-+中的-）</li>
+<li>通过小步试验降低观望方的顾虑（针对-+-中的态度层）</li>
+<li>建立信任和能力提升的正循环</li>
+</ul>
+<p>这就是结构相似性的强大价值：<strong>一旦掌握了某种结构组合的处理方法，就可以在所有具有相同结构的场景中应用</strong>。</p>
+<h2>有限可以算无穷<span class="hx:absolute hx:-mt-20" id="有限可以算无穷"></span>
+    <a href="#%e6%9c%89%e9%99%90%e5%8f%af%e4%bb%a5%e7%ae%97%e6%97%a0%e7%a9%b7" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>组合的威力<span class="hx:absolute hx:-mt-20" id="组合的威力"></span>
+    <a href="#%e7%bb%84%e5%90%88%e7%9a%84%e5%a8%81%e5%8a%9b" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>64种基本结构模式看起来不多，但它们的组合威力是惊人的：</p>
+<p><strong>时间序列组合</strong>：</p>
+<ul>
+<li>同一对主客关系在不同时间可能呈现不同的结构状态</li>
+<li>一个完整的互动过程可能经历多种结构状态的转换</li>
+<li>比如：观望态×观望态 → 全正态×潜力态 → 全正态×全正态</li>
+</ul>
+<p><strong>多方结构组合</strong>：</p>
+<ul>
+<li>现实中的互动往往涉及多方关系</li>
+<li>A与B的结构 + B与C的结构 + A与C的结构</li>
+<li>形成复杂的结构网络</li>
+</ul>
+<p><strong>环境因素调节</strong>：</p>
+<ul>
+<li>相同的主客结构在不同环境下会有不同表现</li>
+<li>时间压力、资源约束、外部竞争等都会影响结构动态</li>
+</ul>
+<p><strong>压缩与嵌套</strong>：</p>
+<ul>
+<li>复杂的结构可以被压缩为简单的结构元素</li>
+<li>简单的结构可以嵌套在更大的结构系统中</li>
+</ul>
+<h3>实际应用：复杂项目的结构分析<span class="hx:absolute hx:-mt-20" id="实际应用复杂项目的结构分析"></span>
+    <a href="#%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e5%a4%8d%e6%9d%82%e9%a1%b9%e7%9b%ae%e7%9a%84%e7%bb%93%e6%9e%84%e5%88%86%e6%9e%90" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>场景</strong>：一个涉及多个部门的复杂项目</p>
+<p><strong>结构拆解</strong>：</p>
+<p><strong>第一层结构</strong>：项目经理 × 技术团队</p>
+<ul>
+<li>项目经理：全正态 (+++)（有清晰目标，有协调能力，态度积极）</li>
+<li>技术团队：有心无力态 (+-+)（认同项目，但技术挑战大，态度配合）</li>
+</ul>
+<p><strong>第二层结构</strong>：项目经理 × 市场部门</p>
+<ul>
+<li>项目经理：全正态 (+++)</li>
+<li>市场部门：观望态 (-+-)（没有积极参与，有相关经验，但对项目效果存疑）</li>
+</ul>
+<p><strong>第三层结构</strong>：技术团队 × 市场部门</p>
+<ul>
+<li>技术团队：有心无力态 (+-+)</li>
+<li>市场部门：观望态 (-+-)</li>
+</ul>
+<p><strong>综合策略</strong>：</p>
+<ol>
+<li>
+<p><strong>项目经理的策略</strong>：</p>
+<ul>
+<li>对技术团队：提供资源和支持，帮助解决技术挑战</li>
+<li>对市场部门：展示阶段性成果，逐步建立信心</li>
+</ul>
+</li>
+<li>
+<p><strong>结构优化路径</strong>：</p>
+<ul>
+<li>短期：维持全正态状态，带动其他部门</li>
+<li>中期：帮助技术团队从+-+转向+++（能力提升）</li>
+<li>长期：帮助市场部门从-+-转向-++，最终转向+++</li>
+</ul>
+</li>
+</ol>
+<p>这种多层结构分析让我们能够：</p>
+<ul>
+<li>系统性地理解复杂关系网络</li>
+<li>制定针对不同关系的差异化策略</li>
+<li>预测整个系统的发展趋势</li>
+<li>找到关键的干预点和优化路径</li>
+</ul>
+<h3>无穷变化的本质<span class="hx:absolute hx:-mt-20" id="无穷变化的本质"></span>
+    <a href="#%e6%97%a0%e7%a9%b7%e5%8f%98%e5%8c%96%e7%9a%84%e6%9c%ac%e8%b4%a8" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>为什么64种基本模式可以处理无穷复杂的现实？</strong></p>
+<ol>
+<li>
+<p><strong>组合爆炸</strong>：64种基本模式的时间序列组合、多方组合、环境调节组合是无穷的</p>
+</li>
+<li>
+<p><strong>分形特征</strong>：每个层次的结构都可以用相同的64种模式来分析，形成自相似的分形结构</p>
+</li>
+<li>
+<p><strong>动态演化</strong>：结构状态会变化，64种模式提供了所有可能的变化路径</p>
+</li>
+<li>
+<p><strong>压缩与展开</strong>：复杂系统可以压缩为简单模式，简单模式可以展开为复杂系统</p>
+</li>
+</ol>
+<p><strong>核心原理</strong>：就像化学中的元素周期表，虽然基本元素有限，但它们的组合可以构成无穷多样的物质世界。64种结构模式就是人际关系的&quot;元素周期表&quot;。</p>
+<h2>案例：历史事件的结构分类<span class="hx:absolute hx:-mt-20" id="案例历史事件的结构分类"></span>
+    <a href="#%e6%a1%88%e4%be%8b%e5%8e%86%e5%8f%b2%e4%ba%8b%e4%bb%b6%e7%9a%84%e7%bb%93%e6%9e%84%e5%88%86%e7%b1%bb" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>商业史中的结构重现<span class="hx:absolute hx:-mt-20" id="商业史中的结构重现"></span>
+    <a href="#%e5%95%86%e4%b8%9a%e5%8f%b2%e4%b8%ad%e7%9a%84%e7%bb%93%e6%9e%84%e9%87%8d%e7%8e%b0" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>让我们通过历史上的商业事件来验证结构相似性原理：</p>
+<p><strong>案例1</strong>：乔布斯重返苹果（1997年）</p>
+<ul>
+<li>乔布斯状态：全正态 (+++)
+<ul>
+<li>行动层：积极推进产品革新和组织变革</li>
+<li>能力层：有产品视野和领导能力</li>
+<li>态度层：真心想要重振苹果</li>
+</ul>
+</li>
+<li>苹果员工状态：有心无力态 (+-+)
+<ul>
+<li>行动层：愿意跟随新的领导</li>
+<li>能力层：技术能力存在但缺乏方向</li>
+<li>态度层：希望公司重新获得成功</li>
+</ul>
+</li>
+</ul>
+<p><strong>案例2</strong>：马斯克接管特斯拉生产危机（2018年）</p>
+<ul>
+<li>马斯克状态：全正态 (+++)
+<ul>
+<li>行动层：亲自到生产线指导，长时间工作</li>
+<li>能力层：有技术理解和决策权</li>
+<li>态度层：全力以赴解决产能问题</li>
+</ul>
+</li>
+<li>生产团队状态：有心无力态 (+-+)
+<ul>
+<li>行动层：努力提升产量</li>
+<li>能力层：面对前所未有的生产挑战</li>
+<li>态度层：想要证明Model 3的可行性</li>
+</ul>
+</li>
+</ul>
+<p><strong>结构编码</strong>：两个案例都是<strong>全正态 × 有心无力态</strong></p>
+<p><strong>相似策略</strong>：</p>
+<ol>
+<li>领导者直接参与，提供指导和支持</li>
+<li>明确具体的目标和标准</li>
+<li>快速解决能力层面的关键问题</li>
+<li>通过小的成功案例建立信心</li>
+</ol>
+<p><strong>相似结果</strong>：</p>
+<ul>
+<li>乔布斯成功带领苹果推出iMac，开始复苏之路</li>
+<li>马斯克成功解决产能问题，特斯拉度过生产危机</li>
+</ul>
+<h3>政治史中的结构重现<span class="hx:absolute hx:-mt-20" id="政治史中的结构重现"></span>
+    <a href="#%e6%94%bf%e6%b2%bb%e5%8f%b2%e4%b8%ad%e7%9a%84%e7%bb%93%e6%9e%84%e9%87%8d%e7%8e%b0" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>案例1</strong>：丘吉尔出任战时首相（1940年）</p>
+<ul>
+<li>丘吉尔状态：全正态 (+++)</li>
+<li>英国民众状态：蓄势态 (&ndash;+)
+<ul>
+<li>行动层：在战争初期比较被动</li>
+<li>能力层：军事力量相对较弱</li>
+<li>态度层：有抵抗意志但士气需要鼓舞</li>
+</ul>
+</li>
+</ul>
+<p><strong>案例2</strong>：罗斯福应对大萧条（1933年）</p>
+<ul>
+<li>罗斯福状态：全正态 (+++)</li>
+<li>美国民众状态：蓄势态 (&ndash;+)
+<ul>
+<li>行动层：经济活动萎缩，消费和投资都很少</li>
+<li>能力层：失业率高，经济能力受限</li>
+<li>态度层：希望改变现状，等待强有力的领导</li>
+</ul>
+</li>
+</ul>
+<p><strong>结构编码</strong>：两个案例都是<strong>全正态 × 蓄势态</strong></p>
+<p><strong>相似策略</strong>：</p>
+<ol>
+<li>强有力的公开演讲，鼓舞士气</li>
+<li>推出具体的行动计划和政策措施</li>
+<li>通过媒体广泛宣传，凝聚共识</li>
+<li>快速取得一些象征性的成果</li>
+</ol>
+<p><strong>相似结果</strong>：</p>
+<ul>
+<li>丘吉尔成功鼓舞了英国的抗战士气</li>
+<li>罗斯福通过新政恢复了民众信心</li>
+</ul>
+<h3>结构分类的价值<span class="hx:absolute hx:-mt-20" id="结构分类的价值"></span>
+    <a href="#%e7%bb%93%e6%9e%84%e5%88%86%e7%b1%bb%e7%9a%84%e4%bb%b7%e5%80%bc" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>通过历史事件的结构分类，我们可以：</p>
+<ol>
+<li><strong>提取成功模式</strong>：从历史中学习处理相似结构的成功策略</li>
+<li><strong>预测发展趋势</strong>：基于结构逻辑预判事件可能的发展方向</li>
+<li><strong>识别关键因素</strong>：理解什么样的行动最容易改变结构状态</li>
+<li><strong>避免历史错误</strong>：认识到相似结构中容易出现的陷阱和错误</li>
+</ol>
+<p><strong>重要启示</strong>：历史不会简单地重复，但结构会重现。掌握了结构规律，我们就能更好地理解历史，也能更好地应对当下的挑战。</p>
+<h2>小结：64种模式的系统价值<span class="hx:absolute hx:-mt-20" id="小结64种模式的系统价值"></span>
+    <a href="#%e5%b0%8f%e7%bb%9364%e7%a7%8d%e6%a8%a1%e5%bc%8f%e7%9a%84%e7%b3%bb%e7%bb%9f%e4%bb%b7%e5%80%bc" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>通过本章的学习，我们建立了一个完整的结构模式体系：</p>
+<h3>三个核心认知<span class="hx:absolute hx:-mt-20" id="三个核心认知"></span>
+    <a href="#%e4%b8%89%e4%b8%aa%e6%a0%b8%e5%bf%83%e8%ae%a4%e7%9f%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li><strong>有限性认知</strong>：复杂的人际互动可以分解为64种基本结构模式（8×8组合）</li>
+<li><strong>完备性认知</strong>：八态结构是个体状态描述的最优解，既不冗余也不缺失</li>
+<li><strong>组合性认知</strong>：64种基本模式通过时间、多方、环境等维度的组合可以处理无穷复杂的现实</li>
+</ol>
+<h3>两个分析原理<span class="hx:absolute hx:-mt-20" id="两个分析原理"></span>
+    <a href="#%e4%b8%a4%e4%b8%aa%e5%88%86%e6%9e%90%e5%8e%9f%e7%90%86" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<li><strong>结构相似性原理</strong>：相同结构编码的场景具有相似的处理策略和发展趋势</li>
+<li><strong>有限算无穷原理</strong>：有限的基本模式通过组合可以应对无限复杂的现实情况</li>
+</ol>
+<h3>一个实践价值<span class="hx:absolute hx:-mt-20" id="一个实践价值"></span>
+    <a href="#%e4%b8%80%e4%b8%aa%e5%ae%9e%e8%b7%b5%e4%bb%b7%e5%80%bc" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>从个案经验到通用智慧的跨越</strong>：</p>
+<ul>
+<li>不再需要在每个新情况中从零开始摸索</li>
+<li>可以快速识别结构类型并匹配已知的成功策略</li>
+<li>能够预测互动的发展趋势和可能的转折点</li>
+<li>可以系统性地积累和传承人际智慧</li>
+</ul>
+<p><strong>最终目标</strong>：建立一个人际关系的&quot;导航系统&quot;，让复杂的社会互动变得清晰可预测，让宝贵的人生经验能够有效传承和应用。</p>
+<p><strong>核心洞察</strong>：世界的复杂性不在于结构的复杂，而在于组合的多样。掌握了64种基本结构，我们就掌握了解读人际关系的密码本。</p>
+
+        </div>
+        <div class="hx:mt-16"></div>
+        <div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="http://localhost:1313/zh-cn/docs/chapter-4-subject-object-framework/"
+        title="第4章 · 主客关系分析框架"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>第4章 · 主客关系分析框架</a><a
+        href="http://localhost:1313/zh-cn/docs/chapter-6-structural-change-mechanisms/"
+        title="第6章 · 规律和触发机制"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >第6章 · 规律和触发机制<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 MainStruct · All Rights Reserved.</div></div>
+    </div></footer>
+    
+    <script defer src="http://localhost:1313/js/main.js" integrity=""></script>
+<script defer src="http://localhost:1313/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
+        <script defer src="http://localhost:1313/zh-cn.search.js" integrity=""></script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StructLang – 标准化</title>
+    <link>http://localhost:1313/zh-cn/tags/%E6%A0%87%E5%87%86%E5%8C%96/</link>
+    <description>Recent content in 标准化 on StructLang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 24 Sep 2025 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/zh-cn/tags/%E6%A0%87%E5%87%86%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>附录1：结构语言语法总表 v2.0 | StructLang 结构语言</title>
+      <link>http://localhost:1313/zh-cn/docs/appendix-1-structlang-grammar-v20/</link>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/zh-cn/docs/appendix-1-structlang-grammar-v20/</guid>
+      <description>
+        
+        
+        &lt;h1&gt;附录1：《结构语言语法总表 v2.0》&lt;/h1&gt;&lt;p&gt;（结构语言体系标准化文件草案·修订版）&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;1 范围&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;1-范围&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#1-%e8%8c%83%e5%9b%b4&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;本标准规定了结构语言体系中的基本单位、符号规则、组合规则、解释规则及案例标注格式。&lt;br&gt;
+本标准适用于结构语言的研究、教学、工程化实现及跨学科应用，强调统一性与收敛性。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;2 术语和定义&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;2-术语和定义&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#2-%e6%9c%af%e8%af%ad%e5%92%8c%e5%ae%9a%e4%b9%89&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;2.1 &lt;strong&gt;意图（Intention, O）&lt;/strong&gt;&lt;br&gt;
+所有结构的原点，决定聚焦对象与数轴正方向。&lt;/p&gt;
+&lt;p&gt;2.2 &lt;strong&gt;点结构（Point Structure, P）&lt;/strong&gt;&lt;br&gt;
+意图作用于对象所形成的聚焦点，是认知压缩的起点。&lt;/p&gt;
+&lt;p&gt;2.3 &lt;strong&gt;线结构（Line Structure, L）&lt;/strong&gt;&lt;br&gt;
+单一维度的数轴判断，由原点、正方向与判断落点构成。&lt;/p&gt;
+&lt;p&gt;2.4 &lt;strong&gt;面结构（Plane Structure, S）&lt;/strong&gt;&lt;br&gt;
+两条线结构在同一意图下交叉，形成二维组合。&lt;/p&gt;
+&lt;p&gt;2.5 &lt;strong&gt;三维结构（3D Structure, B）&lt;/strong&gt;&lt;br&gt;
+三条线结构叠加，形成三维组合，表现为八格（Cell‑8）。&lt;/p&gt;
+&lt;p&gt;2.6 &lt;strong&gt;八格（Cell‑8）&lt;/strong&gt;&lt;br&gt;
+三维 A/Q/T 的 2³ 组合：&lt;code&gt;+++&lt;/code&gt;、&lt;code&gt;++-&lt;/code&gt;、&lt;code&gt;+-+&lt;/code&gt;、&lt;code&gt;+--&lt;/code&gt;、&lt;code&gt;-++&lt;/code&gt;、&lt;code&gt;-+-&lt;/code&gt;、&lt;code&gt;--+&lt;/code&gt;、&lt;code&gt;---&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;2.7 &lt;strong&gt;主客结构（Subject–Object Structure, SC）&lt;/strong&gt;&lt;br&gt;
+主体与客体分别由行动（A）、素质（Q）、态度（T）三维构成的六维结构。&lt;/p&gt;
+&lt;p&gt;2.8 &lt;strong&gt;六十四局（64 Situations, J64）&lt;/strong&gt;&lt;br&gt;
+主客八格 × 八格 = 64 种有限组合，构成人类主客关系的封闭全集。&lt;/p&gt;
+&lt;p&gt;2.9 &lt;strong&gt;局势（Situation, J）&lt;/strong&gt;&lt;br&gt;
+主客六维在特定意图下生成的静态快照，用于趋势推演与跳变判断。&lt;/p&gt;
+&lt;p&gt;2.10 &lt;strong&gt;结构码（Structure Code）&lt;/strong&gt;&lt;br&gt;
+对任意结构状态进行符号化标注的标准写法。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;3 符号规则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;3-符号规则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#3-%e7%ac%a6%e5%8f%b7%e8%a7%84%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;3.1 &lt;strong&gt;正负号&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;+&lt;/code&gt; 表示在该意图下正向/达标/推进；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;-&lt;/code&gt; 表示在该意图下负向/未达/阻滞；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;0&lt;/code&gt; 表示空点或未成态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.2 &lt;strong&gt;趋势符号&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;↑&lt;/code&gt; 上升；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;↓&lt;/code&gt; 下降；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;→&lt;/code&gt; 稳定。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.3 &lt;strong&gt;跳变符号&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;⇒&lt;/code&gt; 表示结构跨越或断点突转。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;3.4 &lt;strong&gt;结构码表示法&lt;/strong&gt;&lt;br&gt;
+标准形式：&lt;code&gt;主(A± Q± T±) | 客(A± Q± T±)&lt;/code&gt;&lt;br&gt;
+示例：&lt;code&gt;主(A+ Q− T+) | 客(A− Q+ T−)&lt;/code&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;4 组合规则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;4-组合规则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#4-%e7%bb%84%e5%90%88%e8%a7%84%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;4.1 &lt;strong&gt;演化路径&lt;/strong&gt;&lt;br&gt;
+点（P）→ 线（L）→ 面（S）→ 三维（B/Cell‑8）→ 主客结构（SC）→ 六十四局（J64）。&lt;/p&gt;
+&lt;p&gt;4.2 &lt;strong&gt;主客扩展&lt;/strong&gt;&lt;br&gt;
+三维（A/Q/T）叠加主客对位，形成六维快照。&lt;/p&gt;
+&lt;p&gt;4.3 &lt;strong&gt;跳变机制&lt;/strong&gt;&lt;br&gt;
+结构跳变表示为：&lt;br&gt;
+&lt;code&gt;跳变(J₁, 触发因子) → J₂&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;基本方式：&lt;br&gt;
+a) 维度跳变（同一原点下，某维翻转/重排）；&lt;br&gt;
+b) 原点跳变（意图整体切换，坐标系重算）；&lt;br&gt;
+c) 外部压缩解压（经验/规则输入导致重判）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;5 解释规则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;5-解释规则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#5-%e8%a7%a3%e9%87%8a%e8%a7%84%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;5.1 &lt;strong&gt;结构辞&lt;/strong&gt;&lt;br&gt;
+每个结构码需配套一段标准解释，含短期效应、长期效应、常见跳变。&lt;br&gt;
+示例：&lt;code&gt;++-&lt;/code&gt; = 表里不一态（行动强、素质强、态度弱）。&lt;/p&gt;
+&lt;p&gt;5.2 &lt;strong&gt;公理约束&lt;/strong&gt;&lt;br&gt;
+a) &lt;strong&gt;主观性公理&lt;/strong&gt;：所有结构以内在主观为中心；&lt;br&gt;
+b) &lt;strong&gt;有限化公理&lt;/strong&gt;：无限信息必被压缩为有限结构；&lt;br&gt;
+c) &lt;strong&gt;可变性公理&lt;/strong&gt;：同一对象在不同意图下生成不同结构；&lt;br&gt;
+d) &lt;strong&gt;修正性公理&lt;/strong&gt;：系统以持续纠错为生命力。&lt;/p&gt;
+&lt;p&gt;5.3 &lt;strong&gt;推理边界&lt;/strong&gt;&lt;br&gt;
+a) 不追求唯一真理，强调有限确定与不断修正；&lt;br&gt;
+b) 禁止出现“绝对客观”表述。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2&gt;6 案例标注格式&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;6-案例标注格式&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#6-%e6%a1%88%e4%be%8b%e6%a0%87%e6%b3%a8%e6%a0%bc%e5%bc%8f&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;案例标注需包含以下要素：&lt;/p&gt;
+&lt;div class=&#34;hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code&#34;&gt;
+
+&lt;div&gt;&lt;pre&gt;&lt;code&gt;案例名称：假狗退货
+意图：维护权益
+点结构：P(狗 = 商品)
+线结构：L(&amp;#43;/- = 真/假)
+面结构：S(真伪 × 是否退款)
+三维结构：B(A/Q/T = &amp;#43;--)
+局势：J(主A&amp;#43;Q−T&amp;#43; | 客A−Q&amp;#43;T−)
+跳变：外部压缩解压 → 客体态度翻转
+结果：退款成功&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0&#34;&gt;
+  &lt;button
+    class=&#34;hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50&#34;
+    title=&#34;Copy code&#34;
+  &gt;
+    &lt;div class=&#34;hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4&#34;&gt;&lt;/div&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2&gt;7 附则&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;7-附则&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#7-%e9%99%84%e5%88%99&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;7.1 本标准为结构语言体系的第二版语法规范，在 v1.0 基础上扩展了趋势符号与跳变符号的使用。&lt;br&gt;
+7.2 本标准由 StructLang 项目组维护和解释，后续版本将随理论与实践演进不断修订。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

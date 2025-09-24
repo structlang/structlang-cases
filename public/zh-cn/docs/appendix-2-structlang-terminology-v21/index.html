@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="zh-cn"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <link rel="icon shortcut" href="http://localhost:1313/favicon.ico" sizes="32x32" />
+<link rel="icon" href="http://localhost:1313/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="http://localhost:1313/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="http://localhost:1313/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="http://localhost:1313/site.webmanifest" rel="manifest" />
+<title>附录2：结构语言术语表 v2.1 | StructLang 结构语言 – StructLang</title>
+  <meta name="description" content="统一术语、收敛符号，附带案例与操作模板的完整手册。从点/线/面/三维/主客六维，到压缩/解压/跳变、因果印象与快照工具，全面阐述结构语言的语法与动力机制。" /><link rel="canonical" href="http://localhost:1313/zh-cn/docs/appendix-2-structlang-terminology-v21/" itemprop="url" />
+
+<meta property="og:title" content="附录2：结构语言术语表 v2.1 | StructLang 结构语言" />
+<meta property="og:description" content="统一术语、收敛符号，附带案例与操作模板的完整手册。从点/线/面/三维/主客六维，到压缩/解压/跳变、因果印象与快照工具，全面阐述结构语言的语法与动力机制。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/zh-cn/docs/appendix-2-structlang-terminology-v21/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2025-09-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-09-24T00:00:00+00:00" />
+
+  <meta itemprop="name" content="附录2：结构语言术语表 v2.1 | StructLang 结构语言">
+  <meta itemprop="description" content="统一术语、收敛符号，附带案例与操作模板的完整手册。从点/线/面/三维/主客六维，到压缩/解压/跳变、因果印象与快照工具，全面阐述结构语言的语法与动力机制。">
+  <meta itemprop="datePublished" content="2025-09-24T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-24T00:00:00+00:00">
+  <meta itemprop="wordCount" content="601">
+  <meta itemprop="keywords" content="结构语言,术语表,点结构,线结构,面结构,主客六维,跳变,因果印象,快照">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="附录2：结构语言术语表 v2.1 | StructLang 结构语言">
+  <meta name="twitter:description" content="统一术语、收敛符号，附带案例与操作模板的完整手册。从点/线/面/三维/主客六维，到压缩/解压/跳变、因果印象与快照工具，全面阐述结构语言的语法与动力机制。">
+<link href="http://localhost:1313/css/compiled/main.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/variables.css" rel="stylesheet" />
+    <link href="http://localhost:1313/css/custom.css" rel="stylesheet" />
+
+  
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  
+  <script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const anchor = document.querySelector('.hextra-search-wrapper') ||
+                 document.querySelector('.hextra-nav-container');
+  if (!anchor) return;
+
+   
+  function readAlternates() {
+    const m = new Map();
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(l=>{
+      const lang=(l.getAttribute('hreflang')||'').toLowerCase();
+      const href=l.getAttribute('href'); if(lang && href) m.set(lang, href);
+    });
+    return m;
+  }
+  function currentLang() {
+    const htmlLang=(document.documentElement.lang||'').toLowerCase();
+    if (htmlLang) return htmlLang;
+    const p=location.pathname.toLowerCase();
+    if (p.startsWith('/zh-cn/')) return 'zh-cn';
+    if (p.startsWith('/en/'))    return 'en';
+    return 'en';
+  }
+  function switchURL(target) {
+    const alts = readAlternates();
+    if (alts.size && alts.get(target)) return alts.get(target);
+    const u = new URL(location.href), p=u.pathname;
+    if (target==='zh-cn') {
+      if (p.startsWith('/en/')) u.pathname=p.replace(/^\/en\//,'/zh-cn/');
+      else if (!p.startsWith('/zh-cn/')) u.pathname='/zh-cn'+(p.startsWith('/')?p:'/'+p);
+    } else {
+      if (p.startsWith('/zh-cn/')) u.pathname=p.replace(/^\/zh-cn\//,'/en/');
+      else if (!p.startsWith('/en/'))    u.pathname='/en'+(p.startsWith('/')?p:'/'+p);
+    }
+    return u.toString();
+  }
+
+  const labels={ 'en':'English', 'zh-cn':'简体中文' };
+  const langs=['en','zh-cn'];
+  const cur=currentLang();
+
+  const langSelect=document.createElement('select');
+  langSelect.className='hx-navbar-lang';
+  langs.forEach(code=>{
+    const opt=document.createElement('option');
+    opt.value=switchURL(code);
+    opt.textContent=labels[code]||code;
+    if(code===cur) opt.selected=true;
+    langSelect.appendChild(opt);
+  });
+  langSelect.addEventListener('change', e => { const url=e.target.value; if(url) location.href=url; });
+  anchor.insertAdjacentElement('afterend', langSelect);
+
+   
+  const origTheme = document.querySelector('.hextra-theme-toggle'); 
+  const topTheme  = document.createElement('button');
+  topTheme.type   = 'button';
+  topTheme.className = 'hextra-theme-toggle in-navbar hx-top-theme';
+  langSelect.insertAdjacentElement('afterend', topTheme);
+
+  function isDark(){
+    
+    return document.documentElement.classList.contains('dark') ||
+           (document.documentElement.getAttribute('data-theme')||'').toLowerCase()==='dark';
+  }
+  function renderThemeIcon(){
+    if (isDark()){
+      topTheme.setAttribute('aria-label','Light');
+      topTheme.title='Light';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 4V2M12 22v-2M4.93 4.93 3.51 3.51M20.49 20.49l-1.42-1.42M4 12H2M22 12h-2M4.93 19.07l-1.42 1.42M20.49 3.51l-1.42 1.42M12 8a4 4 0 1 0 0 8a4 4 0 0 0 0-8Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    } else {
+      topTheme.setAttribute('aria-label','Dark');
+      topTheme.title='Dark';
+      
+      topTheme.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 1 0 9.79 9.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>`;
+    }
+  }
+  function toggleTheme(){
+    if (origTheme) {
+      
+      origTheme.click();
+    } else {
+      
+      document.documentElement.classList.toggle('dark');
+      try { localStorage.setItem('theme', isDark() ? 'dark' : 'light'); } catch(e){}
+    }
+    
+    requestAnimationFrame(()=>setTimeout(renderThemeIcon,0));
+  }
+topTheme.addEventListener('click', toggleTheme);
+
+  
+  renderThemeIcon();
+  const obs = new MutationObserver(renderThemeIcon);
+  obs.observe(document.documentElement, {attributes:true, attributeFilter:['class','data-theme']});
+  if (origTheme) obs.observe(origTheme, {attributes:true, childList:true, subtree:true});
+  window.addEventListener('storage', (e)=>{ if ((e.key||'').toLowerCase().includes('theme')) renderThemeIcon(); });
+
+   
+  const style=document.createElement('style');
+  style.textContent=`
+    @media (min-width:1024px){
+      select.hx-navbar-lang{
+        width:auto; max-width:14rem; height:2rem;
+        padding:0 .55rem; border-radius:9999px;
+        border:1px solid var(--hx-border, rgba(0,0,0,.14));
+        background:transparent; color:var(--hx-fg, inherit);
+        font-size:.9rem; line-height:2rem; cursor:pointer; margin-left:.5rem;
+        color-scheme: light dark;
+      }
+      html.dark select.hx-navbar-lang{
+        color: rgba(255,255,255,.92);
+        border-color: rgba(255,255,255,.22);
+        background-color: rgba(255,255,255,.06);
+      }
+      html.dark select.hx-navbar-lang option{ color:#111; background:#fff; }
+
+      .hextra-theme-toggle.in-navbar{ margin-left:.5rem; background:transparent; border:0; padding:0 .25rem; }
+      .hextra-theme-toggle.in-navbar svg{ display:block; }
+
+      /* 新增：桌面端隐藏原位置的日/夜切换按钮（保留顶部的） */
+      .hextra-theme-toggle:not(.in-navbar){ display: none !important; }
+
+      /* 桌面端也隐藏原位置的语言切换器，避免重复 */
+      .hextra-language-switcher{ display:none !important; }
+    }
+    @media (max-width:1023.98px){
+      /* 移动端：顶部语言下拉不显示；底部的日/夜按钮继续保留 */
+      select.hx-navbar-lang{ display:none !important; }
+    }
+  `;
+  document.head.appendChild(style);
+
+});
+</script>
+</head>
+<body dir="ltr"><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="hextra-nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="http://localhost:1313/zh-cn/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="StructLang">StructLang</span>
+</a>
+
+            <a
+              title="首页"
+              href="http://localhost:1313/zh-cn/"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">首页</span>
+            </a>
+            <a
+              title="文档"
+              href="http://localhost:1313/zh-cn/docs"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">文档</span>
+            </a>
+            <a
+              title="博客"
+              href="http://localhost:1313/zh-cn/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">博客</span>
+            </a>
+            <a
+              title="关于"
+              href="http://localhost:1313/zh-cn/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">关于</span>
+            </a><div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+          <a class="hx:p-2 hx:text-current" target="_blank" rel="noreferrer" href="https://github.com" title="GitHub"><svg height=24 fill="currentColor" viewBox="3 3 18 18">
+  <path d="M12 3C7.0275 3 3 7.12937 3 12.2276C3 16.3109 5.57625 19.7597 9.15374 20.9824C9.60374 21.0631 9.77249 20.7863 9.77249 20.5441C9.77249 20.3249 9.76125 19.5982 9.76125 18.8254C7.5 19.2522 6.915 18.2602 6.735 17.7412C6.63375 17.4759 6.19499 16.6569 5.8125 16.4378C5.4975 16.2647 5.0475 15.838 5.80124 15.8264C6.51 15.8149 7.01625 16.4954 7.18499 16.7723C7.99499 18.1679 9.28875 17.7758 9.80625 17.5335C9.885 16.9337 10.1212 16.53 10.38 16.2993C8.3775 16.0687 6.285 15.2728 6.285 11.7432C6.285 10.7397 6.63375 9.9092 7.20749 9.26326C7.1175 9.03257 6.8025 8.08674 7.2975 6.81794C7.2975 6.81794 8.05125 6.57571 9.77249 7.76377C10.4925 7.55615 11.2575 7.45234 12.0225 7.45234C12.7875 7.45234 13.5525 7.55615 14.2725 7.76377C15.9937 6.56418 16.7475 6.81794 16.7475 6.81794C17.2424 8.08674 16.9275 9.03257 16.8375 9.26326C17.4113 9.9092 17.76 10.7281 17.76 11.7432C17.76 15.2843 15.6563 16.0687 13.6537 16.2993C13.98 16.5877 14.2613 17.1414 14.2613 18.0065C14.2613 19.2407 14.25 20.2326 14.25 20.5441C14.25 20.7863 14.4188 21.0746 14.8688 20.9824C16.6554 20.364 18.2079 19.1866 19.3078 17.6162C20.4077 16.0457 20.9995 14.1611 21 12.2276C21 7.12937 16.9725 3 12 3Z"></path>
+</svg>
+<span class="hx:sr-only">GitHub</span>
+          </a><button type="button" aria-label="Menu" class="hextra-hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+
+  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
+    <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:sticky">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="hextra-search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="搜索文档..."
+      class="hextra-search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="hextra-search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/"
+    
+  >文档
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/introduction/"
+    
+  >导论 · 分析方法的缺陷
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-point-structure/"
+    
+  >第1章 · 点结构
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-line-structure/"
+    
+  >第2章 · 线结构
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-plane-structure/"
+    
+  >第3章 · 面结构
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-three-dimensional-structure/"
+    
+  >第4章 · 三维结构
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-subject-object-structure/"
+    
+  >第5章 · 主客结构
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-compression-and-decompression/"
+    
+  >第6章 · 压缩与解压
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-intention-generation/"
+    
+  >第7章 · 意图的产生
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-8-core-cases/"
+    
+  >第8章 · 核心案例
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-9-transition/"
+    
+  >第9章 · 跳变
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-10-knowledge-vs-experience-structures/"
+    
+  >第10章 · 知识型 vs 经验型结构
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/appendix-1-structlang-grammar-v20/"
+    
+  >附录1 · 语法总表 v2.0
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/docs/appendix-2-structlang-terminology-v21/"
+    
+  >附录2 · 术语表
+    </a>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#0-%e4%bd%bf%e7%94%a8%e9%a1%bb%e7%9f%a5%e6%80%bb%e5%88%99"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >0. 使用须知（总则）</a>
+            </li>
+          <li>
+              <a
+                href="#1-%e7%ac%a6%e5%8f%b7%e7%ba%a6%e5%ae%9a%e4%b8%8e%e8%ae%b0%e5%8f%b7%e7%b3%bb%e7%bb%9f"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >1. 符号约定与记号系统</a>
+            </li>
+          <li>
+              <a
+                href="#2-%e5%9f%ba%e7%a1%80%e7%bb%93%e6%9e%84%e5%8d%95%e5%85%83%e7%82%b9%e7%ba%bf%e9%9d%a2%e4%b8%89%e7%bb%b4"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >2. 基础结构单元（点/线/面/三维）</a>
+            </li>
+          <li>
+              <a
+                href="#3-%e5%85%b3%e7%b3%bb%e5%b1%82%e4%b8%bb%e5%ae%a2%e5%85%ad%e7%bb%b4%e4%b8%8e%e5%85%ad%e5%8d%81%e5%9b%9b%e5%b1%80"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >3. 关系层：主客六维与六十四局</a>
+            </li>
+          <li>
+              <a
+                href="#4-%e5%8a%a8%e6%80%81%e6%9c%ba%e5%88%b6%e5%8e%8b%e7%bc%a9--%e8%a7%a3%e5%8e%8b--%e8%b7%b3%e5%8f%98"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >4. 动态机制：压缩 / 解压 / 跳变</a>
+            </li>
+          <li>
+              <a
+                href="#5-%e5%a4%96%e9%83%a8%e7%bb%93%e6%9e%84%e4%b8%8e%e7%9f%a5%e8%af%86%e8%b0%b1%e7%b3%bb"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >5. 外部结构与知识谱系</a>
+            </li>
+          <li>
+              <a
+                href="#6-%e5%bf%ab%e7%85%a7%e5%b7%a5%e5%85%b7%e5%9b%9b%e4%bb%b6%e5%a5%97%e4%b8%8e%e6%a8%a1%e6%9d%bf"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >6. 快照工具（四件套）与模板</a>
+            </li>
+          <li>
+              <a
+                href="#7-%e5%88%a4%e5%ae%9a%e8%a7%84%e8%8c%83%e4%b8%8e%e9%98%b2%e8%af%af%e7%94%a8%e6%b8%85%e5%8d%95"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >7. 判定规范与防误用清单</a>
+            </li>
+          <li>
+              <a
+                href="#8-%e5%ae%9e%e6%93%8d%e6%b5%81%e7%a8%8b10-%e6%ad%a5"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >8. 实操流程（10 步）</a>
+            </li>
+          <li>
+              <a
+                href="#9-%e6%9c%af%e8%af%ad%e7%b4%a2%e5%bc%95%e4%b8%ad%e8%8b%b1%e5%af%b9%e7%85%a7"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >9. 术语索引（中英对照）</a>
+            </li>
+          <li>
+              <a
+                href="#10-%e7%bb%93%e6%9e%84%e7%a0%81%e4%b9%a6%e5%86%99%e8%a7%84%e8%8c%83%e6%9c%80%e5%b0%8f%e8%af%ad%e6%b3%95"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >10. 结构码书写规范（最小语法）</a>
+            </li>
+          <li>
+              <a
+                href="#11-%e6%9c%80%e5%b0%8f%e6%a1%88%e4%be%8b%e5%ba%9310-%e4%be%8b"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              >11. 最小案例库（10 例）</a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入社群
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/"
+    
+  >博客
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/hextra-v0.10/"
+    
+  >Hextra v0.10
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/blog/markdown-%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/"
+    
+  >Markdown 语法指南
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/about/"
+    
+  >关于
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/showcase/"
+    
+  >项目展示
+    </a></li>
+    </ul>
+
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
+        
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/introduction/"
+    
+  >导论 · 分析方法的缺陷
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-1-point-structure/"
+    
+  >第1章 · 点结构
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-2-line-structure/"
+    
+  >第2章 · 线结构
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-3-plane-structure/"
+    
+  >第3章 · 面结构
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-4-three-dimensional-structure/"
+    
+  >第4章 · 三维结构
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-5-subject-object-structure/"
+    
+  >第5章 · 主客结构
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-6-compression-and-decompression/"
+    
+  >第6章 · 压缩与解压
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-7-intention-generation/"
+    
+  >第7章 · 意图的产生
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-8-core-cases/"
+    
+  >第8章 · 核心案例
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-9-transition/"
+    
+  >第9章 · 跳变
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/chapter-10-knowledge-vs-experience-structures/"
+    
+  >第10章 · 知识型 vs 经验型结构
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/appendix-1-structlang-grammar-v20/"
+    
+  >附录1 · 语法总表 v2.0
+    </a></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="http://localhost:1313/zh-cn/docs/appendix-2-structlang-terminology-v21/"
+    
+  >附录2 · 术语表
+    </a></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="http://localhost:1313/zh-cn/docs/qun/"
+    
+  >加入社群
+    </a></li>
+        
+      </ul>
+    </div>
+  
+  
+    <div class=" hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="切换语言"
+      data-state="closed"
+      class="hextra-language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="切换语言"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>简体中文</span></div>
+    </button>
+    <ul
+      class="hextra-language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/en/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="http://localhost:1313/zh-cn/docs/appendix-2-structlang-terminology-v21/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >简体中文<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="切换主题"
+  data-theme="light"
+  class="hextra-theme-toggle hx:cursor-pointer hx:group hx:rounded-md hx:text-left hx:px-2 hx:text-xs hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400"
+  type="button"
+  aria-label="切换主题"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">此页上</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#0-%e4%bd%bf%e7%94%a8%e9%a1%bb%e7%9f%a5%e6%80%bb%e5%88%99">0. 使用须知（总则）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#1-%e7%ac%a6%e5%8f%b7%e7%ba%a6%e5%ae%9a%e4%b8%8e%e8%ae%b0%e5%8f%b7%e7%b3%bb%e7%bb%9f">1. 符号约定与记号系统
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#2-%e5%9f%ba%e7%a1%80%e7%bb%93%e6%9e%84%e5%8d%95%e5%85%83%e7%82%b9%e7%ba%bf%e9%9d%a2%e4%b8%89%e7%bb%b4">2. 基础结构单元（点/线/面/三维）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#21-%e7%82%b9%e7%bb%93%e6%9e%84point">2.1 点结构（Point）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#22-%e7%ba%bf%e7%bb%93%e6%9e%84line">2.2 线结构（Line）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#23-%e9%9d%a2%e7%bb%93%e6%9e%84plane">2.3 面结构（Plane）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#24-%e4%b8%89%e7%bb%b4%e7%bb%93%e6%9e%843d%e4%b8%8e%e5%85%ab%e6%a0%bccell8">2.4 三维结构（3D）与八格（Cell‑8）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#3-%e5%85%b3%e7%b3%bb%e5%b1%82%e4%b8%bb%e5%ae%a2%e5%85%ad%e7%bb%b4%e4%b8%8e%e5%85%ad%e5%8d%81%e5%9b%9b%e5%b1%80">3. 关系层：主客六维与六十四局
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#31-%e4%b8%bb%e5%ae%a2%e7%bb%93%e6%9e%84sixdim">3.1 主客结构（Six‑Dim）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#32-%e5%85%ad%e5%8d%81%e5%9b%9b%e5%b1%80%e5%85%a8%e9%9b%86%e4%b8%8e%e8%b7%b3%e5%8f%98%e7%bd%91%e7%bb%9c">3.2 六十四局（全集）与跳变网络
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#4-%e5%8a%a8%e6%80%81%e6%9c%ba%e5%88%b6%e5%8e%8b%e7%bc%a9--%e8%a7%a3%e5%8e%8b--%e8%b7%b3%e5%8f%98">4. 动态机制：压缩 / 解压 / 跳变
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#41-%e5%8e%8b%e7%bc%a9compression">4.1 压缩（Compression）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#42-%e8%a7%a3%e5%8e%8bdecompression">4.2 解压（Decompression）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#43-%e8%b7%b3%e5%8f%98jump">4.3 跳变（Jump）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#5-%e5%a4%96%e9%83%a8%e7%bb%93%e6%9e%84%e4%b8%8e%e7%9f%a5%e8%af%86%e8%b0%b1%e7%b3%bb">5. 外部结构与知识谱系
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#6-%e5%bf%ab%e7%85%a7%e5%b7%a5%e5%85%b7%e5%9b%9b%e4%bb%b6%e5%a5%97%e4%b8%8e%e6%a8%a1%e6%9d%bf">6. 快照工具（四件套）与模板
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#61-%e8%a1%a8%e5%b1%82%e5%bf%ab%e7%85%a7nowshot">6.1 表层快照（Now‑Shot）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#62-%e4%b8%ad%e7%a8%8b%e9%93%be%e6%9d%a1%e5%bf%ab%e7%85%a7qchain">6.2 中程链条快照（Q‑Chain）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#63-%e5%af%b9%e5%90%91%e8%a7%86%e8%a7%92%e5%bf%ab%e7%85%a7oppshot">6.3 对向视角快照（Opp‑Shot）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#64-%e6%9e%81%e6%80%a7%e7%bf%bb%e8%bd%ac%e5%bf%ab%e7%85%a7flipshot">6.4 极性翻转快照（Flip‑Shot）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#7-%e5%88%a4%e5%ae%9a%e8%a7%84%e8%8c%83%e4%b8%8e%e9%98%b2%e8%af%af%e7%94%a8%e6%b8%85%e5%8d%95">7. 判定规范与防误用清单
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#8-%e5%ae%9e%e6%93%8d%e6%b5%81%e7%a8%8b10-%e6%ad%a5">8. 实操流程（10 步）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#9-%e6%9c%af%e8%af%ad%e7%b4%a2%e5%bc%95%e4%b8%ad%e8%8b%b1%e5%af%b9%e7%85%a7">9. 术语索引（中英对照）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#10-%e7%bb%93%e6%9e%84%e7%a0%81%e4%b9%a6%e5%86%99%e8%a7%84%e8%8c%83%e6%9c%80%e5%b0%8f%e8%af%ad%e6%b3%95">10. 结构码书写规范（最小语法）
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#11-%e6%9c%80%e5%b0%8f%e6%a1%88%e4%be%8b%e5%ba%9310-%e4%be%8b">11. 最小案例库（10 例）
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>返回顶部</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="http://localhost:1313/zh-cn/docs/">文档</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">附录2 · 术语表</div>
+  </div>
+
+        <div class="content">
+          <h1>附录2：结构语言术语表 v2.1 | StructLang 结构语言</h1>
+          <p>（结构语言体系标准化文件草案·修订版）</p>
+<hr>
+<p><strong>结构语言 = 从“意图-点-线-面-三维-主客”到“张力-跳变-干预”的收敛语法。</strong></p>
+<blockquote>
+  <p>目的：统一术语、收敛符号、提供可落地的案例与模板，避免“同码当同策”“无意图编码”“符号膨胀”等误用。</p>
+</blockquote>
+<h2>0. 使用须知（总则）<span class="hx:absolute hx:-mt-20" id="0-使用须知总则"></span>
+    <a href="#0-%e4%bd%bf%e7%94%a8%e9%a1%bb%e7%9f%a5%e6%80%bb%e5%88%99" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ol>
+<li>
+<p><strong>意图优先</strong>：无意图不编码；所有符号必须锚定意图原点与正方向。</p>
+</li>
+<li>
+<p><strong>有限符号</strong>：<code>+ / − / ↑ / ↓ / → / ⇒</code> 为核心集合，禁止自造新符号。</p>
+</li>
+<li>
+<p><strong>同码≠同策</strong>：六维表象相同，但若意图/外部结构不同，结论可能完全相反。</p>
+</li>
+<li>
+<p><strong>定量克制</strong>：数值化只用于落地执行的粗粒度（如 <code>+0.7</code>），不追求伪精确。</p>
+</li>
+<li>
+<p><strong>层级清晰</strong>：点→线→面→三维→主客→局面/局势→跳变；不得跨层跳写。</p>
+</li>
+</ol>
+<hr>
+<h2>1. 符号约定与记号系统<span class="hx:absolute hx:-mt-20" id="1-符号约定与记号系统"></span>
+    <a href="#1-%e7%ac%a6%e5%8f%b7%e7%ba%a6%e5%ae%9a%e4%b8%8e%e8%ae%b0%e5%8f%b7%e7%b3%bb%e7%bb%9f" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p><strong>A/Q/T</strong>：行动（Action）/ 素质（Quality）/ 态度（Temper）。</p>
+</li>
+<li>
+<p><strong>主/客</strong>：以竖线 <code>|</code> 分隔，如 <code>主(A+ Q− T+) | 客(A− Q+ T+)</code>。</p>
+</li>
+<li>
+<p><strong>正负</strong>：<code>+</code> = 当下在该意图下“有利/达标/推进”；<code>−</code> = “不利/未达/阻滞”。</p>
+</li>
+<li>
+<p><strong>趋势</strong>：<code>↑</code> 上升、<code>↓</code> 下降、<code>→</code> 稳定，写在维度右上角或后缀：<code>A−↑</code>、<code>++-↓</code>。</p>
+</li>
+<li>
+<p><strong>跳变</strong>：<code>⇒</code> 表示断点式跨越：<code>--+↑ ⇒ +-+</code>。</p>
+</li>
+<li>
+<p><strong>时间窗</strong>：必要时以括号标注：<code>[周] [季] [年]</code>；趋势解释必须与时间窗一致。</p>
+</li>
+</ul>
+<p><strong>示例（完整注记）</strong>：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>主(A−↑  Q−→  T&#43;→  [季]) | 客(A&#43;→  Q&#43;→  T−↓  [季])
+短评：短期靠客方托底；若主A持续上行且客T继续下滑，常见跳变：合作破裂 ⇒ 转投新客方。</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h2>2. 基础结构单元（点/线/面/三维）<span class="hx:absolute hx:-mt-20" id="2-基础结构单元点线面三维"></span>
+    <a href="#2-%e5%9f%ba%e7%a1%80%e7%bb%93%e6%9e%84%e5%8d%95%e5%85%83%e7%82%b9%e7%ba%bf%e9%9d%a2%e4%b8%89%e7%bb%b4" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>2.1 点结构（Point）<span class="hx:absolute hx:-mt-20" id="21-点结构point"></span>
+    <a href="#21-%e7%82%b9%e7%bb%93%e6%9e%84point" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：对象 × 意图 → 主观意义的最小单元；本质是<strong>压缩</strong>后的锚点。</p>
+<p><strong>表达</strong>：对象名 + 当前意图；不直接带正负。</p>
+<p><strong>适用</strong>：立题、取景、选择评估维度之前。</p>
+<p><strong>常见误用</strong>：一上来就打 <code>+ / −</code>；或跳过点直接谈面/体。</p>
+<p><strong>案例</strong>：</p>
+<ul>
+<li>
+<p>同一杯咖啡：</p>
+<ul>
+<li>
+<p>“提神”意图 → 点结构 = 能否快速提神；</p>
+</li>
+<li>
+<p>“健康”意图 → 点结构 = 是否高糖高脂；</p>
+</li>
+<li>
+<p>“社交”意图 → 点结构 = 是否体面/合适场合。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3>2.2 线结构（Line）<span class="hx:absolute hx:-mt-20" id="22-线结构line"></span>
+    <a href="#22-%e7%ba%bf%e7%bb%93%e6%9e%84line" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：在一个维度上的主观数轴判断；本质是<strong>解压</strong>后在点上展开一条判断路径。</p>
+<p><strong>表达</strong>：<code>+ / −</code> 或粗粒度数值（如 <code>+0.6</code>）。</p>
+<p><strong>适用</strong>：单轴优先级判断（如“能否交付”“是否合规”）。</p>
+<p><strong>常见误用</strong>：把“态度好（T+）”当成“已经行动（A+）”。</p>
+<p><strong>案例</strong>：</p>
+<ul>
+<li>面试“表达能力”：候选人表达= <code>+0.8</code>，但“任务完成度”未评，不能据此推断整体胜任。</li>
+</ul>
+<hr>
+<h3>2.3 面结构（Plane）<span class="hx:absolute hx:-mt-20" id="23-面结构plane"></span>
+    <a href="#23-%e9%9d%a2%e7%bb%93%e6%9e%84plane" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：两条线结构在同一意图下交叉；二维象限用于<strong>组合判断</strong>。</p>
+<p><strong>表达</strong>：<code>(++/ +−/ −+/ −−)</code> 或坐标 <code>(+0.7, −0.2)</code>。</p>
+<p><strong>适用</strong>：常见二元评估（收益×风险、成本×效果、效率×质量）。</p>
+<p><strong>误用</strong>：混入不同意图的轴（“颜值×安全”用于“是否购买儿童座椅”就不当）。</p>
+<p><strong>案例</strong>（投资）：</p>
+<ul>
+<li>
+<p>轴：收益高低 × 风险大小；</p>
+</li>
+<li>
+<p>结论：<code>(+−)</code> = 高收益×高风险 → 定位“投机位”，需再看资金管理与止损纪律。</p>
+</li>
+</ul>
+<hr>
+<h3>2.4 三维结构（3D）与八格（Cell‑8）<span class="hx:absolute hx:-mt-20" id="24-三维结构3d与八格cell8"></span>
+    <a href="#24-%e4%b8%89%e7%bb%b4%e7%bb%93%e6%9e%843d%e4%b8%8e%e5%85%ab%e6%a0%bccell8" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：A/Q/T 三轴在同一意图下的三维组合；<code>2^3=8</code> 个快照单元。</p>
+<p><strong>八格标签与细化</strong>：</p>
+<table>
+  <thead>
+      <tr>
+          <th>代码</th>
+          <th>基本印象</th>
+          <th>细化解释（正项/负项）</th>
+          <th>常见场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>+++</code></td>
+          <td>全攻型</td>
+          <td>优势叠加，短期推进快；风险：透支</td>
+          <td>创业冲刺期骨干</td>
+      </tr>
+      <tr>
+          <td><code>++-</code></td>
+          <td>有能有为，态度隐忧</td>
+          <td>正项：优势/短撑/表演；负项：态度滑落</td>
+          <td>KPI焦灼的销售</td>
+      </tr>
+      <tr>
+          <td><code>+-+</code></td>
+          <td>热情型缺能</td>
+          <td>Q−但T+；需托底与培训</td>
+          <td>实习生、志愿者</td>
+      </tr>
+      <tr>
+          <td><code>+--</code></td>
+          <td>蛮干/盲动</td>
+          <td>A+但Q−T−；容易事故</td>
+          <td>经验不足的冲锋</td>
+      </tr>
+      <tr>
+          <td><code>-++</code></td>
+          <td>潜力未用</td>
+          <td>Q+T+但A−；缺触发/流程</td>
+          <td>被冗长流程束缚的专家</td>
+      </tr>
+      <tr>
+          <td><code>-+-</code></td>
+          <td>消极抵抗</td>
+          <td>Q+但A−T−；有能不为</td>
+          <td>被动对抗的“老法师”</td>
+      </tr>
+      <tr>
+          <td><code>--+</code></td>
+          <td>善意缺能</td>
+          <td>A−Q−T+；短期可依赖外部托底</td>
+          <td>新人/弱势群体</td>
+      </tr>
+      <tr>
+          <td><code>---</code></td>
+          <td>自然缺席</td>
+          <td>A−Q−T−；多数人常态</td>
+          <td>围观/未纳入角色</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>边界/反例</strong>：</p>
+<ul>
+<li><code>--+</code> 不等于“好人”；若 <code>A−↓</code> 长期走低 ⇒ 可能演化为寄生依赖。</li>
+</ul>
+<p><strong>操作规范</strong>：</p>
+<ul>
+<li>解释八格必须写明<strong>意图</strong>与<strong>外部结构</strong>（流程/资源/规则）。</li>
+</ul>
+<hr>
+<h2>3. 关系层：主客六维与六十四局<span class="hx:absolute hx:-mt-20" id="3-关系层主客六维与六十四局"></span>
+    <a href="#3-%e5%85%b3%e7%b3%bb%e5%b1%82%e4%b8%bb%e5%ae%a2%e5%85%ad%e7%bb%b4%e4%b8%8e%e5%85%ad%e5%8d%81%e5%9b%9b%e5%b1%80" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>3.1 主客结构（Six‑Dim）<span class="hx:absolute hx:-mt-20" id="31-主客结构sixdim"></span>
+    <a href="#31-%e4%b8%bb%e5%ae%a2%e7%bb%93%e6%9e%84sixdim" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：主(A/Q/T) × 客(A/Q/T) 的六维静态快照，用于刻画<strong>关系</strong>与<strong>张力</strong>。</p>
+<p><strong>表达</strong>：<code>主(A? Q? T?) | 客(A? Q? T?)</code>，各维可带趋势。</p>
+<p><strong>案例</strong>：</p>
+<ul>
+<li>
+<p><code>主(+++) | 客(−+−)</code>：主方全力推进，客方“有能不为”，典型被刁难局面。</p>
+</li>
+<li>
+<p><code>主(--+) | 客(+++)</code>：主方善意缺能、客方托底；短期安全，长期需防“依赖固化”。</p>
+</li>
+</ul>
+<p><strong>常见误用</strong>：</p>
+<ul>
+<li>拿“单体八格”解读“关系问题”；应一律用主客六维。</li>
+</ul>
+<hr>
+<h3>3.2 六十四局（全集）与跳变网络<span class="hx:absolute hx:-mt-20" id="32-六十四局全集与跳变网络"></span>
+    <a href="#32-%e5%85%ad%e5%8d%81%e5%9b%9b%e5%b1%80%e5%85%a8%e9%9b%86%e4%b8%8e%e8%b7%b3%e5%8f%98%e7%bd%91%e7%bb%9c" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：八格×八格的有限全集；每个模式绑定 2–3 条<strong>常见跳变</strong>，避免“万花筒式”扩散。</p>
+<p><strong>示例</strong>：<code>--+ | +++</code></p>
+<ul>
+<li>
+<p><strong>短期</strong>：安全（客方兜底）。</p>
+</li>
+<li>
+<p><strong>长期分化</strong>：</p>
+<ul>
+<li>
+<p>若主 <code>A−↑</code>（行动上升） ⇒ <code>+-+ | +++</code>（成长型依赖 → 协作）。</p>
+</li>
+<li>
+<p>若主 <code>A−↓</code>（行动下降） ⇒ <code>-+- | +++</code>（寄生化 → 冲突）。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>规则</strong>：</p>
+<ul>
+<li>每模式仅登记<strong>2–3</strong> 条主流跳变；非常规跳变另列“少数例外”。</li>
+</ul>
+<hr>
+<h2>4. 动态机制：压缩 / 解压 / 跳变<span class="hx:absolute hx:-mt-20" id="4-动态机制压缩--解压--跳变"></span>
+    <a href="#4-%e5%8a%a8%e6%80%81%e6%9c%ba%e5%88%b6%e5%8e%8b%e7%bc%a9--%e8%a7%a3%e5%8e%8b--%e8%b7%b3%e5%8f%98" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>4.1 压缩（Compression）<span class="hx:absolute hx:-mt-20" id="41-压缩compression"></span>
+    <a href="#41-%e5%8e%8b%e7%bc%a9compression" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：无限信息 × 意图 → 点结构；是锚定，不是语言技巧。</p>
+<p><strong>现实形态</strong>：简历、信用分、新闻标题、标签化称呼。</p>
+<h3>4.2 解压（Decompression）<span class="hx:absolute hx:-mt-20" id="42-解压decompression"></span>
+    <a href="#42-%e8%a7%a3%e5%8e%8bdecompression" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：围绕点结构展开新维度，形成线/面/体判断；是重构，不是还原事实。</p>
+<h3>4.3 跳变（Jump）<span class="hx:absolute hx:-mt-20" id="43-跳变jump"></span>
+    <a href="#43-%e8%b7%b3%e5%8f%98jump" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>定义</strong>：张力积累→阈值突破→结构突转（静态快照被重写）。</p>
+<ul>
+<li>
+<p><strong>维度跳变</strong>：同一原点内，某维翻转/重排（如客T−⇒T+）。</p>
+</li>
+<li>
+<p><strong>原点跳变</strong>：意图锚点整体切换（“养家”⇒“尊严”），坐标系重算。</p>
+</li>
+</ul>
+<p><strong>动力方程（扩展）</strong>：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>D = T × w(size, sign) × e ÷ μ</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<ul>
+<li>
+<p><code>T</code> 张力（六维不协调差值）</p>
+</li>
+<li>
+<p><code>w(size, sign)</code> 原点权重（考虑经验轨道大小与方向敏感度）</p>
+</li>
+<li>
+<p><code>e</code> 情绪因子（愤怒/恐惧加速排序重排）</p>
+</li>
+<li>
+<p><code>μ</code> 惯性/黏性（旧经验/沉没成本/规则约束）</p>
+</li>
+</ul>
+<p><strong>观测信号</strong>：绝对化语言、行为波动、同温层收紧、时间偏好转短期、象征化挑衅。</p>
+<p><strong>干预映射</strong>：</p>
+<ul>
+<li>
+<p><strong>降T</strong>：对齐期望、增透明度、补齐维度缺口。</p>
+</li>
+<li>
+<p><strong>调w</strong>：重排目标优先级（把“立刻赢”改为“可持续赢”）。</p>
+</li>
+<li>
+<p><strong>控e</strong>：降峰值情绪（延时决策/换框）。</p>
+</li>
+<li>
+<p><strong>提μ/降μ</strong>：增加退出成本或减轻历史包袱。</p>
+</li>
+</ul>
+<hr>
+<h2>5. 外部结构与知识谱系<span class="hx:absolute hx:-mt-20" id="5-外部结构与知识谱系"></span>
+    <a href="#5-%e5%a4%96%e9%83%a8%e7%bb%93%e6%9e%84%e4%b8%8e%e7%9f%a5%e8%af%86%e8%b0%b1%e7%b3%bb" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><table>
+  <thead>
+      <tr>
+          <th>类型</th>
+          <th>定义</th>
+          <th>嵌入层位</th>
+          <th>风险</th>
+          <th>转化路径</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>经验型外部结构</td>
+          <td>直接经历形成的模式</td>
+          <td>组合/反应层（快）</td>
+          <td>片面/过拟合</td>
+          <td>个体经验 → 可归纳 → 知识化</td>
+      </tr>
+      <tr>
+          <td>知识型外部结构</td>
+          <td>叙事/教育输入的“仿真经验”</td>
+          <td>选择/论证层（慢）</td>
+          <td>被误导/错域迁移</td>
+          <td>他人经验 → 我吸收为知识 → 我试错成经验</td>
+      </tr>
+      <tr>
+          <td>科学</td>
+          <td>经验 ×（可靠性∧可证伪性）</td>
+          <td>规范层</td>
+          <td>也非终极真理</td>
+          <td>科学结论 → 知识库/教学 → 个体再经验化</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2>6. 快照工具（四件套）与模板<span class="hx:absolute hx:-mt-20" id="6-快照工具四件套与模板"></span>
+    <a href="#6-%e5%bf%ab%e7%85%a7%e5%b7%a5%e5%85%b7%e5%9b%9b%e4%bb%b6%e5%a5%97%e4%b8%8e%e6%a8%a1%e6%9d%bf" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>6.1 表层快照（Now‑Shot）<span class="hx:absolute hx:-mt-20" id="61-表层快照nowshot"></span>
+    <a href="#61-%e8%a1%a8%e5%b1%82%e5%bf%ab%e7%85%a7nowshot" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>作用</strong>：记录当下六维氛围与趋势。</p>
+<p><strong>模板</strong>：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>意图：____
+主：A? Q? T?（可带 ↑/↓/→）
+客：A? Q? T?（可带 ↑/↓/→）
+短评：张力/托底/短期-长期判断</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>6.2 中程链条快照（Q‑Chain）<span class="hx:absolute hx:-mt-20" id="62-中程链条快照qchain"></span>
+    <a href="#62-%e4%b8%ad%e7%a8%8b%e9%93%be%e6%9d%a1%e5%bf%ab%e7%85%a7qchain" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>作用</strong>：剥离A/T，重建Q的补偿与依赖关系（谁在为谁兜底）。</p>
+<p><strong>模板</strong>：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>核心产出Q：____
+补偿链： X 的 Q? ← Y 的 Q? ← Z 的 Q?
+脆弱点：若 ____ 失效 ⇒ 整体坍塌/劣化路径</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>6.3 对向视角快照（Opp‑Shot）<span class="hx:absolute hx:-mt-20" id="63-对向视角快照oppshot"></span>
+    <a href="#63-%e5%af%b9%e5%90%91%e8%a7%86%e8%a7%92%e5%bf%ab%e7%85%a7oppshot" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>作用</strong>：将客方设为主方，重建平行快照，揭示解码差异。</p>
+<p><strong>模板</strong>：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>我方表层快照：……
+对方为主的快照：……
+差异点：A↔T 的互换/误读点
+纠偏动作：____</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h3>6.4 极性翻转快照（Flip‑Shot）<span class="hx:absolute hx:-mt-20" id="64-极性翻转快照flipshot"></span>
+    <a href="#64-%e6%9e%81%e6%80%a7%e7%bf%bb%e8%bd%ac%e5%bf%ab%e7%85%a7flipshot" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>作用</strong>：六维正负全翻，做“立场/价值取反”压力测试；识别单稳态与骗局。</p>
+<p><strong>模板</strong>：</p>
+<div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>表层：主/客 六维
+翻转：主/客 六维（正负全翻）
+自洽性：可维持/立即崩溃（若一翻即崩 ⇒ 依赖虚假前提）</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h2>7. 判定规范与防误用清单<span class="hx:absolute hx:-mt-20" id="7-判定规范与防误用清单"></span>
+    <a href="#7-%e5%88%a4%e5%ae%9a%e8%a7%84%e8%8c%83%e4%b8%8e%e9%98%b2%e8%af%af%e7%94%a8%e6%b8%85%e5%8d%95" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p>✅ 以<strong>意图</strong>标注原点与正方向；无意图，不编码。</p>
+</li>
+<li>
+<p>✅ 分层写作：先点→线→面→三维，再入主客六维。</p>
+</li>
+<li>
+<p>✅ 趋势只用 <code>↑/↓/→</code>，跳变只用 <code>⇒</code>。</p>
+</li>
+<li>
+<p>❌ 不将态度（T）当行动（A）的替代证据。</p>
+</li>
+<li>
+<p>❌ 不跨意图比较不同对象（换意图=换坐标系）。</p>
+</li>
+<li>
+<p>❌ 不以单体八格代替主客六维描述关系。</p>
+</li>
+<li>
+<p>❌ 不把“同码”直接套用成“同策”。</p>
+</li>
+</ul>
+<hr>
+<h2>8. 实操流程（10 步）<span class="hx:absolute hx:-mt-20" id="8-实操流程10-步"></span>
+    <a href="#8-%e5%ae%9e%e6%93%8d%e6%b5%81%e7%a8%8b10-%e6%ad%a5" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ol>
+<li>锚定意图 → 2) 建点结构 → 3) 展开线/面/三维 → 4) 生成表层快照 → 5) 做对向视角 → 6) 画中程Q链 → 7) 做极性翻转 → 8) 估 T/w/e/μ → 9) 预测 2–3 条常见跳变 → 10) 选择干预：降T/调w/控e/改μ。</li>
+</ol>
+<hr>
+<h2>9. 术语索引（中英对照）<span class="hx:absolute hx:-mt-20" id="9-术语索引中英对照"></span>
+    <a href="#9-%e6%9c%af%e8%af%ad%e7%b4%a2%e5%bc%95%e4%b8%ad%e8%8b%b1%e5%af%b9%e7%85%a7" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>
+<p>意图 Intention / Origin</p>
+</li>
+<li>
+<p>点结构 Point</p>
+</li>
+<li>
+<p>线结构 Line</p>
+</li>
+<li>
+<p>面结构 Plane</p>
+</li>
+<li>
+<p>三维结构 3D</p>
+</li>
+<li>
+<p>八格 Cell‑8</p>
+</li>
+<li>
+<p>主客六维 Six‑Dim (Subject–Object)</p>
+</li>
+<li>
+<p>局面 Snapshot</p>
+</li>
+<li>
+<p>局势 Situation</p>
+</li>
+<li>
+<p>压缩 Compression</p>
+</li>
+<li>
+<p>解压 Decompression</p>
+</li>
+<li>
+<p>跳变 Jump / Transition（维度/原点）</p>
+</li>
+<li>
+<p>因果印象 Causal Impression</p>
+</li>
+<li>
+<p>复制层 / 自然差异层 / 强制多样性层 Replication / Natural Diversity / Forced Diversity</p>
+</li>
+</ul>
+<p><strong>弃用词/替换</strong>：</p>
+<ul>
+<li>
+<p>体结构 → <strong>三维结构</strong>；</p>
+</li>
+<li>
+<p>切片 → <strong>聚焦点/意图聚焦</strong>；</p>
+</li>
+<li>
+<p>卦/卦辞 → <strong>结构码/结构辞</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2>10. 结构码书写规范（最小语法）<span class="hx:absolute hx:-mt-20" id="10-结构码书写规范最小语法"></span>
+    <a href="#10-%e7%bb%93%e6%9e%84%e7%a0%81%e4%b9%a6%e5%86%99%e8%a7%84%e8%8c%83%e6%9c%80%e5%b0%8f%e8%af%ad%e6%b3%95" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>&lt;意图&gt;: 主(A±(↑/↓/→)  Q±(↑/↓/→)  T±(↑/↓/→) [时间窗])
+      | 客(A±(↑/↓/→)  Q±(↑/↓/→)  T±(↑/↓/→) [时间窗])
+常见跳变：X ⇒ Y；Z ⇒ W（≤ 3 条）
+外部结构：规则/资源/文化 影响点
+结构辞：该模式的解释范围（短期/长期/风险）</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Copy code"
+  >
+    <div class="hextra-copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+<div class="hextra-success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<hr>
+<h2>11. 最小案例库（10 例）<span class="hx:absolute hx:-mt-20" id="11-最小案例库10-例"></span>
+    <a href="#11-%e6%9c%80%e5%b0%8f%e6%a1%88%e4%be%8b%e5%ba%9310-%e4%be%8b" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ol>
+<li>
+<p><strong>新人入职（成长/寄生分岔）</strong><br>
+表层：<code>主(--+↑) | 客(+++)</code>（[季]）<br>
+路径A：主A↑ ⇒ <code>+-+ | +++</code>（协作）；路径B：主A↓ ⇒ <code>-+- | +++</code>（冲突）。</p>
+</li>
+<li>
+<p><strong>投资骗局识别</strong><br>
+表层：双方 <code>A+T+Q+</code>；翻转后即崩 ⇒ 高疑似骗局。<br>
+干预：延迟承诺、第三方托管、拆解Q链验证。</p>
+</li>
+<li>
+<p><strong>家庭作业对抗</strong><br>
+表层：<code>家长(++-) | 孩子(-+-)</code>；张力高。<br>
+对向视角：孩子把家长A当T解码 ⇒ 纠偏改“命令”为“共做”。</p>
+</li>
+<li>
+<p><strong>客服纠纷（托底耗竭）</strong><br>
+表层：<code>客(++-) | 企(--+)</code>；长期 <code>企A−→</code> ⇒ 口碑坍塌跳变。<br>
+干预：提μ（赔付门槛），降T（透明SLA）。</p>
+</li>
+<li>
+<p><strong>团队火线救援</strong><br>
+表层：<code>主(+++) | 客(---)</code>；短期胜出，长期风险：主透支。<br>
+结构辞：限时策略，需补齐客Q。</p>
+</li>
+<li>
+<p><strong>合伙人信任裂缝</strong><br>
+表层：<code>主(++-↓) | 客(++-↓)</code>；情绪 e 放大。<br>
+干预：换框调w（从“分赃”回到“做大盘”），加 μ（退出成本）。</p>
+</li>
+<li>
+<p><strong>学生备赛</strong><br>
+表层：<code>主(+−+↑) | 客(+−+↑)</code> 教练/家长双托底。<br>
+Q链：技术Q ← 体能Q ← 资源Q；脆弱点=体能受伤。</p>
+</li>
+<li>
+<p><strong>供应链延误</strong><br>
+表层：<code>主(+++) | 客(−+−)</code>；对向视角：客在自保。<br>
+跳变：若主持续加压且不补Q ⇒ 断供；若主补Q ⇒ <code>主(+++) | 客(+-+)</code> 协作。</p>
+</li>
+<li>
+<p><strong>社交媒体舆情</strong><br>
+表层：<code>发声方(+++) | 受众(---→)</code>；<br>
+跳变：受众从中性 ⇒ <code>-+-</code>（反感）若频率/语气失控；干预：降e、换叙事。</p>
+</li>
+<li>
+<p><strong>个体求职转向</strong><br>
+原点跳变：从“薪资最大化”⇒“学习曲线最大化”。<br>
+结果：同一岗位评价翻转（过去的Q−在新原点下变Q+）。</p>
+</li>
+</ol>
+<hr>
+<p>本术语表作为 StructLang 项目的核心附录，将随着理论演进与实践反馈<strong>持续更新</strong>。<br>
+每一版都会：</p>
+<ul>
+<li>统一并精简符号体系；</li>
+<li>收录典型案例，保证术语与实际场景可对照；</li>
+<li>修订错误或歧义，保持解释的一致性。</li>
+</ul>
+<p>因此，请以本页最新版本为准，历史版本仅供参考。</p>
+
+        </div>
+        <div class="hx:mt-16"></div>
+        <div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="http://localhost:1313/zh-cn/docs/appendix-1-structlang-grammar-v20/"
+        title="附录1 · 语法总表 v2.0"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>附录1 · 语法总表 v2.0</a><a
+        href="http://localhost:1313/zh-cn/docs/qun/"
+        title="加入社群"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >加入社群<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div>
+        
+      </main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 MainStruct · All Rights Reserved.</div></div>
+    </div></footer>
+    
+    <script defer src="http://localhost:1313/js/main.js" integrity=""></script>
+<script defer src="http://localhost:1313/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script>
+        <script defer src="http://localhost:1313/zh-cn.search.js" integrity=""></script>
+  </body>
+</html>

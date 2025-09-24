@@ -1,0 +1,83 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MainStruct – Chapter 6 · Six-Position Structure</title>
+    <link>//localhost:1313/en/docs/chapter6-six-positions/</link>
+    <description>Recent content in Chapter 6 · Six-Position Structure on MainStruct</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+	  <atom:link href="//localhost:1313/en/docs/chapter6-six-positions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Numbering Principle</title>
+      <link>//localhost:1313/en/docs/chapter6-six-positions/numbering-principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter6-six-positions/numbering-principle/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Host vs. Guest Mapping</title>
+      <link>//localhost:1313/en/docs/chapter6-six-positions/host-guest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter6-six-positions/host-guest/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Execution / Capacity / Stance</title>
+      <link>//localhost:1313/en/docs/chapter6-six-positions/execution-capacity-stance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter6-six-positions/execution-capacity-stance/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Alternative Intent Bindings</title>
+      <link>//localhost:1313/en/docs/chapter6-six-positions/alternative-intents/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter6-six-positions/alternative-intents/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Examples</title>
+      <link>//localhost:1313/en/docs/chapter6-six-positions/examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/en/docs/chapter6-six-positions/examples/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
