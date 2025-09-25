@@ -228,7 +228,20 @@ draft: false
 逻辑不是世界的本源，而是人类大脑的“高效认知压缩算法”：它起源于经验，经由知识叙事抽象化，最终在符号体系中获得迁移力。
 
 ---
+```mermaid
+graph TD
 
+    A[经验<br/>直接印象 · 一次性跳变] --> B[普通知识<br/>故事 · 文化 · 他人经验]
+
+    B -->|筛选：可靠性 × 可证伪性| C[科学<br/>更可靠的经验]
+    B -->|筛选：不可证伪 × 高稳定性| D[宗教 / 神话<br/>稳定信念体系]
+
+    style A fill:#f9f,stroke:#333,stroke-width:1px,color:#000
+    style B fill:#bbf,stroke:#333,stroke-width:1px,color:#000
+    style C fill:#bfb,stroke:#333,stroke-width:1px,color:#000
+    style D fill:#fbb,stroke:#333,stroke-width:1px,color:#000
+
+```
 ##  一句话总结
 
 **经验型结构给我们直觉，知识型结构给我们叙事，科学是更严格的经验管理方式，而逻辑则是经验与知识反复强化后的压缩与迁移工具；四者相互转化，共同塑造了我们在不确定世界中的思维与行动。**
