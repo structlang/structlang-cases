@@ -24,7 +24,7 @@ It expresses judgment, conflict, and strategy as structures, using a unified gra
 
 <div class="hx:flex hx:flex-row hx:justify-center hx:gap-4 hx:mt-1 hx:mb-8">
   {{< hextra/hero-button text="📖 Full Theoretical System" link="docs/" >}}
-  {{< hextra/hero-button text="⚡ Explore Metacognition" link="docs/advanced" >}}
+
 </div>
 
 {{< hextra/feature-grid >}}

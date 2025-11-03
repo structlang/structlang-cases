@@ -23,8 +23,8 @@ StructLang 以符号系统重构思维方式，让直觉变成代码，让思想
 </div>
 
 <div class="hx:flex hx:flex-row hx:justify-center hx:gap-4 hx:mt-1 hx:mb-8">
-  {{< hextra/hero-button text="📖 完整理论体系" link="docs/" >}}
-  {{< hextra/hero-button text="⚡ 解锁元认知层" link="docs/advanced" >}}
+  {{< hextra/hero-button text="📖 阅读完整理论" link="docs/" >}}
+
 
 </div>
 
