@@ -1,6 +1,6 @@
 ---
 title: "StructLang Introduction | Cognitive Structure Language Documentation Center"
-linkTitle: "Introduction"
+linkTitle: "Cognitive Structure Language Documentation Center"
 description: "StructLang is a computable cognitive operating language that reveals the structural mechanisms behind human thought, connecting intuition and AI, empowering decision-making and cognitive freedom. This page provides an overview of its seven core mechanisms, five key applications, ethical boundaries, and the roadmap of theoretical development."
 version: "v2.5"
 slug: "introduction"
