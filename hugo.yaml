@@ -17,24 +17,32 @@ languages:
     weight: 1
     menu:
       main:
-        - { name: Home,  pageRef: /,      weight: 10 }
-        - { name: Docs,  pageRef: /docs,  weight: 20 }
-        - { name: Blog,  pageRef: /blog,  weight: 30 }
-        - { name: About, pageRef: /about, weight: 40 }
-        - { name: Search, weight: 50, params: { type: search } }
-        - { name: GitHub, url: "https://github.com", weight: 60, params: { icon: github } }
+        - { name: Home,  pageRef: /,      weight: 1 }
+        - { name: Docs,  pageRef: /docs,  weight: 2 }
+        - { name: Blog,  pageRef: /blog,  weight: 3 }
+
+        - { name: License, pageRef: /license, weight: 5 }
+        - { name: Whitepaper, pageRef: /structlang-whitepaper, weight: 6 }
+        - { name: panorama, pageRef: /panorama, weight: 7 }
+        - { name: community, pageRef: /community, weight: 8 }
+        - { name: Search, weight: 90, params: { type: search } }
+        - { name: GitHub, url: "https://github.com/structlang/structlang-cases", weight: 99, params: { icon: github } }
 
   zh-cn:
     languageName: 简体中文
     weight: 2
     menu:
       main:
-        - { name: 首页, pageRef: /,      weight: 10 }
-        - { name: 文档, pageRef: /docs,  weight: 20 }
-        - { name: 博客, pageRef: /blog,  weight: 30 }
-        - { name: 关于, pageRef: /about, weight: 40 }
-        - { name: Search, weight: 50, params: { type: search } }
-        - { name: GitHub, url: "https://github.com", weight: 60, params: { icon: github } }
+        - { name: 首页, pageRef: /,      weight: 1 }
+        - { name: 文档, pageRef: /docs,  weight: 2 }
+        - { name: 博客, pageRef: /blog,  weight: 3 }
+
+        - { name: 许可, pageRef: /license, weight: 5 }
+        - { name: 白皮书, pageRef: /structlang-whitepaper, weight: 6 }
+        - { name: 全景图, pageRef: /panorama, weight: 7 }
+        - { name: 社群合作, pageRef: /community, weight: 8 }
+        - { name: Search, weight: 90, params: { type: search } }
+        - { name: GitHub, url: "https://github.com/structlang/structlang-cases", weight: 99, params: { icon: github } }
 
   # 预留（当前禁用）
   fa: { languageName: فارسی, weight: 90 }
@@ -77,3 +85,6 @@ permalinks:
 # 多语言构建稳定性（推荐）
 canonifyURLs: true         # 规范化绝对链接
 relativeURLs: false
+
+
+
