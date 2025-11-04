@@ -31,14 +31,6 @@ wordCount: 7200      # Approximate word count
 toc: true            # Enable table of contents
 ---
 
-
-
-**完整技术手册**（修订版）
-
----
-
-# Appendix A · StructLang Unified Symbol System v5.0
-
 **Complete Technical Manual** (Revised Edition)
 
 ---
@@ -669,25 +661,76 @@ Conclusion: Structurev |intervention I| -> Structure^
 # Resources stabilize trend, leap avoided
 ```
 
-### Rule 8: Superposition Rule (Parallel Intentions)
+### Rule 8: Intent Matching Rule 
 
 ```
-Premise: Object(x1, y1, z1) @intention1
-        Object(x2, y2, z2) @intention2
-        
-Condition: intention1 ≠ intention2
-          Time overlaps
-          
-Conclusion: Object exists in multiple state spaces simultaneously
-          Object(x1, y1, z1) @intention1 // Object(x2, y2, z2) @intention2
+Premise: Intent I1 = (t1, b1, r1)
+         Intent I2 = (t2, b2, r2)
+     
+Operation: Calculate distance
+           d = √[(t1-t2)² + (b1-b2)² + (r1-r2)²]
+     
+Conclusion:
+           d < 0.5  → Highly similar, transferable
+           0.5 ≤ d < 1.0 → Partially similar, requires caution
+           d ≥ 1.0  → Large difference, not transferable
 ```
 
 **Example**:
 
 ```
-employee(+ + +) @work // employee(- - -) @family
-# Same person, different states under different intentions
-# Cannot combine, must analyze separately
+Return intent: I1 = (+1, +1, -1)
+Art project: I2 = (-1, 0, +1)
+d = √[4+1+4] = 3.0
+Conclusion: Not transferable
+```
+
+### Rule 9: Weight Evolution Rule 
+
+```
+Premise: Initial weight w0 of experience E
+     
+Operation: Each validation
+           - Successful validation: w = w + α(1-w)
+           - Failed validation: w = w - β(w+1)
+     
+Where: α is reinforcement coefficient (typically 0.1-0.3)
+       β is decay coefficient (typically 0.2-0.5)
+```
+
+**Example**:
+
+```
+Initial: Method A effective [w=0.5]
+After 1st success: w = 0.5 + 0.2(0.5) = 0.6
+After 2nd success: w = 0.6 + 0.2(0.4) = 0.68
+After 1st failure: w = 0.68 - 0.3(1.68) = 0.176
+Weight affects invocation probability
+```
+
+### Rule 10: Network Propagation Rule 
+
+```
+Premise: Node A influences Node B
+         Node B influences Node C
+     
+Condition: Structural leap in A
+     
+Conclusion: Propagation path A -> B -> C
+            Propagation strength = wAB × wBC
+     
+Where: wAB is influence weight from A to B
+       wBC is influence weight from B to C
+```
+
+**Example**:
+
+```
+Core(+ + +) -> Member1(- + +) -> Member2(- - +)
+         w=0.8            w=0.6
+Core leaps to (- - -):
+→ Member1 influence probability = 0.8
+→ Member2 influence probability = 0.8 × 0.6 = 0.48
 ```
 
 ---
